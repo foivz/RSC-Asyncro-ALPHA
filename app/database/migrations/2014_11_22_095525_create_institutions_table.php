@@ -23,7 +23,7 @@ class CreateInstitutionsTable extends Migration {
 			$table->float('blood_level');
 			$table->text('logo');
 			$table->text('picture');
-            $table->integer('city');
+            $table->integer('city_id');
 			$table->timestamps();
 		});
 	}
