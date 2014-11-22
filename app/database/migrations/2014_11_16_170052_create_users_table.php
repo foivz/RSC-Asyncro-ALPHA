@@ -29,6 +29,7 @@ class CreateUsersTable extends Migration {
             $table->text('twitterid');
             $table->date('born');
             $table->text('gcm_regid')->nullable();
+            $table->integer('counter')->default(0);
             $table->rememberToken();
 			$table->timestamps();
 		});

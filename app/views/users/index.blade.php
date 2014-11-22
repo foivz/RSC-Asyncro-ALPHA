@@ -20,6 +20,7 @@
 				<th>Avatar</th>
 				<th>Blood_group</th>
 				<th>City</th>
+				<th>Counter</th>
 				<th>&nbsp;</th>
 			</tr>
 		</thead>
@@ -36,7 +37,8 @@
 					<td>{{{ $user->rank }}}</td>
 					<td>{{{ $user->avatar }}}</td>
 					<td>{{{ $user->blood_group }}}</td>
-					<td>{{{ $user->city }}}</td>
+					<td>{{{ $user->city }}}
+					<td>{{{$user->counter}}}</td>
                     <td>
                         {{ Form::open(array('style' => 'display: inline-block;', 'method' => 'DELETE', 'route' => array('users.destroy', $user->id))) }}
                             {{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}

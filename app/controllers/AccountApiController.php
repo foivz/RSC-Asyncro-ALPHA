@@ -45,15 +45,29 @@ class AccountApiController extends \BaseController {
 
     public function login(){
 
-        if(Auth::attempt([ 'email' => Input::get('email'), 'password' => Input::get('password') ], true))
-        {
-            $authToken = AuthToken::create(Auth::user());
-            $publicToken = AuthToken::publicToken($authToken);
-            return [ 'status' => 'true', 'token' => $publicToken ];
+        $user = User::where('email', '=', Input::get('email'))->where('counter','<', 3)->first();
+
+        if($user) {
+
+            if (Auth::attempt(['email' => Input::get('email'), 'password' => Input::get('password')], true)) {
+                $authToken = AuthToken::create(Auth::user());
+                $publicToken = AuthToken::publicToken($authToken);
+                return ['status' => 'true', 'token' => $publicToken];
+            } else {
+
+                $user = User::where('email', '=', $email)->first();
+
+                if ($user) {
+                    $user->counter = $user->counter + 1;
+
+                    $user->save();
+                }
+
+                return ['status' => 'false'];
+
+            }
         }else{
-
-            return [ 'status' => 'false' ];
-
+            return ['status' => 'false'];
         }
 
     }
@@ -69,6 +83,8 @@ class AccountApiController extends \BaseController {
         $newPassword = $fake->userName();
 
         $userInstance->password = Hash::make($newPassword);
+
+        $userInstance->counter = 0;
 
         $userInstance->save();
 
