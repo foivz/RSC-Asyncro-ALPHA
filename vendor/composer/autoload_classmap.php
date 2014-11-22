@@ -2134,6 +2134,9 @@ return array(
     'Tappleby\\AuthToken\\HashProvider' => $vendorDir . '/tappleby/laravel-auth-token/src/Tappleby/AuthToken/HashProvider.php',
     'Tappleby\\Support\\Facades\\AuthToken' => $vendorDir . '/tappleby/laravel-auth-token/src/Tappleby/Support/Facades/AuthToken.php',
     'TestCase' => $baseDir . '/app/tests/TestCase.php',
+    'Thujohn\\Twitter\\Twitter' => $vendorDir . '/thujohn/twitter/src/Thujohn/Twitter/Twitter.php',
+    'Thujohn\\Twitter\\TwitterFacade' => $vendorDir . '/thujohn/twitter/src/Thujohn/Twitter/TwitterFacade.php',
+    'Thujohn\\Twitter\\TwitterServiceProvider' => $vendorDir . '/thujohn/twitter/src/Thujohn/Twitter/TwitterServiceProvider.php',
     'Token' => $baseDir . '/app/classes/Token.php',
     'User' => $baseDir . '/app/models/User.php',
     'UsersApiController' => $baseDir . '/app/controllers/UsersApiController.php',
@@ -2204,4 +2207,5 @@ return array(
     'Zizaco\\Entrust\\EntrustServiceProvider' => $vendorDir . '/zizaco/entrust/src/Entrust/EntrustServiceProvider.php',
     'Zizaco\\Entrust\\HasRole' => $vendorDir . '/zizaco/entrust/src/Entrust/HasRole.php',
     'Zizaco\\Entrust\\MigrationCommand' => $vendorDir . '/zizaco/entrust/src/commands/MigrationCommand.php',
+    'tmhOAuth' => $vendorDir . '/themattharris/tmhoauth/tmhOAuth.php',
 );

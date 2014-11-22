@@ -6,9 +6,11 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'tmhOAuth' => array($vendorDir . '/themattharris/tmhoauth'),
     'Xethron\\MigrationsGenerator' => array($vendorDir . '/xethron/migrations-generator/src'),
     'Whoops' => array($vendorDir . '/filp/whoops/src'),
     'Way\\Generators' => array($vendorDir . '/way/generators/src'),
+    'Thujohn\\Twitter' => array($vendorDir . '/thujohn/twitter/src'),
     'Tappleby\\Support' => array($vendorDir . '/tappleby/laravel-auth-token/src'),
     'Tappleby\\AuthToken' => array($vendorDir . '/tappleby/laravel-auth-token/src'),
     'System' => array($vendorDir . '/phpseclib/phpseclib/phpseclib'),

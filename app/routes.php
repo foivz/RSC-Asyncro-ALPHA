@@ -27,6 +27,8 @@ Route::post('/api/account/forgot', ['as' => 'forgotApiRoute', 'uses' => 'Account
 Route::post('/api/account/reset', ['as' => 'resetApiRoute', 'uses' => 'AccountApiController@reset']);
 Route::post('/api/user/fetch', ['as' => 'fetchUserRoute', 'uses' => 'UsersApiController@getUserInfo']);
 Route::post('/api/donation/fetch', ['as' => 'fetchDonationRoute', 'uses' => 'DonationsController@getUserDonations']);
+Route::get('/api/account/login/twitter', [ 'as' => 'twitterLoginRoute', 'uses' => 'TwitterController@login' ]);
+Route::get('/api/account/twitter/callback', [ 'as' => 'twitterCallbackRoute', 'uses' => 'TwitterController@callback' ]);
 /***************API******************/
 Route::group(array('before' => 'auth.token'), function() {
     Route::post('api/data', function(){

@@ -125,7 +125,8 @@ return array(
         'Barryvdh\Cors\CorsServiceProvider',
         'Dollar\Generators\GeneratorsServiceProvider',
         'Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider',
-        'Zizaco\Entrust\EntrustServiceProvider'
+        'Zizaco\Entrust\EntrustServiceProvider',
+        'Thujohn\Twitter\TwitterServiceProvider',
 	),
 
 	/*
@@ -195,6 +196,7 @@ return array(
         'AuthToken' => 'Tappleby\Support\Facades\AuthToken',
         'AuthTokenNotAuthorizedException' => 'Tappleby\AuthToken\Exceptions\NotAuthorizedException',
         'Entrust'    => 'Zizaco\Entrust\EntrustFacade',
+        'Twitter' => 'Thujohn\Twitter\TwitterFacade',
 	),
 
 );
