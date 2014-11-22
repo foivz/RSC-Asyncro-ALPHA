@@ -8,7 +8,7 @@ class UsersApiController extends BaseController {
 
     public function getUserInfo(){
         $userAuth=Token::getUserInstance();
-        return User::find($userAuth->id);
+        return User::find($userAuth->id)->donations;
     }
 
 }
