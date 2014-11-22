@@ -30,4 +30,6 @@ dependencies {
     compile 'com.github.asne:asne-twitter:0.3.1'
     compile 'org.lucasr.twowayview:core:1.0.0-SNAPSHOT@aar'
     compile 'org.lucasr.twowayview:layouts:1.0.0-SNAPSHOT@aar'
+    compile "com.google.android.gms:play-services:3.1.+"
+
 }

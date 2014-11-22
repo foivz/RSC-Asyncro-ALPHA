@@ -5,6 +5,29 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+    <!--GCM premissions-->
+
+    <!-- GCM requires a Google account. -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+
+    <!-- Keeps the processor from sleeping when a message is received. -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!--
+     Creates a custom permission so only this app can receive its messages.
+
+     NOTE: the permission *must* be called PACKAGE.permission.C2D_MESSAGE,
+           where PACKAGE is the application's package name.
+    -->
+    <permission android:name="com.alpha.asyncro.rsc.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="com.alpha.asyncro.rsc.permission.C2D_MESSAGE" />
+
+    <!-- This app has permission to register and receive data message. -->
+    <uses-permission
+        android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -24,6 +47,27 @@
             android:name=".MainActivity"
             android:configChanges="keyboardHidden|orientation|screenSize" />
         <activity android:name="com.github.gorbin.asne.core.OAuthActivity" />
+
+        <!--
+          WakefulBroadcastReceiver that will receive intents from GCM
+          services and hand them to the custom IntentService.
+
+          The com.google.android.c2dm.permission.SEND permission is necessary
+          so only GCM services can send data messages for the app.
+        -->
+        <receiver
+            android:name=".notifications.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <!-- Receives the actual messages. -->
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="com.google.android.gcm.demo.app" />
+            </intent-filter>
+        </receiver>
+        <service android:name=".notifications.GcmIntentService" />
+
+
+
     </application>
 
 </manifest>
