@@ -130,7 +130,7 @@ class InstitutionsController extends BaseController {
 		return Redirect::route('institutions.index');
 	}
     public function institutionByDonation($id){
-        return Institution::where('id','=',$id)
+        return Institution::where('id','=',$id);
     }
 
 }

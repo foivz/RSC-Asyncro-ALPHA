@@ -61,9 +61,9 @@
         </div>
 
         <div class="form-group">
-            {{ Form::label('blood_group', 'Blood_group:', array('class'=>'col-md-2 control-label')) }}
+            {{ Form::label('bloodgroups_id', 'Blood group:', array('class'=>'col-md-2 control-label')) }}
             <div class="col-sm-10">
-              {{ Form::input('number', 'blood_group', Input::old('blood_group'), array('class'=>'form-control')) }}
+              {{ Form::select('bloodgroups_id', $bloodGroups, array('class'=>'form-control', 'placeholder'=>'Blood group')) }}
             </div>
         </div>
 

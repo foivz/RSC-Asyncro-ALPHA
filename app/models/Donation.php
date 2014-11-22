@@ -9,7 +9,7 @@ class Donation extends Eloquent {
 		'date' => 'required',
 		'quantity' => 'required',
 		'note' => 'required',
-		'blood_group' => 'required',
+		'bloodgroups_id' => 'required',
 		//'collecting_blood_event' => 'required'
 	);
     public function user(){

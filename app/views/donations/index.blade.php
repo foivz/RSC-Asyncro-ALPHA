@@ -14,7 +14,7 @@
 				<th>Date</th>
 				<th>Quantity</th>
 				<th>Note</th>
-				<th>Blood_group</th>
+				<th>Blood group</th>
 				<th>&nbsp;</th>
 			</tr>
 		</thead>
@@ -25,7 +25,11 @@
 					<td>{{{ $donation->date }}}</td>
 					<td>{{{ $donation->quantity }}}</td>
 					<td>{{{ $donation->note }}}</td>
-					<td>{{{ $donation->blood_group }}}</td>
+					@foreach($bloodGroups as $group)
+					    @if($group->id === $donation->bloodgroups_id)
+					        <td>{{{ $group->name }}}</td>
+					    @endif
+					@endforeach
                     <td>
                         {{ Form::open(array('style' => 'display: inline-block;', 'method' => 'DELETE', 'route' => array('donations.destroy', $ins,$donation->id))) }}
                             {{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}
