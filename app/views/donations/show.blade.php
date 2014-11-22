@@ -4,7 +4,7 @@
 
 <h1>Show Donation</h1>
 
-<p>{{ link_to_route('donations.index', 'Return to All donations', null, array('class'=>'btn btn-lg btn-primary')) }}</p>
+<p>{{ link_to_route('donations.index', 'Return to All donations', [$ins], array('class'=>'btn btn-lg btn-primary')) }}</p>
 
 <table class="table table-striped">
 	<thead>

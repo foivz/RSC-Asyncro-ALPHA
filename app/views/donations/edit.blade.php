@@ -16,7 +16,7 @@
     </div>
 </div>
 
-{{ Form::model($donation, array('class' => 'form-horizontal', 'method' => 'PATCH', 'route' => array('donations.update', $donation->id))) }}
+{{ Form::model($donation, array('class' => 'form-horizontal', 'method' => 'PATCH', 'route' => array('donations.update',$ins, $donation->id))) }}
 
         <div class="form-group">
             {{ Form::label('date', 'Date:', array('class'=>'col-md-2 control-label')) }}

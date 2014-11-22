@@ -16,7 +16,28 @@
     </div>
 </div>
 
-{{ Form::open(array('route' => 'donations.store', 'class' => 'form-horizontal')) }}
+{{ Form::open(array('route' => ['donations.store', $ins],'class' => 'form-horizontal')) }}
+
+        <div class="form-group">
+               {{ Form::label('user', 'User:', array('class'=>'col-md-2 control-label')) }}
+              <div class="col-sm-10">
+               {{ Form::select('user', $users, array('class'=>'form-control', 'placeholder'=>'User')) }}
+             </div>
+        </div>
+
+        <div class="form-group">
+               {{ Form::label('institution', 'Institution:', array('class'=>'col-md-2 control-label')) }}
+              <div class="col-sm-10">
+               {{ Form::select('institution', $inst, array('class'=>'form-control', 'placeholder'=>'Institution')) }}
+             </div>
+        </div>
+
+        <div class="form-group">
+               {{ Form::label('collecting_blood_event', 'Event:', array('class'=>'col-md-2 control-label')) }}
+              <div class="col-sm-10">
+               {{ Form::text('collecting_blood_event', Input::old('collecting_blood_event'), array('class'=>'form-control', 'placeholder'=>'Event')) }}
+             </div>
+        </div>
 
         <div class="form-group">
             {{ Form::label('date', 'Date:', array('class'=>'col-md-2 control-label')) }}

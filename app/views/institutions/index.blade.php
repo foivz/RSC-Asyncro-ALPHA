@@ -4,7 +4,7 @@
 
 <h1>All Institutions</h1>
 @if($user && $user->hasRole('SuperAdmin'))
-    <p>{{ link_to_route('institutions.create', 'Add New Institution', null, array('class' => 'btn btn-lg btn-success')) }}</p>
+    <p>{{ link_to_route('institutions.create', 'Add New Institution', array('class' => 'btn btn-lg btn-success')) }}</p>
 @endif
 @if ($institutions->count())
 	<table class="table table-striped">
