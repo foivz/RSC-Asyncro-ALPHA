@@ -3,9 +3,9 @@
 @section('main')
 
 <h1>All Institutions</h1>
-
-<p>{{ link_to_route('institutions.create', 'Add New Institution', null, array('class' => 'btn btn-lg btn-success')) }}</p>
-
+@if($user && $user->hasRole('SuperAdmin'))
+    <p>{{ link_to_route('institutions.create', 'Add New Institution', null, array('class' => 'btn btn-lg btn-success')) }}</p>
+@endif
 @if ($institutions->count())
 	<table class="table table-striped">
 		<thead>
@@ -36,9 +36,11 @@
 					<td>{{{ $institution->logo }}}</td>
 					<td>{{{ $institution->picture }}}</td>
                     <td>
-                        {{ Form::open(array('style' => 'display: inline-block;', 'method' => 'DELETE', 'route' => array('institutions.destroy', $institution->id))) }}
-                            {{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}
-                        {{ Form::close() }}
+                        @if($user && $user->hasRole('SuperAdmin'))
+                            {{ Form::open(array('style' => 'display: inline-block;', 'method' => 'DELETE', 'route' => array('institutions.destroy', $institution->id))) }}
+                                {{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}
+                            {{ Form::close() }}
+                        @endif
                         {{ link_to_route('institutions.edit', 'Edit', array($institution->id), array('class' => 'btn btn-info')) }}
                     </td>
 				</tr>

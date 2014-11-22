@@ -11,6 +11,8 @@ class InstitutionsController extends BaseController {
 
 	public function __construct(Institution $institution)
 	{
+        $this->beforeFilter('auth');
+        $this->beforeFilter('bothRoles');
 		$this->institution = $institution;
 	}
 
@@ -22,8 +24,9 @@ class InstitutionsController extends BaseController {
 	public function index()
 	{
 		$institutions = $this->institution->all();
+        $user=Auth::user();
 
-		return View::make('institutions.index', compact('institutions'));
+		return View::make('institutions.index', ['institutions'=>$institutions,'user'=>$user]);
 	}
 
 	/**

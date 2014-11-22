@@ -23,6 +23,9 @@ Route::get('/account/register', [ 'as' => 'registerRoute', 'uses' => 'AccountCon
 /***************API******************/
 Route::post('/api/account/registration', ['as' => 'registerApiRoute', 'uses' => 'AccountApiController@register']);
 Route::post('/api/account/login', ['as' => 'loginApiRoute', 'uses' => 'AccountApiController@login']);
+
+Route::post('/api/account/user/fetch',['as'=>'fetchUser','uses'=>'UsersApiController@getUserInfo']);
+
 /***************API******************/
 
 Route::group(array('before' => 'auth.token'), function() {
