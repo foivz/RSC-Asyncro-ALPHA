@@ -31,9 +31,15 @@ class DonationsController extends BaseController {
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function create($ins)
 	{
-		return View::make('donations.create');
+        $users = User::lists('name', 'id');
+
+        $inst = Institution::lists('name', 'id');
+
+        //$event = Event:all();
+
+		return View::make('donations.create', ['users' => $users, 'inst' => $inst, 'ins' => $ins]);
 	}
 
 	/**
@@ -98,6 +104,7 @@ class DonationsController extends BaseController {
 	 */
 	public function update($ins, $id)
 	{
+
 		$input = array_except(Input::all(), '_method');
 		$validation = Validator::make($input, Donation::$rules);
 
@@ -106,10 +113,10 @@ class DonationsController extends BaseController {
 			$donation = $this->donation->find($id);
 			$donation->update($input);
 
-			return Redirect::route('donations.show', $id);
+			return Redirect::route('donations.show', [$ins, $id]);
 		}
 
-		return Redirect::route('donations.edit', $id)
+		return Redirect::route('donations.edit', [$ins, $id])
 			->withInput()
 			->withErrors($validation)
 			->with('message', 'There were validation errors.');
@@ -125,7 +132,7 @@ class DonationsController extends BaseController {
 	{
 		$this->donation->find($id)->delete();
 
-		return Redirect::route('donations.index');
+		return Redirect::route('donations.index', $ins);
 	}
 
     public function showByInstitution($index){

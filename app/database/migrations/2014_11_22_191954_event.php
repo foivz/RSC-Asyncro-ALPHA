@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateDonationsTable extends Migration {
+class Event extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,12 +12,9 @@ class CreateDonationsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('donations', function(Blueprint $table) {
+		Schema::create('', function(Blueprint $table) {
 			$table->increments('id');
-			$table->date('date');
-			$table->integer('quantity');
-			$table->string('note');
-			$table->integer('blood_group');
+			
 			$table->timestamps();
 		});
 	}
@@ -30,7 +27,7 @@ class CreateDonationsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('donations');
+		Schema::drop('');
 	}
 
 }

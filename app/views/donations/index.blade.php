@@ -6,6 +6,7 @@
 
 <p>{{ link_to_route('donations.create', 'Add New Donation', null, array('class' => 'btn btn-lg btn-success')) }}</p>
 <p>{{ link_to_route('donations.pushnotification', 'Push Notification', null, array('class' => 'btn btn-lg btn-success')) }}</p>
+
 @if ($donations->count())
 	<table class="table table-striped">
 		<thead>
