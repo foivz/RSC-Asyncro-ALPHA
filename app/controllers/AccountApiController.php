@@ -6,7 +6,7 @@ class AccountApiController extends \BaseController {
 
     public function __construct(){
 
-        $this->beforeFilter('auth.token', [ 'except' => ['register', 'login'] ]);
+        $this->beforeFilter('auth.token', [ 'except' => ['register', 'login', 'forgot'] ]);
 
     }
 
@@ -62,13 +62,15 @@ class AccountApiController extends \BaseController {
 
         $input = Input::except('_token');
 
-        $userInstance = Token::getUserInstance();
+        $userInstance = User::where('email', '=', Input::get('email'))->first();
 
         $fake = Faker::create();
 
         $newPassword = $fake->userName();
 
         $userInstance->password = Hash::make($newPassword);
+
+        $userInstance->save();
 
         return [ 'status' => true, 'password' => $newPassword ];
 
