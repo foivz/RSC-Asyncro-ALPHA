@@ -18,6 +18,8 @@ Route::get('/admin', ['as' => 'adminPanelRoute', 'uses' => 'PanelController@inde
 Route::get('/account/logout', [ 'as' => 'logoutRoute', 'uses' => 'AccountController@logout' ]);
 Route::get('/account/login', [ 'as' => 'loginRoute', 'uses' => 'AccountController@loginForm' ]);
 Route::get('/account/register', [ 'as' => 'registerRoute', 'uses' => 'AccountController@registerForm' ]);
+Route::get('/account/login/twitter', [ 'as' => 'twitterLoginRoute', 'uses' => 'TwitterController@login' ]);
+Route::get('/account/twitter/callback', [ 'as' => 'twitterCallbackRoute', 'uses' => 'TwitterController@callback' ]);
 /**************Views******************/
 
 /***************API******************/
@@ -26,9 +28,11 @@ Route::post('/api/account/login', ['as' => 'loginApiRoute', 'uses' => 'AccountAp
 Route::post('/api/account/forgot', ['as' => 'forgotApiRoute', 'uses' => 'AccountApiController@forgot']);
 Route::post('/api/account/reset', ['as' => 'resetApiRoute', 'uses' => 'AccountApiController@reset']);
 Route::post('/api/user/fetch', ['as' => 'fetchUserRoute', 'uses' => 'UsersApiController@getUserInfo']);
-Route::post('/api/donation/fetch', ['as' => 'fetchDonationRoute', 'uses' => 'DonationsController@getUserDonations']);
+Route::post('/api/donation/fetch', ['as' => 'fetchDonationRoute', 'uses' => 'DonationsApiController@getUserDonations']);
+Route::post('/api/account/update', ['as' => 'updateAccountRoute', 'uses' => 'AccountApiController@updateProfileInfo']);
 Route::get('/api/account/login/twitter', [ 'as' => 'twitterLoginRoute', 'uses' => 'TwitterController@login' ]);
 Route::get('/api/account/twitter/callback', [ 'as' => 'twitterCallbackRoute', 'uses' => 'TwitterController@callback' ]);
+
 /***************API******************/
 Route::group(array('before' => 'auth.token'), function() {
     Route::post('api/data', function(){
