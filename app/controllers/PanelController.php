@@ -6,7 +6,7 @@ class PanelController extends \BaseController {
 
         $this->beforeFilter('auth');
 
-        //$this->beforeFilter('role_filter');
+        $this->beforeFilter('bothRoles');
 
     }
 

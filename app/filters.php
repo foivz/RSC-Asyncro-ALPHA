@@ -100,3 +100,21 @@ Route::filter('admin',function(){
         }
     }
 });
+
+Route::filter('superAdmin',function(){
+    $user=Auth::user();
+    if($user){
+        if(!$user->hasRole('SuperAdmin')){
+            return Redirect::route('loginRoute');
+        }
+    }
+});
+
+Route::filter('bothRoles',function(){
+    $user=Auth::user();
+    if($user){
+        if(!$user->hasRole('SuperAdmin') && !$user->hasRole('Admin')){
+            return Redirect::route('loginRoute');
+        }
+    }
+});

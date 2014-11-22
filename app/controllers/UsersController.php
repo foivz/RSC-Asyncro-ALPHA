@@ -11,6 +11,10 @@ class UsersController extends BaseController {
 
 	public function __construct(User $user)
 	{
+        $this->beforeFilter('auth');
+
+        $this->beforeFilter('bothRoles');
+
 		$this->user = $user;
 	}
 
