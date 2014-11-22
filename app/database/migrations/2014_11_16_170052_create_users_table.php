@@ -26,6 +26,8 @@ class CreateUsersTable extends Migration {
             $table->integer('blood_group');
             $table->integer('city');
             $table->text('token');
+            $table->text('twitterid');
+            $table->date('born');
             $table->rememberToken();
 			$table->timestamps();
 		});

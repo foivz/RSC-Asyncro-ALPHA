@@ -41,6 +41,7 @@ class UsersTableSeeder extends Seeder {
                 'blood_group' => $faker->numberBetween(1, 4),
                 'city' => $faker->numberBetween(1, 10),
                 'password' => Hash::make('xxx123'),
+                'born' => $faker->date(),
                 'created_at' => $faker->date()
 			])->attachRole($userRole);
 		}
@@ -53,6 +54,7 @@ class UsersTableSeeder extends Seeder {
             'blood_group' => $faker->numberBetween(1, 4),
             'city' => $faker->numberBetween(1, 10),
             'password' => Hash::make('xxx123'),
+            'born' => $faker->date(),
             'created_at' => $faker->date()
         ]);
 
@@ -67,6 +69,7 @@ class UsersTableSeeder extends Seeder {
             'blood_group' => $faker->numberBetween(1, 4),
             'city' => $faker->numberBetween(1, 10),
             'password' => Hash::make('xxx123'),
+            'born' => $faker->date(),
             'created_at' => $faker->date()
         ]);
         User::where('email','=','superadmin@gmail.com')->first()->attachRole($superAdmin);
