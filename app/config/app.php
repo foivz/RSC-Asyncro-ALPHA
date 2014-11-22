@@ -127,7 +127,7 @@ return array(
         'Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider',
         'Zizaco\Entrust\EntrustServiceProvider',
         'Thujohn\Twitter\TwitterServiceProvider',
-        //'Davibennun\LaravelPushNotification\LaravelPushNotificationServiceProvider'
+        'Davibennun\LaravelPushNotification\LaravelPushNotificationServiceProvider'
 	),
 
 	/*
@@ -195,10 +195,10 @@ return array(
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
         'AuthToken' => 'Tappleby\Support\Facades\AuthToken',
-        'AuthTokenNotAuthorizedException' => 'Tappleby\AuthToken\Exceptions\NotAuthorizedException',
+        'A3uthTokenNotAuthorizedException' => 'Tappleby\AuthToken\Exceptions\NotAuthorizedException',
         'Entrust'    => 'Zizaco\Entrust\EntrustFacade',
         'Twitter' => 'Thujohn\Twitter\TwitterFacade',
-        //'PushNotification' => 'Davibennun\LaravelPushNotification\Facades\PushNotification'
+        'PushNotification' => 'Davibennun\LaravelPushNotification\Facades\PushNotification'
 	),
 
 );

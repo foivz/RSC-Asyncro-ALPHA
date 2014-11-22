@@ -12,7 +12,8 @@
         "fzaninotto/faker": "v1.3.0",
         "xethron/migrations-generator": "dev-master",
         "zizaco/entrust": "1.2.*@dev",
-        "thujohn/twitter": "dev-master"
+        "thujohn/twitter": "dev-master",
+        "davibennun/laravel-push-notification": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

@@ -144,5 +144,10 @@ class DonationsController extends BaseController {
         return View::make('donations.index', [ 'donations' => $instDonations ]);
 
     }
+    public function sendPush(){
+          PushNotification::app('appNameAndroid')
+            ->to('123')
+            ->send('Hello World, i`m a push message');
+    }
 
 }
