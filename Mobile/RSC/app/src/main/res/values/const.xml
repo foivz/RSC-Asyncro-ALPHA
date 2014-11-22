@@ -6,4 +6,6 @@
         <item>AB</item>
         <item>0</item>
     </string-array>
+    <string name="key_twitter_consumer">Qwug8inWnmUr5QpxQhbSR64FO</string>
+    <string name="key_twitter_secret">kOUjAIgXqJa0AfrpwCj0P06yKtbiZ336wxPJTQMxyfcrCUlCUW</string>
 </resources>

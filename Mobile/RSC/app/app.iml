@@ -80,11 +80,16 @@
     <orderEntry type="jdk" jdkName="Android API 21 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="gson-2.2.4" level="project" />
+    <orderEntry type="library" exported="" name="asne-twitter-0.3.1" level="project" />
+    <orderEntry type="library" exported="" name="asne-core-0.3.1" level="project" />
+    <orderEntry type="library" exported="" name="support-v4-21.0.0" level="project" />
     <orderEntry type="library" exported="" name="okhttp-urlconnection-1.6.0" level="project" />
     <orderEntry type="library" exported="" name="okhttp-1.6.0" level="project" />
     <orderEntry type="library" exported="" name="okio-1.0.0" level="project" />
     <orderEntry type="library" exported="" name="retrofit-1.6.0" level="project" />
     <orderEntry type="library" exported="" name="butterknife-5.1.2" level="project" />
+    <orderEntry type="library" exported="" name="twitter4j-core-4.0.2" level="project" />
+    <orderEntry type="library" exported="" name="appcompat-v7-20.0.0" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-21.0.0" level="project" />
     <orderEntry type="module" module-name="lightAndroid" exported="" />
     <orderEntry type="module" module-name="materialDesign" exported="" />

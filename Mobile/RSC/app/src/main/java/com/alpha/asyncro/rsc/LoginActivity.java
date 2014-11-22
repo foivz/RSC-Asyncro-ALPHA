@@ -1,5 +1,6 @@
 package com.alpha.asyncro.rsc;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 
@@ -44,6 +45,16 @@ public class LoginActivity extends LightTabbedActivity {
     @Override
     public int provideLayoutRes() {
         return R.layout.activity_login;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        Fragment fragment = getSupportFragmentManager().findFragmentByTag(LoginFragment.SOCIAL_NETWORK_TAG);
+        if (fragment != null) {
+            fragment.onActivityResult(requestCode, resultCode, data);
+        }
     }
 
 }

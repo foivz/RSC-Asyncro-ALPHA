@@ -14,7 +14,7 @@ import retrofit.client.Response;
 /**
  * Created by dmacan on 22.11.2014..
  */
-public class ProfileFragment extends LabeledFragment implements OnDataResponseListener {
+public class UserFragment extends LabeledFragment implements OnDataResponseListener {
 
     private UserController userController;
 
@@ -25,7 +25,7 @@ public class ProfileFragment extends LabeledFragment implements OnDataResponseLi
 
     @Override
     public void main() {
-        userController = new UserController();
+        userController = new UserController(getLightActivity());
         User user = Preferences.loadUser(getLightActivity());
         userController.loadUser(user.getToken());
     }

@@ -45,7 +45,7 @@ public class RegisterFragment extends LabeledFragment implements Labeled, OnData
     public void main() {
         String[] blood = getLightActivity().getResources().getStringArray(R.array.arr_blood);
         spBloodType.setAdapter(new ArrayAdapter<String>(getLightActivity(), android.R.layout.simple_list_item_1, blood));
-        userController = new UserController();
+        userController = new UserController(getLightActivity());
         userController.setOnDataResponseListener(this);
     }
 

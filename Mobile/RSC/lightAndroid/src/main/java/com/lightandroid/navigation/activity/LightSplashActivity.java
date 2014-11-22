@@ -22,8 +22,11 @@ public abstract class LightSplashActivity extends Activity {
 
             @Override
             public void run() {
-                startActivity(new Intent(getBaseContext(), getNextClassActivity()));
-                finish();
+                Class classActivity = getNextClassActivity();
+                if (classActivity != null) {
+                    startActivity(new Intent(getBaseContext(), getNextClassActivity()));
+                    finish();
+                }
             }
         }, getSplashTime());
 

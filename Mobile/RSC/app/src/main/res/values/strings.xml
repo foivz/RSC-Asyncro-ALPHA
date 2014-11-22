@@ -14,4 +14,5 @@
     <string name="lbl_first_name">First Name</string>
     <string name="lbl_last_name">Last Name</string>
     <string name="lbl_pass_forgot">I\'ve forgot my password</string>
+    <string name="lbl_login_twitter">Login with Twitter</string>
 </resources>

@@ -1,42 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:padding="10dp"
-    android:gravity="center"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fillViewport="true">
 
-    <EditText
-        android:id="@+id/etEmail"
-        android:inputType="textEmailAddress"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:hint="@string/lbl_email"
-        android:layout_height="wrap_content" />
+        android:padding="10dp"
+        android:gravity="center"
+        android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/etPassword"
-        android:inputType="textWebPassword"
-        android:layout_width="match_parent"
-        android:layout_marginTop="5dp"
-        android:hint="@string/lbl_password"
-        android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/etEmail"
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:hint="@string/lbl_email"
+            android:layout_height="wrap_content" />
 
-    <com.gc.materialdesign.views.ButtonRectangle
-        android:id="@+id/btnLogin"
-        android:layout_marginTop="20dp"
-        app:rippleSpeed="50"
-        android:layout_width="match_parent"
-        android:text="@string/lbl_login"
+        <EditText
+            android:id="@+id/etPassword"
+            android:inputType="textWebPassword"
+            android:layout_width="match_parent"
+            android:layout_marginTop="5dp"
+            android:hint="@string/lbl_password"
+            android:layout_height="wrap_content" />
 
-        android:layout_height="wrap_content" />
+        <com.gc.materialdesign.views.ButtonRectangle
+            android:id="@+id/btnLogin"
+            android:layout_marginTop="20dp"
+            app:rippleSpeed="50"
+            android:layout_width="match_parent"
+            android:text="@string/lbl_login"
 
-    <com.gc.materialdesign.views.ButtonRectangle
-        android:id="@+id/btnPasswordReset"
-        android:layout_width="match_parent"
-        android:text="@string/lbl_pass_forgot"
-        app:rippleSpeed="50"
-        android:layout_height="wrap_content" />
+            android:layout_height="wrap_content" />
 
-</LinearLayout>
+        <com.gc.materialdesign.views.ButtonRectangle
+            android:id="@+id/btnPasswordReset"
+            android:layout_width="match_parent"
+            android:text="@string/lbl_pass_forgot"
+            app:rippleSpeed="50"
+            android:layout_height="wrap_content" />
+
+        <com.gc.materialdesign.views.ButtonRectangle
+            android:id="@+id/btnLoginTwitter"
+            android:layout_width="match_parent"
+            android:text="@string/lbl_login_twitter"
+            app:rippleSpeed="50"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</ScrollView>

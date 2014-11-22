@@ -4,7 +4,7 @@ import android.graphics.Typeface;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 
-import com.alpha.asyncro.rsc.fragment.ProfileFragment;
+import com.alpha.asyncro.rsc.fragment.UserFragment;
 import com.astuetz.PagerSlidingTabStrip;
 import com.lightandroid.navigation.activity.LightTabbedActivity;
 import com.lightandroid.util.LightFont;
@@ -28,9 +28,9 @@ public class MainActivity extends LightTabbedActivity {
 
     @Override
     public Fragment[] provideFragments() {
-        ProfileFragment profileFragment = new ProfileFragment();
-        profileFragment.setLabel(getResources().getString(R.string.mic_person));
-        return new Fragment[]{profileFragment};
+        UserFragment userFragment = new UserFragment();
+        userFragment.setLabel(getResources().getString(R.string.mic_person));
+        return new Fragment[]{userFragment};
     }
 
     @Override

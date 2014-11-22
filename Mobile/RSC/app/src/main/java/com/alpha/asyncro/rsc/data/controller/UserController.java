@@ -1,8 +1,11 @@
 package com.alpha.asyncro.rsc.data.controller;
 
+import android.content.Context;
+
 import com.alpha.asyncro.rsc.data.RSCAPI;
 import com.alpha.asyncro.rsc.data.model.Secure;
 import com.alpha.asyncro.rsc.data.model.User;
+import com.alpha.asyncro.rsc.util.Preferences;
 import com.lightandroid.data.LightController;
 import com.lightandroid.event.LightDataResponseCallback;
 import com.lightandroid.util.LightAPIUtil;
@@ -18,12 +21,15 @@ public class UserController extends LightController {
     private LightDataResponseCallback<User> userResponseCallback;
     private LightDataResponseCallback<Secure> passwordForgotCallback;
 
-    public UserController() {
+    private Context context;
+
+    public UserController(Context context) {
         this.loginCallback = new LightDataResponseCallback<User>();
         this.registerCallback = new LightDataResponseCallback<User>();
         this.passwordResetCallback = new LightDataResponseCallback<User>();
         this.userResponseCallback = new LightDataResponseCallback<User>();
         this.passwordForgotCallback = new LightDataResponseCallback<Secure>();
+        this.context = context;
     }
 
     public void login(User user) {
@@ -57,12 +63,13 @@ public class UserController extends LightController {
 
 
     public boolean isUserLoggedIn() {
-        return false;
+        return Preferences.loadUser(context) != null;
     }
 
     public void loadUser(String token) {
         this.userResponseCallback.setOnDataResponseListener(getOnDataResponseListener());
         LightAPIUtil.getRestAdapter(RSCAPI.API_ENDPOINT).create(RSCAPI.class).loadUser(token, userResponseCallback);
     }
+
 
 }

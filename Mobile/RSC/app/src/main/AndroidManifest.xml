@@ -3,6 +3,7 @@
     package="com.alpha.asyncro.rsc">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -20,6 +21,7 @@
         </activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".MainActivity" />
+        <activity android:name="com.github.gorbin.asne.core.OAuthActivity" />
     </application>
 
 </manifest>

@@ -25,11 +25,13 @@ public class User extends Node {
     private int numOfDonations;
     @Expose
     private String rank;
+    @Expose
+    private Donation donation;
 
     public User() {
     }
 
-    public User(String email){
+    public User(String email) {
         this.email = email;
     }
 
@@ -122,5 +124,13 @@ public class User extends Node {
 
     public void setRank(String rank) {
         this.rank = rank;
+    }
+
+    public Donation getDonation() {
+        return donation;
+    }
+
+    public void setDonation(Donation donation) {
+        this.donation = donation;
     }
 }
