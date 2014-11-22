@@ -19,7 +19,7 @@ class CreateDonationsTable extends Migration {
 			$table->date('date');
 			$table->integer('quantity');
 			$table->text('note');
-			$table->integer('blood_group');
+			$table->integer('bloodgroups_id');
 			$table->integer('bloodevents_id');
 			$table->timestamps();
 		});

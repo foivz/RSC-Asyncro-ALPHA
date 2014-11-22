@@ -23,7 +23,9 @@ class DonationsController extends BaseController {
 	{
 		$donations = $this->donation->where('institution','=', $ins)->get();
 
-		return View::make('donations.index', ['donations' => $donations, 'ins' => $ins]);
+        $bloodGroups = Bloodgroup::all();
+
+		return View::make('donations.index', ['bloodGroups' => $bloodGroups,'donations' => $donations, 'ins' => $ins]);
 	}
 
 	/**
@@ -37,9 +39,11 @@ class DonationsController extends BaseController {
 
         $inst = Institution::lists('name', 'id');
 
-        //$event = Event:all();
+        $events = Bloodevent::lists('title', 'id');
 
-		return View::make('donations.create', ['users' => $users, 'inst' => $inst, 'ins' => $ins]);
+        $bloodGroups = Bloodgroup::lists('name','id');
+
+		return View::make('donations.create', ['bloodGroups' => $bloodGroups, 'events' => $events, 'users' => $users, 'inst' => $inst, 'ins' => $ins]);
 	}
 
 	/**
@@ -47,16 +51,17 @@ class DonationsController extends BaseController {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store($ins)
 	{
 		$input = Input::all();
+
 		$validation = Validator::make($input, Donation::$rules);
 
 		if ($validation->passes())
 		{
 			$this->donation->create($input);
 
-			return Redirect::route('donations.index');
+			return Redirect::route('donations.index', $ins);
 		}
 
 		return Redirect::route('donations.create')
@@ -75,7 +80,9 @@ class DonationsController extends BaseController {
 	{
 		$donation = $this->donation->findOrFail($id);
 
-		return View::make('donations.show', ['donation' => $donation, 'ins' => $ins]);
+        $bloodGroups = Bloodgroup::all();
+
+		return View::make('donations.show', ['bloodGroups' => $bloodGroups,'donation' => $donation, 'ins' => $ins]);
 	}
 
 	/**
@@ -88,12 +95,14 @@ class DonationsController extends BaseController {
 	{
 		$donation = $this->donation->find($id);
 
+        $bloodGroups = Bloodgroup::lists('name','id');
+
 		if (is_null($donation))
 		{
 			return Redirect::route('donations.index');
 		}
 
-		return View::make('donations.edit', ['donation' => $donation, 'ins' => $ins]);
+		return View::make('donations.edit', ['donation' => $donation, 'ins' => $ins, 'bloodGroups' => $bloodGroups]);
 	}
 
 	/**

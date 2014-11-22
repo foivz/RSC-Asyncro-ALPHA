@@ -19,9 +19,9 @@
 {{ Form::open(array('route' => ['donations.store', $ins],'class' => 'form-horizontal')) }}
 
         <div class="form-group">
-               {{ Form::label('user', 'User:', array('class'=>'col-md-2 control-label')) }}
+               {{ Form::label('user_id', 'User:', array('class'=>'col-md-2 control-label')) }}
               <div class="col-sm-10">
-               {{ Form::select('user', $users, array('class'=>'form-control', 'placeholder'=>'User')) }}
+               {{ Form::select('user_id', $users, array('class'=>'form-control', 'placeholder'=>'User')) }}
              </div>
         </div>
 
@@ -33,9 +33,9 @@
         </div>
 
         <div class="form-group">
-               {{ Form::label('collecting_blood_event', 'Event:', array('class'=>'col-md-2 control-label')) }}
+               {{ Form::label('bloodevents_id', 'Event:', array('class'=>'col-md-2 control-label')) }}
               <div class="col-sm-10">
-               {{ Form::text('collecting_blood_event', Input::old('collecting_blood_event'), array('class'=>'form-control', 'placeholder'=>'Event')) }}
+               {{ Form::select('bloodevents_id', $events, array('class'=>'form-control', 'placeholder'=>'Event')) }}
              </div>
         </div>
 
@@ -61,9 +61,9 @@
         </div>
 
         <div class="form-group">
-            {{ Form::label('blood_group', 'Blood_group:', array('class'=>'col-md-2 control-label')) }}
+            {{ Form::label('bloodgroups_id', 'Blood group:', array('class'=>'col-md-2 control-label')) }}
             <div class="col-sm-10">
-              {{ Form::input('number', 'blood_group', Input::old('blood_group'), array('class'=>'form-control')) }}
+              {{ Form::select('bloodgroups_id', $bloodGroups, array('class'=>'form-control', 'placeholder'=>'Blood group')) }}
             </div>
         </div>
 
