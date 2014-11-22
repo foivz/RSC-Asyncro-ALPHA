@@ -6,7 +6,7 @@
     android:fillViewport="true"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <LinearLayout
+    <RelativeLayout
         android:orientation="vertical"
         android:paddingLeft="@dimen/md_10"
         android:paddingRight="@dimen/md_10"
@@ -14,23 +14,33 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <include layout="@layout/item_points" />
+        <include
+            layout="@layout/item_points"
+            android:id="@+id/itemPoints" />
 
         <include
+            android:layout_below="@+id/itemPoints"
             layout="@layout/item_chart"
             android:layout_marginTop="@dimen/md_20"
+            android:id="@+id/itemChart"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <TextView
+            android:layout_below="@+id/itemChart"
             android:layout_width="wrap_content"
             android:text="@string/lbl_your_donations"
             style="@style/Label"
             android:layout_marginTop="@dimen/md_20"
+            android:id="@+id/lblList"
             android:layout_marginBottom="@dimen/md_7"
             android:layout_height="wrap_content" />
 
-        <include layout="@layout/layout_twoway" />
+        <include
+            layout="@layout/layout_twoway"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/lblList" />
 
-    </LinearLayout>
+    </RelativeLayout>
 </ScrollView>

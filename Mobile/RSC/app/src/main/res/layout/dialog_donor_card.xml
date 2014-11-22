@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/md_10"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_marginLeft="-5dp"
+        android:layout_marginRight="-5dp"
+        android:id="@+id/lblTitle"
+        style="@style/CardTitle"
+        android:padding="@dimen/md_10"
+        android:layout_alignParentTop="true"
+        android:text="@string/lbl_donor_card"
+        android:layout_height="wrap_content" />
+
+
+    <TextView
+        style="@style/CardLabel"
+        android:layout_below="@+id/lblTitle"
+        android:layout_marginTop="@dimen/md_10"
+        android:layout_width="wrap_content"
+        android:id="@+id/txtFirstName"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        style="@style/CardLabel"
+        android:layout_below="@+id/txtFirstName"
+        android:layout_width="wrap_content"
+        android:id="@+id/txtLastName"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        style="@style/CardLabel"
+        android:layout_width="wrap_content"
+        android:id="@+id/txtEmail"
+        android:layout_below="@id/txtLastName"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/lblPoints"
+        android:layout_width="wrap_content"
+        style="@style/CardLabel"
+        android:layout_below="@+id/txtEmail"
+        android:text="@string/lbl_id"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_below="@+id/txtEmail"
+        style="@style/CardLabel"
+        android:layout_marginLeft="3dp"
+        android:layout_toRightOf="@+id/lblPoints"
+        android:textColor="@color/text_default"
+        android:layout_width="wrap_content"
+        android:id="@+id/txtPoints"
+        android:layout_alignBaseline="@+id/lblPoints"
+        android:layout_height="wrap_content" />
+
+    <com.gc.materialdesign.views.ButtonFlat
+        android:text="OK"
+        android:id="@+id/btnDonorCardOK"
+        android:layout_marginTop="@dimen/md_10"
+        android:layout_below="@+id/txtPoints"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        app:rippleSpeed="1000"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

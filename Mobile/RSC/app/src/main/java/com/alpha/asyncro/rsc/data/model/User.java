@@ -8,6 +8,8 @@ import com.google.gson.annotations.Expose;
 public class User extends Node {
 
     @Expose
+    private int id;
+    @Expose
     private String email;
     @Expose
     private String name;
@@ -142,5 +144,13 @@ public class User extends Node {
 
     public void setPoints(int points) {
         this.points = points;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

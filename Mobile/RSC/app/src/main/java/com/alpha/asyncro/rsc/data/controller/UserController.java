@@ -73,5 +73,9 @@ public class UserController extends LightController {
         LightAPIUtil.getRestAdapter(RSCAPI.API_ENDPOINT).create(RSCAPI.class).loadUser(token, userResponseCallback);
     }
 
+    public void logoutUser() {
+
+    }
+
 
 }

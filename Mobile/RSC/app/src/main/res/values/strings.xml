@@ -21,4 +21,6 @@
     <string name="lbl_your_donations">Your donations: </string>
     <string name="lbl_donor_card">SANGRIO DONOR CARD</string>
     <string name="lbl_points_2">Points:</string>
+    <string name="lbl_id">Id:</string>
+    <string name="lbl_logout">Logout</string>
 </resources>

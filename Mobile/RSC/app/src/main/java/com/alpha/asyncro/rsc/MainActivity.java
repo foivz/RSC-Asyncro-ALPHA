@@ -1,6 +1,7 @@
 package com.alpha.asyncro.rsc;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -9,15 +10,18 @@ import android.os.AsyncTask;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
-import android.widget.TextView;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.alpha.asyncro.rsc.data.controller.UserController;
 import com.alpha.asyncro.rsc.data.model.User;
 import com.alpha.asyncro.rsc.event.OnUserReadListener;
-import com.alpha.asyncro.rsc.fragment.DonorCardFragment;
+import com.alpha.asyncro.rsc.fragment.DonationsFragment;
 import com.alpha.asyncro.rsc.fragment.EventsFragment;
 import com.alpha.asyncro.rsc.fragment.InstitutionsFragment;
+import com.alpha.asyncro.rsc.fragment.LoginFragment;
 import com.alpha.asyncro.rsc.fragment.UserFragment;
 import com.alpha.asyncro.rsc.util.Preferences;
 import com.astuetz.PagerSlidingTabStrip;
@@ -86,13 +90,13 @@ public class MainActivity extends LightTabbedActivity implements OnDataMultipleR
             userController.loadUser(storedUser.getToken());
             UserFragment userFragment = new UserFragment();
             userFragment.setLabel(getResources().getString(R.string.mic_person));
-            DonorCardFragment donorCardFragment = new DonorCardFragment();
-            donorCardFragment.setLabel(getString(R.string.mic_credit_card));
+            DonationsFragment donationsFragment = new DonationsFragment();
+            donationsFragment.setLabel(getString(R.string.mic_favorite));
             InstitutionsFragment institutionsFragment = new InstitutionsFragment();
             institutionsFragment.setLabel(getString(R.string.mic_location_city));
             EventsFragment eventsFragment = new EventsFragment();
             eventsFragment.setLabel(getString(R.string.mic_event));
-            fragments = new Fragment[]{userFragment, donorCardFragment, institutionsFragment, eventsFragment};
+            fragments = new Fragment[]{userFragment, donationsFragment, institutionsFragment, eventsFragment};
 
             /**
              * GCM
@@ -112,6 +116,7 @@ public class MainActivity extends LightTabbedActivity implements OnDataMultipleR
             } else {
                 Log.i(TAG, "No valid Google Play Services APK found.");
             }
+            fragments = new Fragment[]{userFragment, donationsFragment, institutionsFragment, eventsFragment};
         }
         return fragments;
     }
@@ -156,6 +161,27 @@ public class MainActivity extends LightTabbedActivity implements OnDataMultipleR
 
     public UserController getUserController() {
         return userController;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_logout:
+                userController.logoutUser();
+                Intent intent = new Intent(getBaseContext(), LoginActivity.class);
+                intent.putExtra(LoginFragment.KEY_AUTO_LOGIN, false);
+                startActivity(intent);
+                this.finish();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private boolean checkPlayServices() {
@@ -225,7 +251,7 @@ public class MainActivity extends LightTabbedActivity implements OnDataMultipleR
             }
 
             protected void onPostExecute(String msg) {
-                Log.d("ONPostExecute",msg);
+                Log.d("ONPostExecute", msg);
             }
         }.execute(null, null, null);
 

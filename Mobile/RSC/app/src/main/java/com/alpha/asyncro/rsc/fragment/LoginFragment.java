@@ -30,6 +30,8 @@ import retrofit.client.Response;
  */
 public class LoginFragment extends LabeledFragment implements Labeled, OnDataResponseListener, OnLoginCompleteListener, OnRequestSocialPersonCompleteListener {
 
+    public static final String KEY_AUTO_LOGIN = "com.dmacan.loginauto";
+
     @InjectView(R.id.etEmail)
     EditText etEmail;
     @InjectView(R.id.etPassword)
@@ -54,7 +56,7 @@ public class LoginFragment extends LabeledFragment implements Labeled, OnDataRes
         socialNetworkController = new SocialNetworkController(this, SOCIAL_NETWORK_TAG);
         userController = new UserController(getLightActivity());
         userController.setOnDataResponseListener(this);
-        if (userController.isUserLoggedIn())
+        if (userController.isUserLoggedIn() && getActivity().getIntent().getBooleanExtra(KEY_AUTO_LOGIN, true))
             userController.login(Preferences.loadUser(getLightActivity()));
     }
 

@@ -32,4 +32,10 @@ public class Preferences {
         return LightAPIUtil.createGson().fromJson(loadPreferences(context).getString(KEY_USER, null), User.class);
     }
 
+    public static boolean clearPreferences(Context context) {
+        SharedPreferences.Editor editor = loadEditor(context);
+        editor.clear();
+        return editor.commit();
+    }
+
 }

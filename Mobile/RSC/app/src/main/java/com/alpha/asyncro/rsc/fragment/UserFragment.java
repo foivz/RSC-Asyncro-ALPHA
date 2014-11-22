@@ -1,46 +1,41 @@
 package com.alpha.asyncro.rsc.fragment;
 
-import android.widget.TextView;
+import android.widget.ListView;
 
 import com.alpha.asyncro.rsc.MainActivity;
 import com.alpha.asyncro.rsc.R;
-import com.alpha.asyncro.rsc.data.presenter.DonationPresenter;
-import com.alpha.asyncro.rsc.data.model.Donation;
 import com.alpha.asyncro.rsc.data.model.User;
+import com.alpha.asyncro.rsc.data.presenter.ChartPresenter;
+import com.alpha.asyncro.rsc.data.presenter.DonorCardPresenter;
+import com.alpha.asyncro.rsc.data.presenter.PointPresenter;
 import com.alpha.asyncro.rsc.event.OnUserReadListener;
-import com.lightandroid.ui.presenter.LightRecyclerViewAdapter;
-import com.lightandroid.util.LightFont;
-
-import org.lucasr.twowayview.widget.TwoWayView;
+import com.lightandroid.ui.presenter.LightAdapter;
 
 import butterknife.InjectView;
+import butterknife.OnClick;
 
 /**
  * Created by dmacan on 22.11.2014..
  */
 public class UserFragment extends LabeledFragment implements OnUserReadListener {
 
-    @InjectView(R.id.txtPoints)
-    TextView txtPoints;
-    @InjectView(R.id.txtRank)
-    TextView txtRank;
-    @InjectView(R.id.twoWay)
-    TwoWayView listDonations;
+    @InjectView(R.id.list)
+    ListView listDonations;
 
     private MainActivity activity;
-    private LightRecyclerViewAdapter donationsAdapter;
+    private LightAdapter donationsAdapter;
+    private DonorCardPresenter donorCardPresenter;
 
     @Override
     public int provideLayoutRes() {
-        return R.layout.fragment_user;
+        return R.layout.fragment_user_2;
     }
 
     @Override
     public void main() {
         activity = (MainActivity) getActivity();
-        donationsAdapter = new LightRecyclerViewAdapter(getLightActivity(), R.layout.item_donation);
+        donationsAdapter = new LightAdapter(getLightActivity());
         listDonations.setAdapter(donationsAdapter);
-        LightFont.setFont("sangrio.ttf", txtPoints);
         if (activity.getUser() != null)
             display(activity.getUser());
     }
@@ -51,26 +46,15 @@ public class UserFragment extends LabeledFragment implements OnUserReadListener 
     }
 
     private void display(User user) {
-        txtRank.setText(user.getRank());
-        txtPoints.setText(generatePointDisplay(user));
-        Donation[] donations = user.getDonations();
-        if (donations != null)
-            for (Donation donation : donations)
-                donationsAdapter.addItem(new DonationPresenter(donation));
+        donationsAdapter.addItem(new PointPresenter(user));
+        donationsAdapter.addItem(new ChartPresenter(user));
     }
 
-    private String generatePointDisplay(User user) {
-        int points = user.getPoints();
-        int numHearts = points / 3;
-        int numDrops = points % 3;
-        String hearts = "";
-        String drops = "";
-        String heart = getResources().getString(R.string.ic_heart);
-        String drop = getResources().getString(R.string.ic_drop);
-        for (int i = 0; i < numHearts; i++)
-            hearts += heart;
-        for (int i = 0; i < numDrops; i++)
-            drops += drop;
-        return hearts + drops;
+    @OnClick(R.id.btnShowDonorCard)
+    void showDonorCard() {
+        if (donorCardPresenter == null)
+            donorCardPresenter = new DonorCardPresenter(activity);
+        donorCardPresenter.show(activity.getUser());
     }
+
 }
