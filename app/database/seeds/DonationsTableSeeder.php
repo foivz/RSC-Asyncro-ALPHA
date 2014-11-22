@@ -15,7 +15,7 @@ class DonationsTableSeeder extends Seeder {
                 "date"=>$faker->dateTimeAD,
                 "quantity"=>$faker->numberBetween(200,550),
                 "note"=>$faker->sentence(),
-                "blood_group"=>$faker->numberBetween(1,10),
+                "bloodgroup_id"=>$faker->numberBetween(1,8),
                 "bloodevents_id"=>$faker->numberBetween(1,10)
             ]);
         }

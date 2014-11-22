@@ -16,6 +16,7 @@ class InstitutionsTableSeeder extends Seeder {
                 'description'=>$faker->sentence(6),
                 'phone'=>$faker->phoneNumber,
                 'email'=>$faker->email,
+                'city_id' => $faker->numberBetween(1,10),
                 'blood_level'=>$faker->randomFloat(2, $min = 12, 100),
                 'logo'=>'/uploads/',
                 'picture'=>'/uploads/',
