@@ -40,3 +40,4 @@ Route::delete('auth', 'Tappleby\AuthToken\AuthTokenController@destroy');
 
 /**************************Resource******************************/
 Route::resource('users', 'UsersController');
+Route::resource('institutions', 'InstitutionsController');
