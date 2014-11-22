@@ -21,8 +21,16 @@ public class User extends Node {
     private String avatar;
     @Expose
     private int bloodGroup;
+    @Expose
+    private int numOfDonations;
+    @Expose
+    private String rank;
 
     public User() {
+    }
+
+    public User(String email){
+        this.email = email;
     }
 
     public User(String email, String password) {
@@ -98,5 +106,21 @@ public class User extends Node {
 
     public void setSurname(String surname) {
         this.surname = surname;
+    }
+
+    public int getNumOfDonations() {
+        return numOfDonations;
+    }
+
+    public void setNumOfDonations(int numOfDonations) {
+        this.numOfDonations = numOfDonations;
+    }
+
+    public String getRank() {
+        return rank;
+    }
+
+    public void setRank(String rank) {
+        this.rank = rank;
     }
 }

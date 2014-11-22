@@ -1,10 +1,12 @@
 package com.alpha.asyncro.rsc.data;
 
+import com.alpha.asyncro.rsc.data.model.Secure;
 import com.alpha.asyncro.rsc.data.model.User;
 
 import retrofit.Callback;
 import retrofit.http.Body;
 import retrofit.http.POST;
+import retrofit.http.Query;
 
 /**
  * Created by dmacan on 22.11.2014..
@@ -21,6 +23,12 @@ public interface RSCAPI {
     public void register(@Body User request, Callback<User> response);
 
     @POST("/account/reset")
-    public void resetPassword(@Body User request, Callback<User> response);
+    public void resetPassword(@Query("email") String mail, Callback<User> response);
+
+    @POST("/account/forgot")
+    public void forgotPassword(@Body User user, Callback<Secure> response);
+
+    @POST("/user/fetch")
+    public void loadUser(@Query("auth_token") String token, Callback<User> response);
 
 }

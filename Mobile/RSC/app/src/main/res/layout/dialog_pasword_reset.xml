@@ -10,20 +10,7 @@
         android:id="@+id/etEmail"
         android:inputType="textEmailAddress"
         android:hint="@string/lbl_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <EditText
-        android:inputType="textWebPassword"
-        android:id="@+id/etPassword"
-        android:hint="@string/lbl_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <EditText
-        android:inputType="textWebPassword"
-        android:id="@+id/etPasswordConfirm"
-        android:hint="@string/lbl_password_confirm"
+        android:text="deangelo78@yahoo.com"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

@@ -1,14 +1,18 @@
 package com.alpha.asyncro.rsc.fragment;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.alpha.asyncro.rsc.MainActivity;
 import com.alpha.asyncro.rsc.R;
 import com.alpha.asyncro.rsc.data.controller.UserController;
+import com.alpha.asyncro.rsc.data.model.Secure;
 import com.alpha.asyncro.rsc.data.model.User;
+import com.alpha.asyncro.rsc.util.Preferences;
 import com.lightandroid.data.api.listener.OnDataResponseListener;
 import com.lightandroid.type.LightData;
 import com.lightandroid.type.property.Labeled;
@@ -59,13 +63,21 @@ public class LoginFragment extends LabeledFragment implements Labeled, OnDataRes
 
     @Override
     public void onResponse(LightData response, Response retrofitResponse) {
-        User user = (User) response;
-        Toast.makeText(getLightActivity(), "Logged in: " + user.getStatus(), Toast.LENGTH_SHORT).show();
+        if (response instanceof User) {
+            User user = (User) response;
+            if (user.isStatusOk()) {
+                Preferences.storeUser(user, getLightActivity());
+                startActivity(new Intent(getLightActivity(), MainActivity.class));
+            }
+        } else if (response instanceof Secure) {
+            Toast.makeText(getLightActivity(), "Password: " + ((Secure) response).getPassword(), Toast.LENGTH_SHORT).show();
+        }
     }
 
     View.OnClickListener dialogClick = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            userController.forgotPassword(((EditText) dialog.findViewById(R.id.etEmail)).getText().toString());
             dialog.dismiss();
         }
     };

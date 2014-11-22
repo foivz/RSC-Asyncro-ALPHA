@@ -9,7 +9,6 @@ import com.astuetz.PagerSlidingTabStrip;
 import com.lightandroid.navigation.activity.LightTabbedActivity;
 
 import butterknife.InjectView;
-import butterknife.OnClick;
 
 /**
  * Created by dmacan on 22.11.2014..
