@@ -9,7 +9,6 @@ import com.alpha.asyncro.rsc.R;
 import com.alpha.asyncro.rsc.data.controller.UserController;
 import com.alpha.asyncro.rsc.data.model.User;
 import com.lightandroid.data.api.listener.OnDataResponseListener;
-import com.lightandroid.navigation.fragment.LightFragment;
 import com.lightandroid.type.LightData;
 import com.lightandroid.type.property.Labeled;
 
@@ -20,7 +19,7 @@ import retrofit.client.Response;
 /**
  * Created by dmacan on 22.11.2014..
  */
-public class RegisterFragment extends LightFragment implements Labeled, OnDataResponseListener {
+public class RegisterFragment extends LabeledFragment implements Labeled, OnDataResponseListener {
 
     @InjectView(R.id.etEmail)
     EditText etEmail;
@@ -50,11 +49,6 @@ public class RegisterFragment extends LightFragment implements Labeled, OnDataRe
         userController.setOnDataResponseListener(this);
     }
 
-    @Override
-    public String provideLabel() {
-        return "Register";
-    }
-
     @OnClick(R.id.btnRegister)
     void register() {
         userController.register(etFirstName.getText().toString(), etLastName.getText().toString(), etEmail.getText().toString(), etPassword.getText().toString(), (String) spBloodType.getSelectedItem());
@@ -65,4 +59,5 @@ public class RegisterFragment extends LightFragment implements Labeled, OnDataRe
         User user = (User) response;
         Toast.makeText(getLightActivity(), "Status: " + user.getStatus(), Toast.LENGTH_SHORT).show();
     }
+
 }

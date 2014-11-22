@@ -12,11 +12,11 @@ public class SplashActivity extends LightSplashActivity {
 
     @Override
     public int getSplashTime() {
-        return 500;
+        return 200;
     }
 
     @Override
     public Class getNextClassActivity() {
-        return MainActivity.class;
+        return LoginActivity.class;
     }
 }

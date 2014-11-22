@@ -13,4 +13,5 @@
     <string name="lbl_blood_type">Your blood type: </string>
     <string name="lbl_first_name">First Name</string>
     <string name="lbl_last_name">Last Name</string>
+    <string name="lbl_pass_forgot">I\'ve forgot my password</string>
 </resources>

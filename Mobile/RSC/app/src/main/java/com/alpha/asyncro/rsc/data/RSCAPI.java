@@ -20,4 +20,7 @@ public interface RSCAPI {
     @POST("/account/registration")
     public void register(@Body User request, Callback<User> response);
 
+    @POST("/account/reset")
+    public void resetPassword(@Body User request, Callback<User> response);
+
 }
