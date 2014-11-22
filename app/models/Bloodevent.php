@@ -5,8 +5,8 @@ class Bloodevent extends Eloquent {
 
 	public static $rules = array(
 		'title' => 'required',
-		'location' => 'required',
-		'time' => 'required',
+		//'location' => 'required',
+		//'time' => 'required',
 		'logo' => 'required',
 		'institution_id' => 'required'
 	);

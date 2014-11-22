@@ -37,9 +37,7 @@ class DonationsController extends BaseController {
 
         $inst = Institution::lists('name', 'id');
 
-        $events = null;
-
-        //$events = Event::lists('title', 'id');
+        $events = Bloodevent::lists('title', 'id');
 
 		return View::make('donations.create', ['events' => $events, 'users' => $users, 'inst' => $inst, 'ins' => $ins]);
 	}
@@ -49,16 +47,17 @@ class DonationsController extends BaseController {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store($ins)
 	{
 		$input = Input::all();
+
 		$validation = Validator::make($input, Donation::$rules);
 
 		if ($validation->passes())
 		{
 			$this->donation->create($input);
 
-			return Redirect::route('donations.index');
+			return Redirect::route('donations.index', $ins);
 		}
 
 		return Redirect::route('donations.create')
