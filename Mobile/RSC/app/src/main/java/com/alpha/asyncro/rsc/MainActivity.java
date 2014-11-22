@@ -41,4 +41,5 @@ public class MainActivity extends LightTabbedActivity {
     public int provideLayoutRes() {
         return R.layout.activity_main;
     }
+
 }

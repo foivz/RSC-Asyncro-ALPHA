@@ -32,4 +32,8 @@ public abstract class LightTabbedActivity extends LightActivity {
     public void setOnTabChangedListener(ViewPager.OnPageChangeListener onTabChangedListener) {
         this.providePagerSlidingTabStrip().setOnPageChangeListener(onTabChangedListener);
     }
+
+    public LightPagerAdapter getPagerAdapter() {
+        return pagerAdapter;
+    }
 }
