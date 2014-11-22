@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder {
 		$this->call('DonationsTableSeeder');
 		$this->call('BloodeventsTableSeeder');
 		$this->call('BloodgroupsTableSeeder');
+		$this->call('CitiesTableSeeder');
 	}
 
 }

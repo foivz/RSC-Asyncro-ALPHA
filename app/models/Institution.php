@@ -17,4 +17,7 @@ class Institution extends Eloquent {
     public function donations(){
         return $this->hasMany('Donation');
     }
+    public function city(){
+        return $this->belongsTo('City');
+    }
 }
