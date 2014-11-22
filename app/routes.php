@@ -23,6 +23,8 @@ Route::get('/account/register', [ 'as' => 'registerRoute', 'uses' => 'AccountCon
 /***************API******************/
 Route::post('/api/account/registration', ['as' => 'registerApiRoute', 'uses' => 'AccountApiController@register']);
 Route::post('/api/account/login', ['as' => 'loginApiRoute', 'uses' => 'AccountApiController@login']);
+Route::post('/api/account/forgot', ['as' => 'forgotApiRoute', 'uses' => 'AccountApiController@forgot']);
+Route::post('/api/account/reset', ['as' => 'resetApiRoute', 'uses' => 'AccountApiController@reset']);
 /***************API******************/
 
 Route::group(array('before' => 'auth.token'), function() {

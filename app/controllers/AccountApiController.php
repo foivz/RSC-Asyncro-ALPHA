@@ -1,6 +1,14 @@
 <?php
 
+use Faker\Factory as Faker;
+
 class AccountApiController extends \BaseController {
+
+    public function __construct(){
+
+        $this->beforeFilter('auth.token', [ 'except' => ['register', 'login'] ]);
+
+    }
 
 	public function register(){
 
@@ -15,7 +23,7 @@ class AccountApiController extends \BaseController {
 
             $newUser->password = Hash::make(Input::get('password'));
 
-            //FileUpload::saveImage('/uploads', 'avatar');
+            FileUpload::saveImage('/uploads', 'avatar');
 
             try{
 
@@ -48,6 +56,43 @@ class AccountApiController extends \BaseController {
 
         }
 
+    }
+
+    public function forgot(){
+
+        $input = Input::except('_token');
+
+        $userInstance = Token::getUserInstance();
+
+        $fake = Faker::create();
+
+        $newPassword = $fake->userName();
+
+        $userInstance->password = Hash::make($newPassword);
+
+        return [ 'status' => true, 'password' => $newPassword ];
+
+    }
+
+    public function reset(){
+
+        $input = Input::except('_token');
+
+        $userInstance = Token::getUserInstance();
+
+        $oldPassword = Input::get('oldpassword');
+
+        if(Hash::check($oldPassword, $userInstance->password)){
+
+            $userInstance->password = Hash::make($input['newpassword']);
+
+            $userInstance->save();
+
+            return [ 'status' => true ,'newpassword' => $input['newpassword'] ];
+
+        }else {
+            return ['status' => false];
+        }
     }
 
 }
