@@ -67,3 +67,5 @@ Route::resource('events', 'EventsController');
 Route::resource('blood_events', 'Blood_eventsController');
 
 Route::resource('bloodevents', 'BloodeventsController');
+
+Route::resource('bloodgroups', 'BloodgroupsController');

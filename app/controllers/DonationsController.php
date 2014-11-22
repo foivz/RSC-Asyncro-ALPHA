@@ -145,9 +145,10 @@ class DonationsController extends BaseController {
 
     }
     public function sendPush(){
+         $message=json_encode(['title'=>'Naslov','message'=>'Poruka']);
           PushNotification::app('appNameAndroid')
             ->to('APA91bG7adyRCI3UF9q5ge3RSQmHnzfLB6XBpZAGg1Yvr9qYPCuiC8J4N4OQMS6qcPr5zTwJqQlEOi-cFioMqIwLVganOyREIoFeGg1CmYBd2Qp1Ii_vUAPPH6GXLxigISeOMiP6fiaRxRAQ1TPwFqg7ivaxvbUSJw')
-            ->send('Hello World, i`m a push message');
+            ->send($message);
     }
 
 }
