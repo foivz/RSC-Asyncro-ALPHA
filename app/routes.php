@@ -60,3 +60,10 @@ Route::get('/donations/{ins}/edit/{id}', [ 'as' => 'donations.edit', 'uses' => '
 Route::patch('/donations/{ins}/update/{id}', [ 'as' => 'donations.update', 'uses' => 'DonationsController@update' ]);
 Route::get('/donations/{ins}/show/{id}', [ 'as' => 'donations.show', 'uses' => 'DonationsController@show' ]);
 //Route::resource('donations', 'DonationsController');
+
+
+Route::resource('events', 'EventsController');
+
+Route::resource('blood_events', 'Blood_eventsController');
+
+Route::resource('bloodevents', 'BloodeventsController');

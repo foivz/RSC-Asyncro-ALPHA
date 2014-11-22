@@ -14,4 +14,7 @@ class Institution extends Eloquent {
 		'logo' => 'required',
 		'picture' => 'required'
 	);
+    public function donations(){
+        return $this->hasMany('Donation');
+    }
 }

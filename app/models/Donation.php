@@ -15,4 +15,10 @@ class Donation extends Eloquent {
     public function user(){
         return $this->belongsTo('User');
     }
+    public function events(){
+        return $this->belongsTo('event');
+    }
+    public function institution(){
+        return $this->belongsTo('institution');
+    }
 }
