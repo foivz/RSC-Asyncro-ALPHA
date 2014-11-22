@@ -10,7 +10,7 @@ class DonationsTableSeeder extends Seeder {
         foreach(range(1, 10) as $index)
         {
             Donation::create([
-                "user"=>$faker->numberBetween(1,10),
+                "user_id"=>$faker->numberBetween(1,10),
                 "institution"=>$faker->numberBetween(1,10),
                 "date"=>$faker->dateTimeAD,
                 "quantity"=>$faker->numberBetween(200,550),
