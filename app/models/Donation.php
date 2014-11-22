@@ -16,7 +16,7 @@ class Donation extends Eloquent {
         return $this->belongsTo('User');
     }
     public function events(){
-        return $this->belongsTo('event');
+        return $this->belongsTo('Bloodevent');
     }
     public function institution(){
         return $this->belongsTo('institution');

@@ -10,4 +10,7 @@ class Bloodevent extends Eloquent {
 		'logo' => 'required',
 		'institution_id' => 'required'
 	);
+    public function donations(){
+        return $this->hasMany('Donations');
+    }
 }
