@@ -1,4 +1,4 @@
-package com.alpha.asyncro.rsc.data;
+package com.alpha.asyncro.rsc.data.presenter;
 
 import android.view.View;
 import android.widget.TextView;
@@ -6,6 +6,9 @@ import android.widget.TextView;
 import com.alpha.asyncro.rsc.R;
 import com.alpha.asyncro.rsc.data.model.Donation;
 import com.lightandroid.ui.presenter.LightRecyclerPresenter;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -33,7 +36,14 @@ public class DonationPresenter implements LightRecyclerPresenter {
 
     @Override
     public void display(View view, int position) {
-        txtDonationDate.setText(donation.getDate());
+        txtDonationDate.setText(formatDate());
         txtDonationQuantity.setText(donation.getQuantity());
+    }
+
+
+    private String formatDate() {
+        Date date = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd. mm. yyyy.");
+        return dateFormat.format(date);
     }
 }

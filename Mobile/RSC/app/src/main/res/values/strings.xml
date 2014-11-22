@@ -19,4 +19,6 @@
     <string name="lbl_points">Points:</string>
     <string name="lbl_donations_year">Donations in past year</string>
     <string name="lbl_your_donations">Your donations: </string>
+    <string name="lbl_donor_card">SANGRIO DONOR CARD</string>
+    <string name="lbl_points_2">Points:</string>
 </resources>

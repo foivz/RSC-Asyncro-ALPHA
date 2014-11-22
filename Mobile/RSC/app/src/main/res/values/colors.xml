@@ -3,4 +3,5 @@
     <color name="white">#fff</color>
     <color name="red">#D55C4B</color>
     <color name="text_default">#444</color>
+    <color name="text_lighter">#777</color>
 </resources>
