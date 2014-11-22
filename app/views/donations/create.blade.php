@@ -33,9 +33,9 @@
         </div>
 
         <div class="form-group">
-               {{ Form::label('collecting_blood_event', 'Event:', array('class'=>'col-md-2 control-label')) }}
+               {{ Form::label('bloodevents_id', 'Event:', array('class'=>'col-md-2 control-label')) }}
               <div class="col-sm-10">
-               {{ Form::text('collecting_blood_event', Input::old('collecting_blood_event'), array('class'=>'form-control', 'placeholder'=>'Event')) }}
+               {{ Form::select('bloodevents_id', $events, array('class'=>'form-control', 'placeholder'=>'Event')) }}
              </div>
         </div>
 

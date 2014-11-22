@@ -37,9 +37,11 @@ class DonationsController extends BaseController {
 
         $inst = Institution::lists('name', 'id');
 
-        //$event = Event:all();
+        $events = null;
 
-		return View::make('donations.create', ['users' => $users, 'inst' => $inst, 'ins' => $ins]);
+        //$events = Event::lists('title', 'id');
+
+		return View::make('donations.create', ['events' => $events, 'users' => $users, 'inst' => $inst, 'ins' => $ins]);
 	}
 
 	/**
