@@ -17,6 +17,15 @@ class CreateUsersTable extends Migration {
 			$table->increments('id');
 			$table->string('email')->unique();
 			$table->string('password');
+            $table->string('name');
+            $table->string('surname');
+            $table->float('points')->default(0);
+            $table->integer('num_of_donations')->default(0);
+            $table->text('rank');
+            $table->text('avatar');
+            $table->integer('blood_group');
+            $table->integer('city');
+            $table->text('token');
             $table->rememberToken();
 			$table->timestamps();
 		});

@@ -10,6 +10,9 @@ class UsersTableSeeder extends Seeder {
         /*
          * Role instantiation
          * */
+        $superAdmin = new Role();
+        $superAdmin->name = 'SuperAdmin';
+        $superAdmin->save();
         $admin = new Role;
         $admin->name = 'Admin';
         $admin->save();
@@ -31,16 +34,42 @@ class UsersTableSeeder extends Seeder {
 		{
 			User::create([
                 'email' => $faker->email(),
+                'name' => $faker->name(),
+                'surname' => $faker->lastName(),
+                'points' => $faker->numberBetween(0, 10),
+                'num_of_donations' => $faker->numberBetween(0, 10),
+                'blood_group' => $faker->numberBetween(1, 4),
+                'city' => $faker->numberBetween(1, 10),
                 'password' => Hash::make('xxx123'),
                 'created_at' => $faker->date()
 			])->attachRole($userRole);
 		}
         User::create([
             'email' => 'admin@gmail.com',
+            'name' => $faker->name(),
+            'surname' => $faker->lastName(),
+            'points' => $faker->numberBetween(0, 10),
+            'num_of_donations' => $faker->numberBetween(0, 10),
+            'blood_group' => $faker->numberBetween(1, 4),
+            'city' => $faker->numberBetween(1, 10),
             'password' => Hash::make('xxx123'),
             'created_at' => $faker->date()
         ]);
+
         User::where('email','=','admin@gmail.com')->first()->attachRole($admin);
+
+        User::create([
+            'email' => 'superadmin@gmail.com',
+            'name' => $faker->name(),
+            'surname' => $faker->lastName(),
+            'points' => $faker->numberBetween(0, 10),
+            'num_of_donations' => $faker->numberBetween(0, 10),
+            'blood_group' => $faker->numberBetween(1, 4),
+            'city' => $faker->numberBetween(1, 10),
+            'password' => Hash::make('xxx123'),
+            'created_at' => $faker->date()
+        ]);
+        User::where('email','=','superadmin@gmail.com')->first()->attachRole($superAdmin);
     }
 
 }

@@ -11,10 +11,6 @@ class UsersController extends BaseController {
 
 	public function __construct(User $user)
 	{
-        $this->beforeFilter('auth');
-
-        $this->beforeFilter('admin');
-
 		$this->user = $user;
 	}
 
@@ -52,6 +48,9 @@ class UsersController extends BaseController {
 
 		if ($validation->passes())
 		{
+            $input['password'] = Hash::make($input['password']);
+
+
 			$this->user->create($input);
 
 			return Redirect::route('users.index');
@@ -102,11 +101,13 @@ class UsersController extends BaseController {
 	 */
 	public function update($id)
 	{
-		$input = array_except(Input::all(), '_method');
+		$input = Input::except('_method');
 		$validation = Validator::make($input, User::$rules);
 
 		if ($validation->passes())
 		{
+            $input['password'] = Hash::make($input['password']);
+
 			$user = $this->user->find($id);
 			$user->update($input);
 

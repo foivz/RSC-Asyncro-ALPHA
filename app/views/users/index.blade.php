@@ -11,6 +11,15 @@
 		<thead>
 			<tr>
 				<th>Email</th>
+				<th>Password</th>
+				<th>Name</th>
+				<th>Surname</th>
+				<th>Points</th>
+				<th>Num_of_donations</th>
+				<th>Rank</th>
+				<th>Avatar</th>
+				<th>Blood_group</th>
+				<th>City</th>
 				<th>&nbsp;</th>
 			</tr>
 		</thead>
@@ -19,6 +28,15 @@
 			@foreach ($users as $user)
 				<tr>
 					<td>{{{ $user->email }}}</td>
+					<td>{{{ $user->password }}}</td>
+					<td>{{{ $user->name }}}</td>
+					<td>{{{ $user->surname }}}</td>
+					<td>{{{ $user->points }}}</td>
+					<td>{{{ $user->num_of_donations }}}</td>
+					<td>{{{ $user->rank }}}</td>
+					<td>{{{ $user->avatar }}}</td>
+					<td>{{{ $user->blood_group }}}</td>
+					<td>{{{ $user->city }}}</td>
                     <td>
                         {{ Form::open(array('style' => 'display: inline-block;', 'method' => 'DELETE', 'route' => array('users.destroy', $user->id))) }}
                             {{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}

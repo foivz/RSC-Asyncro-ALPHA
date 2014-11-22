@@ -20,18 +20,18 @@ class AccountApiController extends \BaseController {
             try{
 
                 $newUser->save();
-                $userRole=Role::find(2);
+                $userRole=Role::find(3);
                 $newUser->attachRole($userRole);
             }catch (Exception $e){
 
-                return [ 'status' => false ];
+                return [ 'status' => 'false' ];
 
             }
 
-            return [ 'status' => true ];
+            return [ 'status' => 'true' ];
 
         }else
-            return [ 'status' => false ];
+            return [ 'status' => 'false' ];
 
     }
 
@@ -41,10 +41,10 @@ class AccountApiController extends \BaseController {
         {
             $authToken = AuthToken::create(Auth::user());
             $publicToken = AuthToken::publicToken($authToken);
-            return [ 'status' => true, 'token' => $publicToken ];
+            return [ 'status' => 'true', 'token' => $publicToken ];
         }else{
 
-            return [ 'status' => false ];
+            return [ 'status' => 'false' ];
 
         }
 
