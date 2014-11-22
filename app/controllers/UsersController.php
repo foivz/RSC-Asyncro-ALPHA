@@ -57,6 +57,9 @@ class UsersController extends BaseController {
 
 			$this->user->create($input);
 
+            $userRole=Role::find(3);
+            $this->user->attachRole($userRole);
+
 			return Redirect::route('users.index');
 		}
 

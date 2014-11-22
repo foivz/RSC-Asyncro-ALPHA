@@ -97,4 +97,25 @@ class AccountApiController extends \BaseController {
         }
     }
 
+    public function updateProfileInfo(){
+
+        $token = Input::get('auth_token');
+
+        $userInstance = Token::getUserInstance();
+
+        $userInstance->update(Input::except('auth_token'));
+
+        try {
+
+            $userInstance->save();
+
+            return [ 'status' => 'true' ];
+
+        }catch (Exception $e){
+
+            return [ 'status' => 'false' ];
+        }
+
+    }
+
 }

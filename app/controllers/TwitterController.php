@@ -3,11 +3,11 @@
 class TwitterController extends BaseController {
 
     public function login(){
-
+        // your SIGN IN WITH TWITTER  button should point to this route
         $sign_in_twitter = TRUE;
         $force_login = FALSE;
-        $callback_url = 'http://' . $_SERVER['HTTP_HOST'] . '/api/account/twitter/callback';
-
+        $callback_url = 'http://' . $_SERVER['HTTP_HOST'] . '/account/twitter/callback';
+        // Make sure we make this request w/o tokens, overwrite the default values in case of login.
         Twitter::set_new_config(array('token' => '', 'secret' => ''));
         $token = Twitter::getRequestToken($callback_url);
         if( isset( $token['oauth_token_secret'] ) ) {
@@ -19,14 +19,12 @@ class TwitterController extends BaseController {
 
             return Redirect::to($url);
         }
-
-        return 'failed';
+        return Redirect::to('twitter/error');
 
     }
 
     public function callback(){
-
-        // You should set this route on your Twitter Application settings as the callback
+// You should set this route on your Twitter Application settings as the callback
         // https://apps.twitter.com/app/YOUR-APP-ID/settings
         if(Session::has('oauth_request_token')) {
             $request_token = array(
@@ -50,19 +48,18 @@ class TwitterController extends BaseController {
             $credentials = Twitter::query('account/verify_credentials');
             if( is_object( $credentials ) && !isset( $credentials->error ) ) {
 
-                dd($credentials);
-
                 $user = new User();
-
-                $user->token = Input::get('oauth_token');
 
                 $user->name = $credentials->name;
 
-                $user->twitterid = $credentials->id;
+                $user->token = Input::get('oauth_token');
+
+                $user->twitterid = $credentials->id_str;
 
                 $user->save();
 
-                Auth::login($user);
+                $userRole=Role::find(3);
+                $user->attachRole($userRole);
 
                 // $credentials contains the Twitter user object with all the info about the user.
                 // Add here your own user logic, store profiles, create new users on your tables...you name it!
