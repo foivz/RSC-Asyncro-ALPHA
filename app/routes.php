@@ -26,7 +26,6 @@ Route::post('/api/account/login', ['as' => 'loginApiRoute', 'uses' => 'AccountAp
 Route::post('/api/account/forgot', ['as' => 'forgotApiRoute', 'uses' => 'AccountApiController@forgot']);
 Route::post('/api/account/reset', ['as' => 'resetApiRoute', 'uses' => 'AccountApiController@reset']);
 /***************API******************/
-
 Route::group(array('before' => 'auth.token'), function() {
     Route::post('api/data', function(){
         return Token::getUserInstance();
