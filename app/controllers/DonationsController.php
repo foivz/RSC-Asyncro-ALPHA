@@ -19,11 +19,11 @@ class DonationsController extends BaseController {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index($ins)
 	{
-		$donations = $this->donation->all();
+		$donations = $this->donation->where('institution','=', $ins)->get();
 
-		return View::make('donations.index', compact('donations'));
+		return View::make('donations.index', ['donations' => $donations, 'ins' => $ins]);
 	}
 
 	/**
@@ -65,11 +65,11 @@ class DonationsController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($ins, $id)
 	{
 		$donation = $this->donation->findOrFail($id);
 
-		return View::make('donations.show', compact('donation'));
+		return View::make('donations.show', ['donation' => $donation, 'ins' => $ins]);
 	}
 
 	/**
@@ -78,7 +78,7 @@ class DonationsController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($ins ,$id)
 	{
 		$donation = $this->donation->find($id);
 
@@ -87,7 +87,7 @@ class DonationsController extends BaseController {
 			return Redirect::route('donations.index');
 		}
 
-		return View::make('donations.edit', compact('donation'));
+		return View::make('donations.edit', ['donation' => $donation, 'ins' => $ins]);
 	}
 
 	/**
@@ -96,7 +96,7 @@ class DonationsController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($ins, $id)
 	{
 		$input = array_except(Input::all(), '_method');
 		$validation = Validator::make($input, Donation::$rules);
@@ -121,11 +121,21 @@ class DonationsController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($ins, $id)
 	{
 		$this->donation->find($id)->delete();
 
 		return Redirect::route('donations.index');
 	}
+
+    public function showByInstitution($index){
+
+        $instDonations = Donation::where('institution', '=', $index)->get();
+
+        //dd($instDonations);
+
+        return View::make('donations.index', [ 'donations' => $instDonations ]);
+
+    }
 
 }

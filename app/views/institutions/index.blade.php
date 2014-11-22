@@ -42,6 +42,7 @@
                             {{ Form::close() }}
                         @endif
                         {{ link_to_route('institutions.edit', 'Edit', array($institution->id), array('class' => 'btn btn-info')) }}
+                        {{ link_to_route('donations.index', 'Supply', array($institution->id), array('class' => 'btn btn-info')) }}
                     </td>
 				</tr>
 			@endforeach

@@ -32,7 +32,7 @@ Route::post('/api/donation/fetch', ['as' => 'fetchDonationRoute', 'uses' => 'Don
 Route::post('/api/account/update', ['as' => 'updateAccountRoute', 'uses' => 'AccountApiController@updateProfileInfo']);
 Route::get('/api/account/login/twitter', [ 'as' => 'twitterLoginRoute', 'uses' => 'TwitterController@login' ]);
 Route::get('/api/account/twitter/callback', [ 'as' => 'twitterCallbackRoute', 'uses' => 'TwitterController@callback' ]);
-
+Route::get('/institutions/supply/{id}', ['as' => 'institutionBloodSupply', 'uses' => 'DonationsController@showByInstitution']);
 /***************API******************/
 Route::group(array('before' => 'auth.token'), function() {
     Route::post('api/data', function(){
@@ -51,4 +51,10 @@ Route::delete('auth', 'Tappleby\AuthToken\AuthTokenController@destroy');
 Route::resource('users', 'UsersController');
 Route::resource('institutions', 'InstitutionsController');
 
-Route::resource('donations', 'DonationsController');
+Route::get('/donations/{ins}', [ 'as' => 'donations.index', 'uses' => 'DonationsController@index' ]);
+Route::get('/donations/{ins}/create', [ 'as' => 'donations.create', 'uses' => 'DonationsController@create' ]);
+Route::get('/donations/{ins}/destroy/{id}', [ 'as' => 'donations.destroy', 'uses' => 'DonationsController@destroy' ]);
+Route::get('/donations/{ins}/edit/{id}', [ 'as' => 'donations.edit', 'uses' => 'DonationsController@edit' ]);
+Route::get('/donations/{ins}/update/{id}', [ 'as' => 'donations.update', 'uses' => 'DonationsController@update' ]);
+Route::get('/donations/{ins}/show/{id}', [ 'as' => 'donations.show', 'uses' => 'DonationsController@show' ]);
+//Route::resource('donations', 'DonationsController');
