@@ -20,7 +20,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".LoginActivity" />
-        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
         <activity android:name="com.github.gorbin.asne.core.OAuthActivity" />
     </application>
 

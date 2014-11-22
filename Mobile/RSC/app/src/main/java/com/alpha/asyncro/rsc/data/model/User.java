@@ -26,7 +26,9 @@ public class User extends Node {
     @Expose
     private String rank;
     @Expose
-    private Donation donation;
+    private Donation[] donations;
+    @Expose
+    private int points;
 
     public User() {
     }
@@ -126,11 +128,19 @@ public class User extends Node {
         this.rank = rank;
     }
 
-    public Donation getDonation() {
-        return donation;
+    public Donation[] getDonations() {
+        return donations;
     }
 
-    public void setDonation(Donation donation) {
-        this.donation = donation;
+    public void setDonations(Donation[] donations) {
+        this.donations = donations;
+    }
+
+    public int getPoints() {
+        return points;
+    }
+
+    public void setPoints(int points) {
+        this.points = points;
     }
 }

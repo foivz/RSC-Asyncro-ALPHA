@@ -7,6 +7,7 @@ import com.alpha.asyncro.rsc.data.model.Secure;
 import com.alpha.asyncro.rsc.data.model.User;
 import com.alpha.asyncro.rsc.util.Preferences;
 import com.lightandroid.data.LightController;
+import com.lightandroid.event.LightDataMultipleResponseCallback;
 import com.lightandroid.event.LightDataResponseCallback;
 import com.lightandroid.util.LightAPIUtil;
 
@@ -18,7 +19,7 @@ public class UserController extends LightController {
     private LightDataResponseCallback<User> loginCallback;
     private LightDataResponseCallback<User> registerCallback;
     private LightDataResponseCallback<User> passwordResetCallback;
-    private LightDataResponseCallback<User> userResponseCallback;
+    private LightDataMultipleResponseCallback<User[]> userResponseCallback;
     private LightDataResponseCallback<Secure> passwordForgotCallback;
 
     private Context context;
@@ -27,7 +28,7 @@ public class UserController extends LightController {
         this.loginCallback = new LightDataResponseCallback<User>();
         this.registerCallback = new LightDataResponseCallback<User>();
         this.passwordResetCallback = new LightDataResponseCallback<User>();
-        this.userResponseCallback = new LightDataResponseCallback<User>();
+        this.userResponseCallback = new LightDataMultipleResponseCallback<User[]>();
         this.passwordForgotCallback = new LightDataResponseCallback<Secure>();
         this.context = context;
     }
@@ -67,7 +68,8 @@ public class UserController extends LightController {
     }
 
     public void loadUser(String token) {
-        this.userResponseCallback.setOnDataResponseListener(getOnDataResponseListener());
+        this.userResponseCallback.setOnErrorListener(getOnErrorListener());
+        this.userResponseCallback.setOnDataMultipleResponseListener(getOnDataMultipleResponseListener());
         LightAPIUtil.getRestAdapter(RSCAPI.API_ENDPOINT).create(RSCAPI.class).loadUser(token, userResponseCallback);
     }
 

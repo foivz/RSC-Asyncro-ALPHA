@@ -15,4 +15,8 @@
     <string name="lbl_last_name">Last Name</string>
     <string name="lbl_pass_forgot">I\'ve forgot my password</string>
     <string name="lbl_login_twitter">Login with Twitter</string>
+    <string name="lbl_rank">Rank:</string>
+    <string name="lbl_points">Points:</string>
+    <string name="lbl_donations_year">Donations in past year</string>
+    <string name="lbl_your_donations">Your donations: </string>
 </resources>

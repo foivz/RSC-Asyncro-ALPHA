@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:text="@string/lbl_rank"
+        style="@style/Label"
+        android:layout_width="wrap_content"
+        android:id="@+id/lblRank"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/txtRank"
+        android:layout_marginLeft="@dimen/md_7"
+        style="@style/Text"
+        android:layout_alignBaseline="@+id/lblRank"
+        android:layout_toRightOf="@+id/lblRank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:text="@string/lbl_points"
+        android:layout_below="@+id/lblRank"
+        android:layout_marginTop="@dimen/md_10"
+        style="@style/Label"
+        android:id="@+id/lblPoints"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        style="@style/Points"
+        android:layout_alignBaseline="@+id/lblPoints"
+        android:layout_toRightOf="@+id/lblPoints"
+        android:layout_below="@+id/txtRank"
+        android:layout_marginLeft="@dimen/md_7"
+        android:id="@+id/txtPoints"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

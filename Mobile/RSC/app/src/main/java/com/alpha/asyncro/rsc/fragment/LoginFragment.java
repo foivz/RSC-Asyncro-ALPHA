@@ -108,6 +108,6 @@ public class LoginFragment extends LabeledFragment implements Labeled, OnDataRes
 
     @Override
     public void onRequestSocialPersonSuccess(int i, SocialPerson socialPerson) {
-        Toast.makeText(getLightActivity(), "Social person: " + socialPerson.name, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getLightActivity(), "Social person: " + socialPerson.email, Toast.LENGTH_SHORT).show();
     }
 }

@@ -1,15 +1,22 @@
 package com.alpha.asyncro.rsc.data.model;
 
+import com.google.gson.annotations.Expose;
+
 /**
  * Created by dmacan on 22.11.2014..
  */
 public class Donation extends Node {
 
+    @Expose
     private int id;
     private Institution institution;
+    @Expose
     private String date;
+    @Expose
     private String quantity;
+    @Expose
     private String note;
+    @Expose
     private int bloodGroup;
     private Event collectingBloodEvent;
 

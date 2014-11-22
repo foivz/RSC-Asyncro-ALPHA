@@ -3,6 +3,24 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
         <!-- Customize your theme here. -->
+        <item name="android:actionBarStyle">@style/DefaultActionBar</item>
+    </style>
+    <!-- ActionBar styles -->
+    <style name="DefaultActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@color/red</item>
+    </style>
+
+    <style name="Text">
+        <item name="android:textSize">@dimen/td_16</item>
+        <item name="android:textColor">@color/text_default</item>
+    </style>
+
+    <style name="Label" parent="Text">
+        <item name="android:textSize">@dimen/td_18</item>
+    </style>
+
+    <style name="Points" parent="Text">
+        <item name="android:textColor">@color/red</item>
     </style>
 
 </resources>

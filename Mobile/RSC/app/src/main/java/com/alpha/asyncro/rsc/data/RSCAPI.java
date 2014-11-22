@@ -29,6 +29,6 @@ public interface RSCAPI {
     public void forgotPassword(@Body User user, Callback<Secure> response);
 
     @POST("/user/fetch")
-    public void loadUser(@Query("auth_token") String token, Callback<User> response);
+    public void loadUser(@Query("auth_token") String token, Callback<User[]> response);
 
 }
