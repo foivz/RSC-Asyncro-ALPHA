@@ -28,6 +28,6 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
     protected $fillable = array('email', 'password', 'name', 'surname', 'blood_group');
     public function donations(){
-        return $this->hasMany('Donation','user');
+        return $this->hasMany('Donation');
     }
 }

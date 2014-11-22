@@ -26,7 +26,7 @@ Route::post('/api/account/login', ['as' => 'loginApiRoute', 'uses' => 'AccountAp
 Route::post('/api/account/forgot', ['as' => 'forgotApiRoute', 'uses' => 'AccountApiController@forgot']);
 Route::post('/api/account/reset', ['as' => 'resetApiRoute', 'uses' => 'AccountApiController@reset']);
 Route::post('/api/user/fetch', ['as' => 'fetchUserRoute', 'uses' => 'UsersApiController@getUserInfo']);
-Route::post('/api/donation/fetch', ['as' => 'fetchDonationRoute', 'uses' => 'DonationsApiController@getUserDonations']);
+Route::post('/api/donation/fetch', ['as' => 'fetchDonationRoute', 'uses' => 'DonationsController@getUserDonations']);
 /***************API******************/
 Route::group(array('before' => 'auth.token'), function() {
     Route::post('api/data', function(){
