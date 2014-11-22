@@ -4,13 +4,13 @@ class Donation extends Eloquent {
 	protected $guarded = array();
 
 	public static $rules = array(
-		'user_id' => 'required',
-		'institution' => 'required',
+		/*'user_id' => 'required',
+		'institution' => 'required',*/
 		'date' => 'required',
 		'quantity' => 'required',
 		'note' => 'required',
 		'blood_group' => 'required',
-		'collecting_blood_event' => 'required'
+		//'collecting_blood_event' => 'required'
 	);
     public function user(){
         return $this->belongsTo('User');
