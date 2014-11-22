@@ -127,6 +127,7 @@ return array(
         'Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider',
         'Zizaco\Entrust\EntrustServiceProvider',
         'Thujohn\Twitter\TwitterServiceProvider',
+        //'Davibennun\LaravelPushNotification\LaravelPushNotificationServiceProvider'
 	),
 
 	/*
@@ -197,6 +198,7 @@ return array(
         'AuthTokenNotAuthorizedException' => 'Tappleby\AuthToken\Exceptions\NotAuthorizedException',
         'Entrust'    => 'Zizaco\Entrust\EntrustFacade',
         'Twitter' => 'Thujohn\Twitter\TwitterFacade',
+        //'PushNotification' => 'Davibennun\LaravelPushNotification\Facades\PushNotification'
 	),
 
 );
