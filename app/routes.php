@@ -51,6 +51,7 @@ Route::delete('auth', 'Tappleby\AuthToken\AuthTokenController@destroy');
 Route::resource('users', 'UsersController');
 Route::resource('institutions', 'InstitutionsController');
 
+Route::get('/donations/push', [ 'as' => 'donations.pushnotification', 'uses' => 'DonationsController@sendPush' ]);
 Route::get('/donations/{ins}', [ 'as' => 'donations.index', 'uses' => 'DonationsController@index' ]);
 Route::get('/donations/{ins}/create', [ 'as' => 'donations.create', 'uses' => 'DonationsController@create' ]);
 Route::get('/donations/{ins}/destroy/{id}', [ 'as' => 'donations.destroy', 'uses' => 'DonationsController@destroy' ]);

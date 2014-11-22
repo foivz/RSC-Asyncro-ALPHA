@@ -34,7 +34,7 @@ return array(
     'ClassPreloader\\Parser\\FileVisitor' => $vendorDir . '/classpreloader/classpreloader/src/ClassPreloader/Parser/FileVisitor.php',
     'ClassPreloader\\Parser\\NodeTraverser' => $vendorDir . '/classpreloader/classpreloader/src/ClassPreloader/Parser/NodeTraverser.php',
     'CreateAuthTokenTable' => $vendorDir . '/tappleby/laravel-auth-token/src/migrations/2013_05_12_014954_create_auth_token_table.php',
-    'CreateDonationsTable' => $baseDir . '/app/database/migrations/2014_11_22_130052_create_donations_table.php',
+    'CreateDonationsTable' => $baseDir . '/app/database/migrations/2014_11_22_171433_create_donations_table.php',
     'CreateInstitutionsTable' => $baseDir . '/app/database/migrations/2014_11_22_095525_create_institutions_table.php',
     'CreateUsersTable' => $baseDir . '/app/database/migrations/2014_11_16_170052_create_users_table.php',
     'Crypt_AES' => $vendorDir . '/phpseclib/phpseclib/phpseclib/Crypt/AES.php',
