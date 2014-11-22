@@ -63,5 +63,5 @@ Route::get('/donations/{ins}/show/{id}', [ 'as' => 'donations.show', 'uses' => '
 
 
 Route::resource('events', 'EventsController');
-
 Route::resource('bloodevents', 'BloodeventsController');
+Route::resource('bloodgroups', 'BloodgroupsController');
