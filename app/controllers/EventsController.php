@@ -134,7 +134,7 @@ class EventsController extends BaseController {
 
         $name = Institution::where('id','=', $ins)->first()->name;
 
-        return View::make('institutions.event', ['name' =>$name, 'events' => $events ]);
+        return View::make('institutions.event', ['ins' => $ins,'name' =>$name, 'events' => $events ]);
 
     }
 

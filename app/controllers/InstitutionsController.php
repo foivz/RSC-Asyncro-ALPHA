@@ -149,4 +149,22 @@ class InstitutionsController extends BaseController {
     public function listInstitutions(){
         return Institution::all();
     }
+
+    public function eventDonations($event){
+
+        $donations = Donation::where('bloodevents_id','=', $event)->get();
+
+        return View::make('institutions.donations', [ 'donations' => $donations, 'ins' => $event ]);
+
+    }
+
+    public function eventDonationsEdit($id){
+
+        $donation = Donation::where('id', '=', $id)->first();
+
+        $bloodGroups = Bloodgroup::lists('name', 'id');
+
+        return View::make('institutions.editdonations', [ 'bloodGroups' => $bloodGroups ,'donation' => $donation, 'ins' =>0 ]);
+
+    }
 }

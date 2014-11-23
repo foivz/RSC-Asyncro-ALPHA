@@ -121,7 +121,11 @@ class AccountApiController extends \BaseController {
 
         $userInstance = Token::getUserInstance();
 
-        $userInstance->update(Input::except('auth_token'));
+        $userInstance->email = Input::get('email');
+
+        $userInstance->name = Input::get('name');
+
+        $userInstance->surname = Input::get('surname');
 
         try {
 
