@@ -3,6 +3,7 @@ package com.alpha.asyncro.rsc.data.controller;
 import com.alpha.asyncro.rsc.data.RSCAPI;
 import com.alpha.asyncro.rsc.data.model.Event;
 import com.alpha.asyncro.rsc.data.model.Institution;
+import com.alpha.asyncro.rsc.data.model.InstitutionRequest;
 import com.lightandroid.data.LightController;
 import com.lightandroid.event.LightDataMultipleResponseCallback;
 import com.lightandroid.event.LightDataResponseCallback;
@@ -21,12 +22,14 @@ public class InstitutionController extends LightController {
     public InstitutionController() {
         onInstitutionReadListener = new LightDataResponseCallback<Institution>();
         onEventReadListener = new LightDataResponseCallback<Event>();
+        institutionsReadListener = new LightDataMultipleResponseCallback<Institution[]>();
+        eventsReadListener = new LightDataMultipleResponseCallback<Event[]>();
     }
 
-    public void getInstitution(String institution) {
+    public void getInstitution(String institution, String token) {
         onInstitutionReadListener.setOnDataResponseListener(getOnDataResponseListener());
         onInstitutionReadListener.setOnErrorListener(getOnErrorListener());
-        LightAPIUtil.getRestAdapter(RSCAPI.API_ENDPOINT).create(RSCAPI.class).getInstitution(String.valueOf(institution), onInstitutionReadListener);
+        LightAPIUtil.getRestAdapter(RSCAPI.API_ENDPOINT).create(RSCAPI.class).getInstitution(new InstitutionRequest(String.valueOf(institution), token), onInstitutionReadListener);
     }
 
     public void getEvent(String event) {
@@ -35,7 +38,14 @@ public class InstitutionController extends LightController {
         LightAPIUtil.getRestAdapter(RSCAPI.API_ENDPOINT).create(RSCAPI.class).getEvent(event, onEventReadListener);
     }
 
-    public void getInstitutions() {
+    public void getInstitutions(String token) {
+        institutionsReadListener.setOnDataMultipleResponseListener(getOnDataMultipleResponseListener());
+        institutionsReadListener.setOnErrorListener(getOnErrorListener());
+        LightAPIUtil.getRestAdapter(RSCAPI.API_ENDPOINT).create(RSCAPI.class).getInstitutions(new InstitutionRequest(null, token), institutionsReadListener);
+    }
+
+    public void getEvents() {
+
     }
 
 }

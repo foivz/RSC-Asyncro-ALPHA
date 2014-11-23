@@ -2,6 +2,7 @@ package com.alpha.asyncro.rsc.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import com.alpha.asyncro.rsc.data.model.User;
 import com.lightandroid.util.LightAPIUtil;
@@ -14,6 +15,7 @@ public class Preferences {
     private static final String KEY_PREFERENCES = "com.asyncro.alpha.rsc.prefs";
     private static final String KEY_USER = "com.asyncro.user";
     private static final String KEY_LANGUAGE = "en";
+    private static final String KEY_NOTIFICATIONS = "com.notifications";
 
     public static SharedPreferences.Editor loadEditor(Context context) {
         return loadPreferences(context).edit();
@@ -25,7 +27,9 @@ public class Preferences {
 
     public static boolean storeUser(User user, Context context) {
         SharedPreferences.Editor editor = loadEditor(context);
-        editor.putString(KEY_USER, LightAPIUtil.createGson().toJson(user));
+        String store = LightAPIUtil.createGson().toJson(user);
+        Log.d("DAM", store);
+        editor.putString(KEY_USER, store);
         return editor.commit();
     }
 
@@ -39,14 +43,23 @@ public class Preferences {
         return editor.commit();
     }
 
-    public static boolean storeLanguage(String language,Context context) {
+    public static boolean storeLanguage(String language, Context context) {
         SharedPreferences.Editor editor = loadEditor(context);
-        editor.putString(KEY_LANGUAGE,language);
+        editor.putString(KEY_LANGUAGE, language);
         return editor.commit();
     }
 
     public static String loadLanguage(Context context) {
-        return loadPreferences(context).getString(KEY_LANGUAGE,null);
+        return loadPreferences(context).getString(KEY_LANGUAGE, null);
     }
 
+    public static boolean storeNotificationPref(Context context, boolean pref) {
+        SharedPreferences.Editor editor = loadEditor(context);
+        editor.putBoolean(KEY_NOTIFICATIONS, pref);
+        return editor.commit();
+    }
+
+    public static boolean loadIsNotificationEnabled(Context context) {
+        return loadPreferences(context).getBoolean(KEY_NOTIFICATIONS, true);
+    }
 }

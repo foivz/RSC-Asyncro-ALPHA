@@ -1,12 +1,7 @@
 package com.alpha.asyncro.rsc;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
 import android.graphics.Typeface;
-import android.os.AsyncTask;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
@@ -19,23 +14,16 @@ import com.alpha.asyncro.rsc.data.controller.UserController;
 import com.alpha.asyncro.rsc.data.model.User;
 import com.alpha.asyncro.rsc.event.OnUserReadListener;
 import com.alpha.asyncro.rsc.fragment.DonationsFragment;
-import com.alpha.asyncro.rsc.fragment.EventsFragment;
 import com.alpha.asyncro.rsc.fragment.InstitutionsFragment;
 import com.alpha.asyncro.rsc.fragment.LoginFragment;
 import com.alpha.asyncro.rsc.fragment.UserFragment;
 import com.alpha.asyncro.rsc.util.Preferences;
 import com.astuetz.PagerSlidingTabStrip;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GooglePlayServicesUtil;
-import com.google.android.gms.gcm.GoogleCloudMessaging;
 import com.lightandroid.data.api.listener.OnDataMultipleResponseListener;
 import com.lightandroid.data.api.listener.OnErrorListener;
 import com.lightandroid.navigation.activity.LightTabbedActivity;
 import com.lightandroid.type.LightData;
 import com.lightandroid.util.LightFont;
-
-import java.io.IOException;
-import java.util.concurrent.atomic.AtomicInteger;
 
 import butterknife.InjectView;
 import retrofit.RetrofitError;
@@ -67,18 +55,14 @@ public class MainActivity extends LightTabbedActivity implements OnDataMultipleR
             userController.setOnDataMultipleResponseListener(this);
             userController.setOnErrorListener(this);
             User storedUser = Preferences.loadUser(this);
-            userController.loadUser(storedUser.getToken());
             UserFragment userFragment = new UserFragment();
             userFragment.setLabel(getResources().getString(R.string.mic_person));
             DonationsFragment donationsFragment = new DonationsFragment();
             donationsFragment.setLabel(getString(R.string.mic_favorite));
             InstitutionsFragment institutionsFragment = new InstitutionsFragment();
             institutionsFragment.setLabel(getString(R.string.mic_location_city));
-            EventsFragment eventsFragment = new EventsFragment();
-            eventsFragment.setLabel(getString(R.string.mic_event));
-            fragments = new Fragment[]{userFragment, donationsFragment, institutionsFragment, eventsFragment};
-
-            fragments = new Fragment[]{userFragment, donationsFragment, institutionsFragment, eventsFragment};
+            fragments = new Fragment[]{userFragment, donationsFragment, institutionsFragment};
+            userController.loadUser(storedUser.getToken());
         }
         return fragments;
     }
@@ -144,17 +128,14 @@ public class MainActivity extends LightTabbedActivity implements OnDataMultipleR
                 break;
 
             case R.id.action_settings:
-                Intent intentSettings = new Intent(getBaseContext(),SettingsActivity.class);
+                Intent intentSettings = new Intent(getBaseContext(), SettingsActivity.class);
                 startActivity(intentSettings);
+                this.finish();
         }
         return super.onOptionsItemSelected(item);
     }
 
-
-
-
-
-
-
-
+    public static void setFragments(Fragment[] fragments) {
+        MainActivity.fragments = fragments;
+    }
 }

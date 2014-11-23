@@ -24,4 +24,5 @@
     <string name="lbl_id">Id:</string>
     <string name="lbl_logout">Logout</string>
     <string name="lbl_language_type">Select language</string>
+    <string name="lbl_save">Save</string>
 </resources>

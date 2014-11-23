@@ -63,6 +63,8 @@ public class LoginFragment extends LabeledFragment implements Labeled {
     void login() {
         userController.setOnDataResponseListener(onLoginListener);
         userController.setOnErrorListener(onLoginListener);
+        onLoginListener.setEmail(etEmail.getText().toString());
+        onLoginListener.setPassword(etPassword.getText().toString());
         userController.login(etEmail.getText().toString(), etPassword.getText().toString(), null);
     }
 
@@ -86,18 +88,4 @@ public class LoginFragment extends LabeledFragment implements Labeled {
         }
     };
 
-//    @Override
-//    public void onLoginSuccess(int i) {
-//        socialNetworkController.twitterUserDetails(onSocialLoginListener);
-//    }
-//
-//    @Override
-//    public void onError(int i, String s, String s2, Object o) {
-//
-//    }
-//
-//    @Override
-//    public void onRequestSocialPersonSuccess(int i, SocialPerson socialPerson) {
-//        Toast.makeText(getLightActivity(), "Social person: " + socialPerson.email, Toast.LENGTH_SHORT).show();
-//    }
 }
