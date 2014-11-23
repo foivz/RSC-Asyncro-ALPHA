@@ -128,4 +128,14 @@ class EventsController extends BaseController {
 		return Redirect::route('events.index');
 	}
 
+    public function instEvents($ins){
+
+        $events = Bloodevent::where('institution_id', '=', $ins)->get();
+
+        $name = Institution::where('id','=', $ins)->first()->name;
+
+        return View::make('institutions.event', ['name' =>$name, 'events' => $events ]);
+
+    }
+
 }
