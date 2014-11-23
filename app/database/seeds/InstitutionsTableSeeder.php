@@ -18,8 +18,8 @@ class InstitutionsTableSeeder extends Seeder {
                 'email'=>$faker->email,
                 'cities_id' => $faker->numberBetween(1,10),
                 'blood_level'=>$faker->randomFloat(2, $min = 12, 100),
-                'logo'=>'/uploads/',
-                'picture'=>'/uploads/',
+                'logo'=>'http://us.cdn2.123rf.com/168nwm/romul/romul1212/romul121200019/17009648-shop--illustration.jpg',
+                'picture'=>'http://s.hswstatic.com/gif/smithsonian-institution-1.jpg',
                 'created_at' => $faker->date()
             ]);
         }

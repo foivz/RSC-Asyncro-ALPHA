@@ -75,16 +75,15 @@ class DonationsController extends BaseController {
             }
 
             if($value < 5000){
-                $users = $institution->with('users')->get();
+
+                $users = User::get();
 
                 foreach($users as $user){
 
-                    var_dump($user->email);
+                    Notification::Send($user->gcm_regid, 'Low Supplies!', 'We\'re inviting you to donate blood!');
 
                 }
             }
-
-            die();
 
             $institution->blood_level = $value;
 
