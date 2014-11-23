@@ -39,6 +39,8 @@ Route::get('/institutions/supply/{id}', ['as' => 'institutionBloodSupply', 'uses
 Route::get('/institutions/events/{ins}', ['as' => 'institutionEvents', 'uses' => 'EventsController@instEvents']);
 Route::get('/users/institution/{id}', ['as' => 'usersForInstitution', 'uses' => 'InstitutionsController@getUsers']);
 Route::post('/api/1/institutions/all',['as'=>'institutionsList','uses'=>'InstitutionsController@listInstitutions']);
+Route::get('/events/{ev}/donations/{id}',['as'=>'eventDonations','uses'=>'InstitutionsController@eventDonations']);
+Route::get('/events/{ins}/donations/edit/{id}',['as'=>'eventDonationsEdit','uses'=>'InstitutionsController@eventDonationsEdit']);
 /***************API******************/
 Route::group(array('before' => 'auth.token'), function() {
     Route::post('api/data', function(){
@@ -66,6 +68,8 @@ Route::get('/donations/{ins}/destroy/{id}', [ 'as' => 'donations.destroy', 'uses
 Route::get('/donations/{ins}/edit/{id}', [ 'as' => 'donations.edit', 'uses' => 'DonationsController@edit' ]);
 Route::patch('/donations/{ins}/update/{id}', [ 'as' => 'donations.update', 'uses' => 'DonationsController@update' ]);
 Route::get('/donations/{ins}/bloodgroup/{group}', [ 'as' => 'donations.bybloodgroup', 'uses' => 'DonationsController@byBloodGroup' ]);
+Route::get('/donations/edit/{id}', [ 'as' => 'donations.editEvent', 'uses' => 'DonationsController@editEvent' ]);
+Route::patch('/donations/update/{id}', [ 'as' => 'donations.eventUpdate', 'uses' => 'DonationsController@eventUpdate' ]);
 
 //Route::resource('donations', 'DonationsController');
 

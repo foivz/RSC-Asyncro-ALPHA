@@ -67,6 +67,12 @@ class DonationsController extends BaseController {
 
             $institution->save();
 
+            $user = User::where('id', '=', Input::get('user_id'))->first();
+
+            $user->points += 1;
+
+            $user->save();
+
 			return Redirect::route('donations.index', $ins);
 		}
 
@@ -175,6 +181,32 @@ class DonationsController extends BaseController {
         //dd($bloodGroups);
 
         return View::make('donations.bloodgroup', ['group' => $group, 'bloodGroups' => $bloodGroups ,'ins' => $ins ,'donations' => $donations]);
+
+    }
+
+    public function editEvent($id){
+
+        return null;
+
+    }
+
+    public function eventUpdate($id){
+
+        $input = array_except(Input::all(), '_method');
+        $validation = Validator::make($input, Donation::$rules);
+
+        if ($validation->passes())
+        {
+            $donation = $this->donation->find($id);
+            $donation->update($input);
+
+            return Redirect::route('institutionEvents', [$id]);
+        }
+
+        return Redirect::route('institutionEvents', [$id])
+            ->withInput()
+            ->withErrors($validation)
+            ->with('message', 'There were validation errors.');
 
     }
 

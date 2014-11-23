@@ -15,6 +15,7 @@
 				<th>Time</th>
 				<th>Logo</th>
 				<th>Institution</th>
+				<th>Donations</th>
 			</tr>
 		</thead>
 
@@ -26,6 +27,7 @@
 					<td>{{{$event->time}}}</td>
 					<td>{{{$event->logo}}}</td>
 					<td>{{{$name}}}</td>
+					<td>{{ link_to_route('eventDonations', 'Donations', [$ins,$event->id], array('class' => 'btn btn-info')) }}</td>
 				</tr>
 			@endforeach
 		</tbody>
