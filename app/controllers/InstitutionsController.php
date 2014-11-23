@@ -142,7 +142,8 @@ class InstitutionsController extends BaseController {
         return Institution::where('id','=',$id)->with('city')->first();
     }
     public function getUsers($id){
-        $users=Institution::find($id)->first()->users;
+        $users=Institution::where('id','=',$id)->first()->users;
+
         return View::make('users.index', compact('users'));
     }
     public function listInstitutions(){

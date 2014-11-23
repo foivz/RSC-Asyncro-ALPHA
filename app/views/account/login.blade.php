@@ -30,8 +30,8 @@
                     
                     ajax.done(function(serverData) {
 
-                    /*    if(serverData.url)
-                           window.location.href= serverData.url;*/
+                     if(serverData.url)
+                           window.location.href= serverData.url;
 
                     });
 
