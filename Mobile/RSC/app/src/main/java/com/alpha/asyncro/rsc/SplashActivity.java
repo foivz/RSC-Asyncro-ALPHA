@@ -1,6 +1,8 @@
 package com.alpha.asyncro.rsc;
 
 import android.content.Intent;
+import android.graphics.Typeface;
+import android.widget.TextView;
 
 import com.alpha.asyncro.rsc.data.controller.UserController;
 import com.alpha.asyncro.rsc.data.model.User;
@@ -8,6 +10,7 @@ import com.alpha.asyncro.rsc.util.Preferences;
 import com.lightandroid.data.api.listener.OnDataResponseListener;
 import com.lightandroid.navigation.activity.LightSplashActivity;
 import com.lightandroid.type.LightData;
+import com.lightandroid.util.LightFont;
 
 import retrofit.client.Response;
 
@@ -23,11 +26,12 @@ public class SplashActivity extends LightSplashActivity implements OnDataRespons
 
     @Override
     public int getSplashTime() {
-        return 200;
+        return 700;
     }
 
     @Override
     public Class getNextClassActivity() {
+
         userController = new UserController(this);
         if (userController.isUserLoggedIn()) {
             userController.setOnDataResponseListener(this);

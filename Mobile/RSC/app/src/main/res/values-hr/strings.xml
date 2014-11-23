@@ -23,4 +23,6 @@
     <string name="lbl_points_2">Bodovi:</string>
     <string name="lbl_id">Šifra:</string>
     <string name="lbl_logout">Odjava</string>
+    <string name="lbl_save">Spremi</string>
+    <string name="lbl_splash">Dijeli,Voli,Doniraj</string>
 </resources>

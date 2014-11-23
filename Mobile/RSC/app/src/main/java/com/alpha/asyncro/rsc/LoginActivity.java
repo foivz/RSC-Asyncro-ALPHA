@@ -39,6 +39,7 @@ public class LoginActivity extends LightTabbedActivity {
     @Override
     public PagerSlidingTabStrip providePagerSlidingTabStrip() {
         tabs.setTextColorResource(R.color.white);
+        tabs.setIndicatorColorResource(R.color.gray);
         return tabs;
     }
 
