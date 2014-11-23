@@ -2,6 +2,7 @@ package com.alpha.asyncro.rsc.data.presenter;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Intent;
 import android.util.Log;
 import android.view.Window;
 import android.widget.EditText;
@@ -106,6 +107,21 @@ public class DonorCardPresenter {
             btnEdit.setText(activity.getResources().getString(R.string.lbl_edit));
             btnOK.setText(activity.getResources().getString(R.string.lbl_ok));
         }
+    }
+
+    @OnClick(R.id.btnShare)
+    void share() {
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        String donorCard = "My donor card: ";
+        donorCard += "\nMy name: " + user.getName() + " " + user.getSurname();
+        donorCard += "\nMy mail: " + user.getEmail();
+        donorCard += "\nMy Id: " + user.getId();
+        donorCard += "\n\nSent from Sanguio. #swag, #bloodymarry, #rsc, #prestige";
+        donorCard += "\nKeep bleeding :)";
+        sendIntent.putExtra(Intent.EXTRA_TEXT, donorCard);
+        sendIntent.setType("text/plain");
+        activity.startActivity(sendIntent);
     }
 
 }

@@ -7,12 +7,10 @@ import com.alpha.asyncro.rsc.data.model.Institution;
 import com.alpha.asyncro.rsc.data.model.User;
 import com.alpha.asyncro.rsc.data.presenter.InstitutionPresenter;
 import com.alpha.asyncro.rsc.event.OnUserReadListener;
-import com.alpha.asyncro.rsc.util.Const;
 import com.alpha.asyncro.rsc.util.Preferences;
 import com.lightandroid.data.api.listener.OnDataMultipleResponseListener;
 import com.lightandroid.type.LightData;
 import com.lightandroid.ui.presenter.LightRecyclerViewAdapter;
-import com.lightandroid.util.LightAPIUtil;
 
 import org.lucasr.twowayview.widget.TwoWayView;
 
@@ -40,16 +38,14 @@ public class InstitutionsFragment extends LabeledFragment implements OnDataMulti
 
     @Override
     public void main() {
-        activity = (MainActivity) getActivity();
-        institutionsAdapter = new LightRecyclerViewAdapter(getLightActivity(), R.layout.item_institution);
-        twoWayView.setAdapter(institutionsAdapter);
-        institutionController = new InstitutionController();
-        institutionController.setOnDataMultipleResponseListener(this);
-        User stored = Preferences.loadUser(getLightActivity());
         if (institutions == null) {
-//            institutions = LightAPIUtil.createGson().fromJson(Const.JSON, Institution[].class);
+            activity = (MainActivity) getActivity();
+            institutionsAdapter = new LightRecyclerViewAdapter(getLightActivity(), R.layout.item_institution);
+            twoWayView.setAdapter(institutionsAdapter);
+            institutionController = new InstitutionController();
+            institutionController.setOnDataMultipleResponseListener(this);
+            User stored = Preferences.loadUser(getLightActivity());
             institutionController.getInstitutions(stored.getToken());
-//            display(institutions);
         }
     }
 

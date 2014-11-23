@@ -32,7 +32,7 @@ import retrofit.client.Response;
 /**
  * Created by dmacan on 22.11.2014..
  */
-public class MainActivity extends LightTabbedActivity implements OnDataMultipleResponseListener, OnErrorListener {
+public class MainActivity extends LightTabbedActivity implements OnDataMultipleResponseListener, OnErrorListener, ViewPager.OnPageChangeListener {
 
 
     @InjectView(R.id.pager)
@@ -62,6 +62,7 @@ public class MainActivity extends LightTabbedActivity implements OnDataMultipleR
             InstitutionsFragment institutionsFragment = new InstitutionsFragment();
             institutionsFragment.setLabel(getString(R.string.mic_location_city));
             fragments = new Fragment[]{userFragment, donationsFragment, institutionsFragment};
+            setOnTabChangedListener(this);
             userController.loadUser(storedUser.getToken());
         }
         return fragments;
@@ -137,5 +138,31 @@ public class MainActivity extends LightTabbedActivity implements OnDataMultipleR
 
     public static void setFragments(Fragment[] fragments) {
         MainActivity.fragments = fragments;
+    }
+
+
+    @Override
+    public void onPageScrolled(int i, float v, int i2) {
+
+    }
+
+    @Override
+    public void onPageSelected(int i) {
+        switch (i) {
+            case 0:
+                getActionBar().setTitle(getString(R.string.lbl_my_profile));
+                break;
+            case 1:
+                getActionBar().setTitle(getString(R.string.lbl_my_donations));
+                break;
+            case 2:
+                getActionBar().setTitle(getString(R.string.lbl_where_can_donate));
+                break;
+        }
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int i) {
+
     }
 }

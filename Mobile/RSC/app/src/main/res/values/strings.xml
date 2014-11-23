@@ -19,7 +19,7 @@
     <string name="lbl_points">Points:</string>
     <string name="lbl_donations_year">Donations in past year</string>
     <string name="lbl_your_donations">Your donations: </string>
-    <string name="lbl_donor_card">SANGRIO DONOR CARD</string>
+    <string name="lbl_donor_card">Sangrio donor card</string>
     <string name="lbl_points_2">Points:</string>
     <string name="lbl_id">Id:</string>
     <string name="lbl_logout">Logout</string>
@@ -38,4 +38,8 @@
     <string name="lbl_tajtl">Password reset confirmation</string>
     <string name="lbl_donated">Donated:</string>
     <string name="lbl_mills">Milliliters:</string>
+    <string name="lbl_my_profile">My profile</string>
+    <string name="lbl_my_donations">My donations</string>
+    <string name="lbl_where_can_donate">Where can I donate?</string>
+    <string name="lbl_share">Share</string>
 </resources>

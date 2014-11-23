@@ -18,9 +18,17 @@
         android:text="@string/lbl_donor_card"
         android:layout_height="wrap_content" />
 
+    <com.gc.materialdesign.views.ButtonFlat
+        android:id="@+id/btnShare"
+        android:layout_width="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignBaseline="@+id/lblTitle"
+        android:text="@string/lbl_share"
+        android:layout_height="wrap_content"/>
+
 
     <EditText
-        style="@style/CardLabel"
+        style="@style/EditText"
         android:layout_below="@+id/lblTitle"
         android:enabled="false"
         android:layout_marginTop="@dimen/md_10"
@@ -29,7 +37,7 @@
         android:layout_height="wrap_content" />
 
     <EditText
-        style="@style/CardLabel"
+        style="@style/EditText"
         android:layout_below="@+id/txtFirstName"
         android:layout_width="wrap_content"
         android:enabled="false"
@@ -37,7 +45,7 @@
         android:layout_height="wrap_content" />
 
     <EditText
-        style="@style/CardLabel"
+        style="@style/EditText"
         android:layout_width="wrap_content"
         android:id="@+id/txtEmail"
         android:enabled="false"
@@ -50,6 +58,7 @@
         style="@style/CardLabel"
         android:layout_below="@+id/txtEmail"
         android:text="@string/lbl_id"
+        android:layout_marginTop="@dimen/md_10"
         android:layout_height="wrap_content" />
 
     <TextView
