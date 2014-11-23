@@ -44,8 +44,4 @@ public class InstitutionController extends LightController {
         LightAPIUtil.getRestAdapter(RSCAPI.API_ENDPOINT).create(RSCAPI.class).getInstitutions(new InstitutionRequest(null, token), institutionsReadListener);
     }
 
-    public void getEvents() {
-
-    }
-
 }

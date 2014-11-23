@@ -13,7 +13,7 @@
     <string name="lbl_blood_type">Your blood type: </string>
     <string name="lbl_first_name">First Name</string>
     <string name="lbl_last_name">Last Name</string>
-    <string name="lbl_pass_forgot">I\'ve forgot my password</string>
+    <string name="lbl_pass_forgot">Forgot password</string>
     <string name="lbl_login_twitter">Login with Twitter</string>
     <string name="lbl_rank">Rank:</string>
     <string name="lbl_points">Points:</string>
@@ -29,4 +29,13 @@
     <string name="lbl_edit">Edit</string>
     <string name="lbl_ok">OK</string>
     <string name="lbl_splash">Share,Love,Donate</string>
+    <string name="lbl_err_msg_network">There seems to be a problem with your network</string>
+    <string name="lbl_error_error">Error</string>
+    <string name="lbl_submit_2">Submit</string>
+    <string name="lbl_change_pass">CHANGE YOUR PASSWORD</string>
+    <string name="lbl_notice">The password for your account will be sent to this email:</string>
+    <string name="lbl_pass_reset_confirm">The password has been sent to your e-mail address</string>
+    <string name="lbl_tajtl">Password reset confirmation</string>
+    <string name="lbl_donated">Donated:</string>
+    <string name="lbl_mills">Milliliters:</string>
 </resources>

@@ -10,17 +10,7 @@ public class Institution extends Node {
     @Expose
     private String name;
     @Expose
-    private String lat;
-    @Expose
-    private String lng;
-    @Expose
-    private String description;
-    @Expose
-    private String phone;
-    @Expose
     private String email;
-    @Expose
-    private int bloodLevel;
     @Expose
     private String logo;
     @Expose
@@ -34,37 +24,37 @@ public class Institution extends Node {
         this.name = name;
     }
 
-    public String getLat() {
-        return lat;
-    }
-
-    public void setLat(String lat) {
-        this.lat = lat;
-    }
-
-    public String getLng() {
-        return lng;
-    }
-
-    public void setLng(String lng) {
-        this.lng = lng;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
+//    public String getLat() {
+//        return lat;
+//    }
+//
+//    public void setLat(String lat) {
+//        this.lat = lat;
+//    }
+//
+//    public String getLng() {
+//        return lng;
+//    }
+//
+//    public void setLng(String lng) {
+//        this.lng = lng;
+//    }
+//
+//    public String getDescription() {
+//        return description;
+//    }
+//
+//    public void setDescription(String description) {
+//        this.description = description;
+//    }
+//
+//    public String getPhone() {
+//        return phone;
+//    }
+//
+//    public void setPhone(String phone) {
+//        this.phone = phone;
+//    }
 
     public String getEmail() {
         return email;
@@ -74,13 +64,13 @@ public class Institution extends Node {
         this.email = email;
     }
 
-    public int getBloodLevel() {
-        return bloodLevel;
-    }
-
-    public void setBloodLevel(int bloodLevel) {
-        this.bloodLevel = bloodLevel;
-    }
+//    public int getBloodLevel() {
+//        return bloodLevel;
+//    }
+//
+//    public void setBloodLevel(int bloodLevel) {
+//        this.bloodLevel = bloodLevel;
+//    }
 
     public String getLogo() {
         return logo;

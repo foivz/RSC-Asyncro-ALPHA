@@ -2,6 +2,7 @@ package com.alpha.asyncro.rsc.event;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 
 import com.alpha.asyncro.rsc.MainActivity;
 import com.alpha.asyncro.rsc.data.model.User;
@@ -26,8 +27,12 @@ public class OnLoginListener extends OnResponseListener {
     @Override
     public void onResponse(LightData response, Response retrofitResponse) {
         User user = (User) response;
-        user.setEmail(email);
-        user.setPassword(password);
+        Log.d("DAM", "Email: " + email);
+        Log.d("DAM", "Password: " + password);
+        if (email != null && !email.equals("")) {
+            user.setEmail(email);
+            user.setPassword(password);
+        }
         if (user.isStatusOk()) {
             Preferences.storeUser(user, getActivity());
             getActivity().startActivity(new Intent(getActivity(), MainActivity.class));

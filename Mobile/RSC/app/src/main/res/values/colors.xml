@@ -2,8 +2,10 @@
 <resources>
     <color name="white">#fff</color>
     <color name="gray">#ddd</color>
-    <color name="red">#e53935</color>
+    <color name="red">#ffd5373c</color>
     <color name="text_default">#444</color>
     <color name="text_lighter">#999</color>
-    <color name="secondary">#435764</color>
+    <color name="disabled">@android:color/transparent</color>
+    <color name="idle">#bbb</color>
+    <color name="secondary">#ff62a5c4</color>
 </resources>

@@ -15,10 +15,11 @@
             android:text="@string/lbl_donations_year"
             android:layout_height="wrap_content" />
 
-        <View
+        <ImageView
             android:layout_width="match_parent"
+            android:src="@drawable/graph"
+            android:scaleType="centerCrop"
             android:layout_marginTop="@dimen/md_7"
-            android:background="#ccc"
             android:layout_height="200dp" />
     </LinearLayout>
 </android.support.v7.widget.CardView>

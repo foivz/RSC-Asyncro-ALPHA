@@ -1,9 +1,9 @@
 package com.alpha.asyncro.rsc.event;
 
 import android.app.Activity;
-import android.widget.Toast;
 
-import com.alpha.asyncro.rsc.data.model.Secure;
+import com.alpha.asyncro.rsc.R;
+import com.alpha.asyncro.rsc.data.presenter.MessageDialog;
 import com.lightandroid.type.LightData;
 
 import retrofit.client.Response;
@@ -18,6 +18,7 @@ public class OnPasswordChangeListener extends OnResponseListener {
 
     @Override
     public void onResponse(LightData response, Response retrofitResponse) {
-        Toast.makeText(getActivity(), "Password: " + ((Secure) response).getPassword(), Toast.LENGTH_SHORT).show();
+        MessageDialog dialog = new MessageDialog(getActivity(), getActivity().getString(R.string.lbl_tajtl), getActivity().getString(R.string.lbl_pass_reset_confirm));
+        dialog.show();
     }
 }

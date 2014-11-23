@@ -51,7 +51,6 @@ public class LoginActivity extends LightTabbedActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
         Fragment fragment = getSupportFragmentManager().findFragmentByTag(LoginFragment.SOCIAL_NETWORK_TAG);
         if (fragment != null) {
             fragment.onActivityResult(requestCode, resultCode, data);

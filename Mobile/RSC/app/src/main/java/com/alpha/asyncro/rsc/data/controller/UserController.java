@@ -37,7 +37,9 @@ public class UserController extends LightController {
     }
 
     public void login(User user) {
-        login(user.getEmail(), user.getPassword(), user.getToken());
+        this.loginCallback.setOnDataResponseListener(getOnDataResponseListener());
+        this.loginCallback.setOnErrorListener(getOnErrorListener());
+        LightAPIUtil.getRestAdapter(RSCAPI.API_ENDPOINT).create(RSCAPI.class).login(user, loginCallback);
     }
 
     public void login(String email, String password, String token) {

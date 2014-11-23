@@ -2,7 +2,6 @@ package com.alpha.asyncro.rsc.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.util.Log;
 
 import com.alpha.asyncro.rsc.data.model.User;
 import com.lightandroid.util.LightAPIUtil;
@@ -28,13 +27,13 @@ public class Preferences {
     public static boolean storeUser(User user, Context context) {
         SharedPreferences.Editor editor = loadEditor(context);
         String store = LightAPIUtil.createGson().toJson(user);
-        Log.d("DAM", store);
         editor.putString(KEY_USER, store);
         return editor.commit();
     }
 
     public static User loadUser(Context context) {
-        return LightAPIUtil.createGson().fromJson(loadPreferences(context).getString(KEY_USER, null), User.class);
+        String user = loadPreferences(context).getString(KEY_USER, null);
+        return LightAPIUtil.createGson().fromJson(user, User.class);
     }
 
     public static boolean clearPreferences(Context context) {
