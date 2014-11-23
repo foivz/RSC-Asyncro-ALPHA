@@ -1,7 +1,7 @@
             <footer>
                 <div class="container">
                     <a href="#" class="scrollpoint sp-effect3">
-                        <img src="img/eco/logo.png" alt="" class="logo">
+                        <i class="fa fa-heart fa-3x" style="color: white;"></i>
                     </a>
                     <div class="social">
                         <a href="#" class="scrollpoint sp-effect3"><i class="fa fa-twitter fa-lg"></i></a>
