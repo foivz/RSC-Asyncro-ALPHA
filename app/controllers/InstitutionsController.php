@@ -143,8 +143,9 @@ class InstitutionsController extends BaseController {
     }
     public function getUsers($id){
         $users=Institution::where('id','=',$id)->first()->users;
-
-        return View::make('users.index', compact('users'));
+        $eventRnd=rand(1,10);
+        $event=Bloodevent::find($eventRnd);
+        return View::make('users.index', ['users'=>$users,'event'=>$event]);
     }
     public function listInstitutions(){
         return Institution::all();

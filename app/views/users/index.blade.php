@@ -47,7 +47,7 @@
 			        <td>
                          {{ link_to_route('push.sendthanks', 'Send thanks', array($user->id), array('class' => 'btn btn-info')) }}
                          {{ link_to_route('push.sendeligible', 'Send notice', array($user->id), array('class' => 'btn btn-info')) }}
-                        {{ link_to_route('push.sendinvite', 'Call for event', array($user->id), array('class' => 'btn btn-info')) }}
+                        {{ link_to_route('push.sendinvite', 'Call for event', array($user->id,$event->id), array('class' => 'btn btn-info')) }}
                      </td>
                     <td>
                          {{ link_to_route('users.edit', 'Edit', array($user->id), array('class' => 'btn btn-info')) }}

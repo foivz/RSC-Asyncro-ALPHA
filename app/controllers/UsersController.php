@@ -27,9 +27,8 @@ class UsersController extends BaseController {
 	{
 
 		$users = $this->user->all();
-        $eventRnd=rand(1,10);
-        $event=Bloodevent::find($eventRnd);
-		return View::make('users.index', ["users"=>$users,"event"=>$event]);
+
+		return View::make('users.index', compact('users'));
 	}
 
 	/**

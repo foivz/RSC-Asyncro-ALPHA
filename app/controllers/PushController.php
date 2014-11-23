@@ -25,10 +25,10 @@ class PushController extends BaseController {
                 ->to($user->gcm_regid)
                 ->send($message);
             Session::flash('success','Notification sent');
-            Redirect::back();
+           return  Redirect::back();
         }else{
             Session::flash('error','User does not have required data');
-            Redirect::back();
+           return  Redirect::back();
         }
     }
     public function isEligible($id){
@@ -39,10 +39,10 @@ class PushController extends BaseController {
                 ->to($user->gcm_regid)
                 ->send($message);
             Session::flash('success','Notification sent');
-            Redirect::back();
+           return Redirect::back();
         }else{
             Session::flash('error','User does not have required data');
-            Redirect::back();
+           return  Redirect::back();
         }
     }
 }
