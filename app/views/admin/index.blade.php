@@ -10,8 +10,6 @@
 
         <a href="/account/logout">Logout</a>
 
-        <a href="/users">Users</a>
-
         <a href="/institutions">Institutions</a>
 
         <a href="/bloodevents">Events</a>

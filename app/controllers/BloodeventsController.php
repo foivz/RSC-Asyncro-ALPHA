@@ -11,7 +11,7 @@ class BloodeventsController extends BaseController {
 
 	public function __construct(Bloodevent $bloodevent)
 	{
-        
+
 		$this->beforeFilter('auth.token',["only"=>"eventByDonation"]);
         $this->bloodevent = $bloodevent;
 
