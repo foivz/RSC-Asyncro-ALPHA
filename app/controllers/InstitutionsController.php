@@ -137,7 +137,8 @@ class InstitutionsController extends BaseController {
 
 		return Redirect::route('institutions.index');
 	}
-    public function institutionByDonation($id){
+    public function institutionByDonation(){
+        $id=Input::get('id');
         return Institution::where('id','=',$id)->with('city')->first();
     }
     public function getUsers($id){
