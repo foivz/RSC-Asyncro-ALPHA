@@ -165,7 +165,7 @@ class InstitutionsController extends BaseController {
 
         $bloodGroups = Bloodgroup::lists('name', 'id');
 
-        return View::make('institutions.editdonations', [ 'bloodGroups' => $bloodGroups ,'donation' => $donation, 'ins' =>0 ]);
+        return View::make('institutions.editdonations', [ 'bloodGroups' => $bloodGroups ,'donation' => $donation, 'ins' =>$id ]);
 
     }
 }
