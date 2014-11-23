@@ -18,6 +18,9 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
+
+            <li><a href="/users">Users</a></li>
+
             <li><a href="/institutions">Institutions</a></li>
             <li><a href="/bloodevents">Events</a></li>
             <li>
@@ -30,7 +33,7 @@
                 </div></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="/logout">Logout</a></li>
+            <li><a href="/account/logout">Logout</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

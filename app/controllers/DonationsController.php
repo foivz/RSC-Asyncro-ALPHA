@@ -63,8 +63,6 @@ class DonationsController extends BaseController {
 
             $institution = Institution::where('id','=', Input::get('institution'))->first();
 
-            //$institution->blood_level += Input::get('quantity');
-
             $value = 0;
 
             $donations = $this->donation->where('institution', '=', Input::get('institution'))->get(['quantity']);
@@ -195,8 +193,6 @@ class DonationsController extends BaseController {
 
         $instDonations = Donation::where('institution', '=', $index)->get();
 
-        //dd($instDonations);
-
         return View::make('donations.index', [ 'donations' => $instDonations ]);
 
     }
@@ -212,8 +208,6 @@ class DonationsController extends BaseController {
         $donations = Donation::where('institution', '=', $ins)->get();
 
         $bloodGroups = Bloodgroup::all();
-
-        //dd($bloodGroups);
 
         return View::make('donations.bloodgroup', ['group' => $group, 'bloodGroups' => $bloodGroups ,'ins' => $ins ,'donations' => $donations]);
 
