@@ -7,7 +7,8 @@
     <!--<![endif]-->
     <head>
         <meta charset="UTF-8">
-        <title>RSC App</title>
+        <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon" />
+        <title>Sanguio</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <meta name="google-translate-customization" content="89d5308248a4c0c6-9ecd1297e13e1f29-g7ff0e872a6eff02e-d"></meta>
