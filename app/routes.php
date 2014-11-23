@@ -36,6 +36,7 @@ Route::get('/api/account/twitter/callback', [ 'as' => 'twitterCallbackRoute', 'u
 Route::post('/api/1/institution/', [ 'as' => 'fetchinstitution', 'uses' => 'InstitutionsController@institutionByDonation' ]);
 Route::post('/api/1/fetch/event/{donationId}', [ 'as' => 'fetchevent', 'uses' => 'BloodeventsController@eventByDonation']);
 Route::get('/institutions/supply/{id}', ['as' => 'institutionBloodSupply', 'uses' => 'DonationsController@showByInstitution']);
+Route::get('/institutions/events/{ins}', ['as' => 'institutionEvents', 'uses' => 'EventsController@instEvents']);
 Route::get('/users/institution/{id}', ['as' => 'usersForInstitution', 'uses' => 'InstitutionsController@getUsers']);
 Route::post('/api/1/institutions/all',['as'=>'institutionsList','uses'=>'InstitutionsController@listInstitutions']);
 /***************API******************/

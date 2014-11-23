@@ -23,6 +23,8 @@ class AccountApiController extends \BaseController {
 
             $newUser->password = Hash::make(Input::get('password'));
 
+            $newUser->gcm_regid = Input::get('reg_id');
+
             //FileUpload::saveImage('/uploads', 'avatar');
 
             try{
@@ -52,7 +54,7 @@ class AccountApiController extends \BaseController {
             if (Auth::attempt(['email' => Input::get('email'), 'password' => Input::get('password')], true)) {
                 $authToken = AuthToken::create(Auth::user());
                 $publicToken = AuthToken::publicToken($authToken);
-                return ['status' => 'true', 'token' => $publicToken];
+                return ['status' => 'true', 'token' => $publicToken, 'url' => '/admin'];
             } else {
 
                 $user = User::where('email', '=', $email)->first();
