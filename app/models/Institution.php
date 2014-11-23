@@ -20,4 +20,7 @@ class Institution extends Eloquent {
     public function city(){
         return $this->belongsTo('City');
     }
+    public function users(){
+        return $this->belongsToMany('User','follows','user_id','institution_id');
+    }
 }

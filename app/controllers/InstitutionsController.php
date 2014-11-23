@@ -11,9 +11,9 @@ class InstitutionsController extends BaseController {
 
 	public function __construct(Institution $institution)
 	{
-        $this->beforeFilter('auth',["except"=>["institutionByDonation"]]);
-        $this->beforeFilter('bothRoles',["except"=>["institutionByDonation"]]);
-        $this->beforeFilter('auth.token',["only"=>["institutionByDonation"]]);
+        $this->beforeFilter('auth',["except"=>["institutionByDonation","listInstitutions"]]);
+        $this->beforeFilter('bothRoles',["except"=>["institutionByDonation","listInstitutions"]]);
+        $this->beforeFilter('auth.token',["only"=>["institutionByDonation","listInstitutions"]]);
 		$this->institution = $institution;
 	}
 
@@ -24,9 +24,16 @@ class InstitutionsController extends BaseController {
 	 */
 	public function index()
 	{
-		$institutions = $this->institution->all();
+
         $user=Auth::user();
-		return View::make('institutions.index', ['institutions'=>$institutions,'user'=>$user]);
+        if ($user->hasRole('SuperAdmin')) {
+                $institutions=Institution::all();
+                return View::make('institutions.index', ['institutions'=>$institutions,'user'=>$user]);
+        }
+        if($user->hasRole('Admin')){
+            $institutions=$user->institutions;
+            return View::make('institutions.index', ['institutions'=>$institutions,'user'=>$user]);
+        }
 	}
 
 	/**
@@ -133,5 +140,10 @@ class InstitutionsController extends BaseController {
     public function institutionByDonation($id){
         return Institution::where('id','=',$id)->with('city')->first();
     }
-
+    public function getUsers($id){
+        return Institution::find($id)->first()->users;
+    }
+    public function listInstitutions(){
+        return Institution::all();
+    }
 }

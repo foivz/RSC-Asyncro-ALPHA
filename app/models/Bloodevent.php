@@ -11,6 +11,6 @@ class Bloodevent extends Eloquent {
 		'institution_id' => 'required'
 	);
     public function donations(){
-        return $this->hasMany('Donations');
+        return $this->hasMany('Donations','bloodevents_id');
     }
 }

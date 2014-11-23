@@ -9,6 +9,12 @@
                             <a class="navbar-brand" href="index.html">
                                 <img src="/assets/img/eco/logo.png" alt="" class="logo">
                             </a>
+                            <div id="google_translate_element"></div><script type="text/javascript">
+                            function googleTranslateElementInit() {
+                              new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'de,en,es,fr,pt,ru', autoDisplay: false}, 'google_translate_element');
+                            }
+                            </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
                         </div>
 
                         <!-- Collect the nav links, forms, and other content for toggling -->

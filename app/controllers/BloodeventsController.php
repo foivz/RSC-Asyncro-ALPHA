@@ -11,7 +11,10 @@ class BloodeventsController extends BaseController {
 
 	public function __construct(Bloodevent $bloodevent)
 	{
-		$this->bloodevent = $bloodevent;
+        
+		$this->beforeFilter('auth.token',["only"=>"eventByDonation"]);
+        $this->bloodevent = $bloodevent;
+
 	}
 
 	/**
@@ -127,5 +130,7 @@ class BloodeventsController extends BaseController {
 
 		return Redirect::route('bloodevents.index');
 	}
-
+    public function eventByDonation($donationId){
+        return Donation::with('events')->find($donationId)->events;
+    }
 }
