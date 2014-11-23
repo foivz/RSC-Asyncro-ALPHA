@@ -41,7 +41,10 @@
     <string name="lbl_mills">Mililitros:</string>
 
 
-
+    <string name="lbl_my_profile">My profile</string>
+    <string name="lbl_my_donations">My donations</string>
+    <string name="lbl_where_can_donate">Where can I donate?</string>
+    <string name="lbl_share">Share</string>
 
 
 </resources>

@@ -25,4 +25,22 @@
     <string name="lbl_logout">Odjava</string>
     <string name="lbl_save">Spremi</string>
     <string name="lbl_splash">Dijeli,Voli,Doniraj</string>
+
+    <string name="lbl_cancel">Cancel</string>
+    <string name="lbl_edit">Edit</string>
+    <string name="lbl_ok">OK</string>
+    <string name="lbl_err_msg_network">There seems to be a problem with your network</string>
+    <string name="lbl_error_error">Error</string>
+    <string name="lbl_submit_2">Submit</string>
+    <string name="lbl_change_pass">CHANGE YOUR PASSWORD</string>
+    <string name="lbl_notice">The password for your account will be sent to this email:</string>
+    <string name="lbl_pass_reset_confirm">The password has been sent to your e-mail address</string>
+    <string name="lbl_tajtl">Password reset confirmation</string>
+    <string name="lbl_donated">Donated:</string>
+    <string name="lbl_mills">Milliliters:</string>
+    <string name="lbl_my_profile">My profile</string>
+    <string name="lbl_my_donations">My donations</string>
+    <string name="lbl_where_can_donate">Where can I donate?</string>
+    <string name="lbl_share">Share</string>
+
 </resources>
