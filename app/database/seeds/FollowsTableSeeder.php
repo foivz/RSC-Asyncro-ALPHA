@@ -10,7 +10,7 @@ class FollowsTableSeeder extends Seeder {
         foreach(range(1, 10) as $index)
         {
             Follow::create([
-                'user_id'=>$faker->numberBetween(1,10),
+                'user_id'=>$faker->numberBetween(1,12),
                 'institution_id'=>$faker->numberBetween(1,10)
             ]);
         }

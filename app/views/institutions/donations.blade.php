@@ -25,7 +25,7 @@
 					<td>{{{ $donation->note }}}</td
 					<td>{{{$donation->bloodgroups_id}}}</td>
                     <td>
-                        {{ link_to_route('eventDonationsEdit', 'Edit', [$ins,$donation->id], array('class' => 'btn btn-info')) }}
+                        {{ link_to_route('eventDonationsEdit', 'Edit', [$ins,$donation->id], array('class' => 'btn btn-info', 'style' => 'margin-top:0;')) }}
                     </td>
 				</tr>
 			@endforeach

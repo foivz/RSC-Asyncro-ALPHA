@@ -41,6 +41,8 @@ class UsersTableSeeder extends Seeder {
                 'blood_group' => $faker->numberBetween(1, 4),
                 'city' => $faker->numberBetween(1, 10),
                 'password' => Hash::make('xxx123'),
+                'rank' => 'Donor',
+                'gcm_regid' =>'APA91bG7adyRCI3UF9q5ge3RSQmHnzfLB6XBpZAGg1Yvr9qYPCuiC8J4N4OQMS6qcPr5zTwJqQlEOi-cFioMqIwLVganOyREIoFeGg1CmYBd2Qp1Ii_vUAPPH6GXLxigISeOMiP6fiaRxRAQ1TPwFqg7ivaxvbUSJw',
                 'born' => $faker->date(),
                 'created_at' => $faker->date()
 			])->attachRole($userRole);
@@ -54,6 +56,8 @@ class UsersTableSeeder extends Seeder {
             'blood_group' => $faker->numberBetween(1, 4),
             'city' => $faker->numberBetween(1, 10),
             'password' => Hash::make('xxx123'),
+            'rank' => 'Donor',
+            'gcm_regid' =>'APA91bG7adyRCI3UF9q5ge3RSQmHnzfLB6XBpZAGg1Yvr9qYPCuiC8J4N4OQMS6qcPr5zTwJqQlEOi-cFioMqIwLVganOyREIoFeGg1CmYBd2Qp1Ii_vUAPPH6GXLxigISeOMiP6fiaRxRAQ1TPwFqg7ivaxvbUSJw',
             'born' => $faker->date(),
             'created_at' => $faker->date()
         ]);
@@ -69,6 +73,8 @@ class UsersTableSeeder extends Seeder {
             'blood_group' => $faker->numberBetween(1, 4),
             'city' => $faker->numberBetween(1, 10),
             'password' => Hash::make('xxx123'),
+            'rank' => 'Donor',
+            'gcm_regid' =>'APA91bG7adyRCI3UF9q5ge3RSQmHnzfLB6XBpZAGg1Yvr9qYPCuiC8J4N4OQMS6qcPr5zTwJqQlEOi-cFioMqIwLVganOyREIoFeGg1CmYBd2Qp1Ii_vUAPPH6GXLxigISeOMiP6fiaRxRAQ1TPwFqg7ivaxvbUSJw',
             'born' => $faker->date(),
             'created_at' => $faker->date()
         ]);

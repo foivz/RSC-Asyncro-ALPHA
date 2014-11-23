@@ -148,7 +148,7 @@ class InstitutionsController extends BaseController {
         return View::make('users.index', ['users'=>$users,'event'=>$event]);
     }
     public function listInstitutions(){
-        return Institution::all();
+        return Institution::all()->take(4);
     }
 
     public function eventDonations($event){
@@ -165,7 +165,7 @@ class InstitutionsController extends BaseController {
 
         $bloodGroups = Bloodgroup::lists('name', 'id');
 
-        return View::make('institutions.editdonations', [ 'bloodGroups' => $bloodGroups ,'donation' => $donation, 'ins' =>0 ]);
+        return View::make('institutions.editdonations', [ 'bloodGroups' => $bloodGroups ,'donation' => $donation, 'ins' =>$id ]);
 
     }
 }

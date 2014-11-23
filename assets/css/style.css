@@ -31,6 +31,10 @@ body#login{
     margin-bottom: 10px !important;
 }
 
+form{
+    margin-top: 100px;
+}
+
 input[type="text"] {
     margin-bottom: -1px;
     border-bottom-left-radius: 0;
@@ -39,7 +43,9 @@ input[type="text"] {
 .goog-logo-link {
     display:none !important;
 }
-
+.row{
+    margin-top: 100px;
+}
 .goog-te-gadget {
     color: transparent !important;
 }
@@ -50,7 +56,6 @@ input[type="password"] {
 }
 .btn{
     border-radius: none !important;
-    background: #c72222 !important;
     border:none;
     margin-top:25px;
 }

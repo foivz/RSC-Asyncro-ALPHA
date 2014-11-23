@@ -2,6 +2,8 @@
 
     <head>
           <link rel="stylesheet" href="/assets/css/bootstrap.css">
+          <title>Sanguio</title>
+          <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon" />
                  <link rel="stylesheet" href="/assets/css/animate.css">
                  <link rel="stylesheet" href="/assets/css/style.css">
            <meta name="google-translate-customization" content="89d5308248a4c0c6-9ecd1297e13e1f29-g7ff0e872a6eff02e-d"></meta>
@@ -18,6 +20,9 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
+            @if($user->hasRole('SuperAdmin'))
+            <li><a href="/users">Users</a></li>
+            @endif
             <li><a href="/institutions">Institutions</a></li>
             <li><a href="/bloodevents">Events</a></li>
             <li>
@@ -30,7 +35,7 @@
                 </div></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="/logout">Logout</a></li>
+            <li><a href="/account/logout">Logout</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
