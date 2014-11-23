@@ -18,7 +18,9 @@
 .goog-logo-link {
     display:none !important;
 }
-
+.google_translate_element{
+    display:inline;
+}
 .goog-te-gadget {
     color: transparent !important;
 }
@@ -694,21 +696,21 @@ form textarea.form-control {
   }
 }
 header {
-  background: #cc6698;
+  background: #66cc99;
   /* Old browsers */
-  background: -moz-linear-gradient(-45deg, #cc6698 0%, #6b396c 100%);
+  background: -moz-linear-gradient(-45deg, #66cc99 0%, #339999 100%);
   /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #cc6698), color-stop(100%, #6b396c));
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #66cc99), color-stop(100%, #339999));
   /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(-45deg, #cc6698 0%, #6b396c 100%);
+  background: -webkit-linear-gradient(-45deg, #66cc99 0%, #339999 100%);
   /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(-45deg, #cc6698 0%, #6b396c 100%);
+  background: -o-linear-gradient(-45deg, #66cc99 0%, #339999 100%);
   /* Opera 11.10+ */
-  background: -ms-linear-gradient(-45deg, #cc6698 0%, #6b396c 100%);
+  background: -ms-linear-gradient(-45deg, #66cc99 0%, #339999 100%);
   /* IE10+ */
-  background: linear-gradient(-45deg, #cc6698 0%, #6b396c 100%);
+  background: linear-gradient(-45deg, #66cc99 0%, #339999 100%);
   /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#cc6698, endColorstr=#6b396c, GradientType=1);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#66cc99, endColorstr=#339999, GradientType=1);
   /* IE6-9 fallback on horizontal gradient */
 }
 header .navbar-default ul.navbar-nav li a {
@@ -716,7 +718,7 @@ header .navbar-default ul.navbar-nav li a {
   background: none;
 }
 header .navbar-default ul.navbar-nav li a.getApp {
-  color: #824583;
+  color: #3cb4b4;
   background: #ffffff;
   /* Old browsers */
   background: -moz-linear-gradient(180deg, #ffffff 0%, #e0e0e0 100%);
@@ -735,7 +737,7 @@ header .navbar-default ul.navbar-nav li a.getApp {
   /* IE6-9 fallback on horizontal gradient */
 }
 header .navbar-default ul.navbar-nav li a.getApp:hover {
-  color: #8c4b8d;
+  color: #40bfbf;
   background: #ffffff;
   /* Old browsers */
   background: -moz-linear-gradient(180deg, #ffffff 0%, #cccccc 100%);
@@ -767,60 +769,60 @@ header .navbar-default ul.navbar-nav li a:hover {
   transition: all 0.25s ease-in-out;
 }
 header .navbar-default.scrolled {
-  border-bottom: 3px solid #6b396c;
+  border-bottom: 3px solid #339999;
 }
 header .navbar-default.scrolled ul.navbar-nav li a {
-  color: #6b396c;
+  color: #339999;
 }
 header .navbar-default.scrolled ul.navbar-nav li a:hover {
-  color: #6b396c;
+  color: #339999;
 }
 header .navbar-default.scrolled ul.navbar-nav li a:hover:after {
-  background: #6b396c;
+  background: #339999;
 }
 header .navbar-default.scrolled .navbar-brand {
-  background: #6b396c;
+  background: #339999;
 }
 section .section-heading .divider:after {
-  background: #cc6698;
+  background: #66cc99;
 }
 section#about .about-item i.fa {
-  border: 2px solid #cc6698;
-  color: #cc6698;
+  border: 2px solid #66cc99;
+  color: #66cc99;
 }
 section#about .about-item:hover i.fa {
   color: #ffffff;
-  background: #cc6698;
+  background: #66cc99;
 }
 section#about .about-item:hover h3 {
-  color: #cc6698;
+  color: #66cc99;
 }
 section#features {
   background: #f6f6f6;
 }
 section#features header h1:after {
-  background: #cc6698;
+  background: #66cc99;
 }
 section#features .media i.fa {
-  border: 2px solid #cc6698;
-  color: #cc6698;
+  border: 2px solid #66cc99;
+  color: #66cc99;
 }
 section#features .media:hover i.fa {
   color: #ffffff;
-  background: #cc6698;
+  background: #66cc99;
 }
 section#features .media:hover h3 {
-  color: #cc6698;
+  color: #66cc99;
 }
 section#features .media.active i.fa {
   color: #ffffff;
-  background: #cc6698;
+  background: #66cc99;
 }
 section#features .media.active .media-heading {
-  color: #cc6698;
+  color: #66cc99;
 }
 section#reviews {
-  background: url("../img/berry/bk-berry.jpg");
+  background: url("../img/eco/bk-eco.jpg");
 }
 section#reviews header {
   color: #ffffff;
@@ -835,10 +837,10 @@ section#reviews .review-filtering .review .review-comment {
   background: #ffffff;
 }
 section#reviews .review-filtering .review .review-comment h3 {
-  color: #cc6698;
+  color: #66cc99;
 }
 section#reviews .review-filtering .review .review-comment p span i {
-  color: #cc6698;
+  color: #66cc99;
 }
 section#reviews .review-filtering .review .review-comment:after {
   border-right-color: #ffffff;
@@ -848,10 +850,10 @@ section#reviews .review-filtering .slick-dots li button {
   border: 2px solid #ffffff;
 }
 section#reviews .review-filtering .slick-dots li.slick-active button {
-  background: #cc6698;
+  background: #66cc99;
 }
 section#screens header h1:after {
-  background: #cc6698;
+  background: #66cc99;
 }
 section#screens .slider div img {
   border: 2px solid #e5e5e5;
@@ -863,7 +865,7 @@ section#screens .slider .slick-dots li button {
   background: #999999;
 }
 section#screens .slider .slick-dots li.slick-active button {
-  background: #cc6698;
+  background: #66cc99;
 }
 section#screens .filter a {
   border: 2px solid #cccccc;
@@ -871,24 +873,24 @@ section#screens .filter a {
 }
 section#screens .filter a:hover {
   color: #ffffff;
-  background: #cc6698;
-  border-color: #cc6698;
+  background: #66cc99;
+  border-color: #66cc99;
 }
 section#screens .filter a.active {
   color: #ffffff;
-  background: #cc6698;
-  border-color: #cc6698;
+  background: #66cc99;
+  border-color: #66cc99;
 }
 /* demo video Section */
 section#demo {
   background: #f6f6f6;
 }
 section#demo header h1:after {
-  background: #cc6698;
+  background: #66cc99;
 }
 /* Get app Section */
 section#getApp {
-  background: url("../img/berry/bk-berry-ga.jpg");
+  background: url("../img/eco/bk-eco-ga.jpg");
 }
 section#getApp header {
   color: #ffffff;
@@ -911,43 +913,43 @@ section#getApp .platforms .media:hover {
 }
 section#getApp .platforms .media:hover a i,
 section#getApp .platforms .media:hover a div.media-body {
-  color: #cc6698;
+  color: #66cc99;
 }
 /* support section */
 section#support header h1:after {
-  background: #cc6698;
+  background: #66cc99;
 }
 section#support .media i.fa {
-  border: 2px solid #cc6698;
-  color: #cc6698;
+  border: 2px solid #66cc99;
+  color: #66cc99;
 }
 section#support .media a {
-  color: #cc6698;
+  color: #66cc99;
 }
 section#support .media:hover i.fa {
   color: #ffffff;
-  background: #cc6698;
+  background: #66cc99;
 }
 section#support .media:hover h3 {
-  color: #cc6698;
+  color: #66cc99;
 }
 /* footer section */
 footer {
-  background: #cc6698;
+  background: #66cc99;
   /* Old browsers */
-  background: -moz-linear-gradient(-45deg, #cc6698 0%, #6b396c 100%);
+  background: -moz-linear-gradient(-45deg, #66cc99 0%, #339999 100%);
   /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #cc6698), color-stop(100%, #6b396c));
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #66cc99), color-stop(100%, #339999));
   /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(-45deg, #cc6698 0%, #6b396c 100%);
+  background: -webkit-linear-gradient(-45deg, #66cc99 0%, #339999 100%);
   /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(-45deg, #cc6698 0%, #6b396c 100%);
+  background: -o-linear-gradient(-45deg, #66cc99 0%, #339999 100%);
   /* Opera 11.10+ */
-  background: -ms-linear-gradient(-45deg, #cc6698 0%, #6b396c 100%);
+  background: -ms-linear-gradient(-45deg, #66cc99 0%, #339999 100%);
   /* IE10+ */
-  background: linear-gradient(-45deg, #cc6698 0%, #6b396c 100%);
+  background: linear-gradient(-45deg, #66cc99 0%, #339999 100%);
   /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#cc6698, endColorstr=#6b396c, GradientType=1);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#66cc99, endColorstr=#339999, GradientType=1);
   /* IE6-9 fallback on horizontal gradient */
 }
 footer .social a {
@@ -960,7 +962,7 @@ footer .social a:hover {
   background: #ffffff;
 }
 footer .social a:hover i {
-  color: #cc6698;
+  color: #66cc99;
 }
 footer .rights {
   color: #ffffff;
@@ -975,13 +977,13 @@ footer .rights a {
   border: 1px solid rgba(0, 0, 0, 0);
 }
 .btn.btn-primary {
-  color: #cc6698;
-  border-color: #cc6698;
+  color: #66cc99;
+  border-color: #66cc99;
 }
 .btn.btn-primary:hover {
   color: #ffffff;
-  background: #cc6698;
-  border-color: #cc6698;
+  background: #66cc99;
+  border-color: #66cc99;
 }
 .btn.btn-primary.inverse {
   color: #ffffff;
@@ -989,8 +991,8 @@ footer .rights a {
 }
 .btn.btn-primary.inverse:hover {
   color: #ffffff;
-  background: #cc6698;
-  border-color: #cc6698;
+  background: #66cc99;
+  border-color: #66cc99;
 }
 .btn.btn-default {
   background: #ffffff;
@@ -1009,13 +1011,13 @@ footer .rights a {
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff, endColorstr=#cccccc, GradientType=1);
   /* IE6-9 fallback on horizontal gradient */
-  color: #6b396c;
+  color: #339999;
 }
 .btn.btn-default:hover {
-  color: #6b396c;
+  color: #339999;
 }
 form .form-control:focus {
-  border-color: #cc6698;
+  border-color: #66cc99;
   color: #999999;
 }
 @media screen and (max-width: 640px) {
@@ -1025,7 +1027,7 @@ form .form-control:focus {
   }
   header .navbar-default ul.navbar-nav li a {
     color: #ffffff;
-    border-bottom: 1px solid #753e76;
+    border-bottom: 1px solid #37a4a4;
   }
   header .navbar-default ul.navbar-nav li a.getApp {
     color: #ffffff;
@@ -1034,21 +1036,22 @@ form .form-control:focus {
     display: none;
   }
   header .navbar-default ul.navbar-nav li a:hover {
-    color: #cc6698;
+    color: #66cc99;
   }
   header .navbar-default .navbar-collapse {
-    background: #6b396c;
+    background: #339999;
   }
   header .navbar-default.scrolled {
-    background: #6b396c;
+    background: #339999;
   }
   header .navbar-default.scrolled ul.navbar-nav li a {
     color: #ffffff;
   }
   header .navbar-default.scrolled ul.navbar-nav li a:hover {
-    color: #cc6698;
+    color: #66cc99;
   }
 }
+
 
 .pre-loader {
   position: fixed;
@@ -1110,5 +1113,5 @@ form .form-control:focus {
   }
 }
 .pre-loader {
-  background: #6b396c;
+  background: #339999;
 }

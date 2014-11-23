@@ -28,7 +28,7 @@
                                             <i class="fa fa-map-marker fa-2x"></i>
                                         </a>
                                         <div class="media-body">
-                                            <h4 class="media-heading">4, Some street, California, USA</h4>
+                                            <h4 class="media-heading">Varaždin, FOI</h4>
                                         </div>
                                     </div>
                                     <div class="media">
@@ -37,18 +37,11 @@
                                         </a>
                                         <div class="media-body">
                                             <h4 class="media-heading">
-                                                <a href="mailto:support@oleose.com">support@oleose.com</a>
+                                                <a href="asyncro-alpha@foi.hr">asyncro-alpha@foi.hr</a>
                                             </h4>
                                         </div>
                                     </div>
-                                    <div class="media">
-                                        <a class="pull-left" href="#" >
-                                            <i class="fa fa-phone fa-2x"></i>
-                                        </a>
-                                        <div class="media-body">
-                                            <h4 class="media-heading">+1 234 567890</h4>
-                                        </div>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>

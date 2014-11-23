@@ -7,11 +7,8 @@
              @include('partials.slider')
         </header>
         <div class="wrapper">
-            @include('partials.about')
             @include('partials.features')
             @include('partials.screens')
-            @include('partials.demo')
-            @include('partials.getapp')
             @include('partials.support')
             @include('partials.footer')
         </div>

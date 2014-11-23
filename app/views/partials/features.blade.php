@@ -13,7 +13,7 @@
                                 </a>
                                 <div class="media-body">
                                     <h3 class="media-heading">User Settings</h3>
-                                    Lorem ipsum dolor sit amet.
+                                    User can manage and edit settings.
                                 </div>
                             </div>
                             <div class="media media-left feature">
@@ -21,35 +21,19 @@
                                     <i class="fa fa-envelope fa-2x"></i>
                                 </a>
                                 <div class="media-body">
-                                    <h3 class="media-heading">Messages Inbox</h3>
-                                    Lorem ipsum dolor sit amet.
+                                    <h3 class="media-heading">Push Notifications</h3>
+                                    Receive push notifications on your device
                                 </div>
                             </div>
-                            <div class="media media-left feature">
-                                <a class="pull-right" href="#">
-                                    <i class="fa fa-users fa-2x"></i>
-                                </a>
-                                <div class="media-body">
-                                    <h3 class="media-heading">Friends List</h3>
-                                    Lorem ipsum dolor sit amet.
-                                </div>
-                            </div>
-                            <div class="media media-left feature">
-                                <a class="pull-right" href="#">
-                                    <i class="fa fa-comments fa-2x"></i>
-                                </a>
-                                <div class="media-body">
-                                    <h3 class="media-heading">Live Chat Messages</h3>
-                                    Lorem ipsum dolor sit amet.
-                                </div>
-                            </div>
+
+
                             <div class="media media-left feature">
                                 <a class="pull-right" href="#">
                                     <i class="fa fa-calendar fa-2x"></i>
                                 </a>
                                 <div class="media-body">
-                                    <h3 class="media-heading">Calendar / Planner</h3>
-                                    Lorem ipsum dolor sit amet.
+                                    <h3 class="media-heading">Personal donor card</h3>
+                                    Your app as your own donor card
                                 </div>
                             </div>
                         </div>
@@ -59,20 +43,11 @@
                         <div class="col-md-4 col-sm-4 scrollpoint sp-effect2">
                             <div class="media feature">
                                 <a class="pull-left" href="#">
-                                    <i class="fa fa-map-marker fa-2x"></i>
-                                </a>
-                                <div class="media-body">
-                                    <h3 class="media-heading">My Places</h3>
-                                    Lorem ipsum dolor sit amet.
-                                </div>
-                            </div>
-                            <div class="media feature">
-                                <a class="pull-left" href="#">
                                     <i class="fa fa-film fa-2x"></i>
                                 </a>
                                 <div class="media-body">
-                                    <h3 class="media-heading">Media Player™</h3>
-                                    Lorem ipsum dolor sit amet.
+                                    <h3 class="media-heading">Modern way to be a hero</h3>
+                                    See your rank, statistics, etc.
                                 </div>
                             </div>
                             <div class="media feature">
@@ -80,17 +55,8 @@
                                     <i class="fa fa-compass fa-2x"></i>
                                 </a>
                                 <div class="media-body">
-                                    <h3 class="media-heading">Intuitive Statistics</h3>
-                                    Lorem ipsum dolor sit amet.
-                                </div>
-                            </div>
-                            <div class="media feature">
-                                <a class="pull-left" href="#">
-                                    <i class="fa fa-picture-o fa-2x"></i>
-                                </a>
-                                <div class="media-body">
-                                    <h3 class="media-heading">Weather on-the-go</h3>
-                                    Lorem ipsum dolor sit amet.
+                                    <h3 class="media-heading">Find the info that you need</h3>
+                                    All the information that every donor needs
                                 </div>
                             </div>
                             <div class="media active feature">
@@ -99,7 +65,7 @@
                                 </a>
                                 <div class="media-body">
                                     <h3 class="media-heading">And much more!</h3>
-                                    Lorem ipsum dolor sit amet.
+                                    Yes, yes...much more
                                 </div>
                             </div>
                         </div>
