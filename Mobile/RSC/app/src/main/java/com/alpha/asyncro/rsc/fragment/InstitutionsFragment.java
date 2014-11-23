@@ -38,16 +38,13 @@ public class InstitutionsFragment extends LabeledFragment implements OnDataMulti
 
     @Override
     public void main() {
-        if (institutions == null) {
-            activity = (MainActivity) getActivity();
-            institutionsAdapter = new LightRecyclerViewAdapter(getLightActivity(), R.layout.item_institution);
-            twoWayView.setAdapter(institutionsAdapter);
-            institutionController = new InstitutionController();
-            institutionController.setOnDataMultipleResponseListener(this);
-            User stored = Preferences.loadUser(getLightActivity());
-            institutionController.getInstitutions(stored.getToken());
-        } else
-            display(institutions);
+        activity = (MainActivity) getActivity();
+        institutionsAdapter = new LightRecyclerViewAdapter(getLightActivity(), R.layout.item_institution);
+        twoWayView.setAdapter(institutionsAdapter);
+        institutionController = new InstitutionController();
+        institutionController.setOnDataMultipleResponseListener(this);
+        User stored = Preferences.loadUser(getLightActivity());
+        institutionController.getInstitutions(stored.getToken());
     }
 
 
