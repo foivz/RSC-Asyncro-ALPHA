@@ -18,9 +18,9 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-
+            @if($user->hasRole('SuperAdmin'))
             <li><a href="/users">Users</a></li>
-
+            @endif
             <li><a href="/institutions">Institutions</a></li>
             <li><a href="/bloodevents">Events</a></li>
             <li>

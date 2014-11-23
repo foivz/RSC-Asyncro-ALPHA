@@ -57,7 +57,7 @@ class AccountApiController extends \BaseController {
                 return ['status' => 'true', 'token' => $publicToken, 'url' => '/admin'];
             } else {
 
-                $user = User::where('email', '=', $email)->first();
+                $user = User::where('email', '=', Input::get('email'))->first();
 
                 if ($user) {
                     $user->counter = $user->counter + 1;
