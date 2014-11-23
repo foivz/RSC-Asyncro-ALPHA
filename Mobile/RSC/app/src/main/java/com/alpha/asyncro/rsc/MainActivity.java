@@ -73,6 +73,8 @@ public class MainActivity extends LightTabbedActivity implements OnDataMultipleR
         tabs.setTextSize(50);
         tabs.setTextColor(getResources().getColor(R.color.white));
         tabs.setTypeface(LightFont.getTypeface(getBaseContext(), LightFont.DEFAULT_FONT), Typeface.NORMAL);
+        tabs.setIndicatorColorResource(R.color.secondary);
+        tabs.setIndicatorHeight(10);
         return tabs;
     }
 
@@ -131,6 +133,7 @@ public class MainActivity extends LightTabbedActivity implements OnDataMultipleR
             case R.id.action_settings:
                 Intent intentSettings = new Intent(getBaseContext(), SettingsActivity.class);
                 startActivity(intentSettings);
+                InstitutionsFragment.setInstitutions(null);
                 this.finish();
         }
         return super.onOptionsItemSelected(item);

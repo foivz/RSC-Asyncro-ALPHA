@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Sanguio</string>
+    <string name="hello_world">¡Hola Mundo!</string>
+    <string name="action_settings">Configuración</string>
+
+    <string name="lbl_login">Entrar</string>
+    <string name="lbl_register">Registro</string>
+    <string name="lbl_email">E-mail</string>
+    <string name="lbl_password">Contraseña </string>
+    <string name="lbl_password_confirm">Contraseña confirmar</string>
+    <string name="lbl_blood_type">Su tipo de sangre:  </string>
+    <string name="lbl_first_name">Nombre</string>
+    <string name="lbl_last_name">Apellido </string>
+    <string name="lbl_pass_forgot">Olvidé mi contraseña </string>
+    <string name="lbl_login_twitter"> Entrar con Twitter </string>
+    <string name="lbl_rank">Rango:</string>
+    <string name="lbl_points">Puntos:</string>
+    <string name="lbl_donations_year">Las donaciones en el año pasado</string>
+    <string name="lbl_your_donations">Sus donaciones: </string>
+    <string name="lbl_donor_card">TARJETA DE DONANTE SANGRIO</string>
+    <string name="lbl_points_2">Puntos:</string>
+    <string name="lbl_id">Id:</string>
+    <string name="lbl_logout">Editar</string>
+    <string name="lbl_save">Aceptar</string>
+    <string name="lbl_splash">Compartir, Amor, Donar </string>
+
+    <string name="lbl_language_type">Seleccionar idioma</string>
+    <string name="lbl_cancel">Cancelar</string>
+    <string name="lbl_edit">Editar</string>
+    <string name="lbl_ok">Aceptar</string>
+    <string name="lbl_err_msg_network">Parece que hay un problema con la web</string>
+    <string name="lbl_error_error">Error</string>
+    <string name="lbl_submit_2">Enviar</string>
+    <string name="lbl_change_pass">Cambie su contraseña </string>
+    <string name="lbl_notice">La contraseña de su cuenta será enviada a esta dirección de correo electrónico: </string>
+    <string name="lbl_pass_reset_confirm">La contraseña ha sido enviada a su dirección de correo electrónico</string>
+    <string name="lbl_tajtl">Confirmación de restablecimiento de contraseña </string>
+    <string name="lbl_donated">Donado :</string>
+    <string name="lbl_mills">Mililitros:</string>
+
+
+
+
+
+</resources>

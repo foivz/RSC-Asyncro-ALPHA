@@ -49,7 +49,7 @@ public class Preferences {
     }
 
     public static String loadLanguage(Context context) {
-        return loadPreferences(context).getString(KEY_LANGUAGE, null);
+        return loadPreferences(context).getString(KEY_LANGUAGE, "en");
     }
 
     public static boolean storeNotificationPref(Context context, boolean pref) {

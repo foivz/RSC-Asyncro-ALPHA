@@ -34,6 +34,7 @@ public class UserFragment extends LabeledFragment implements OnUserReadListener 
     @Override
     public void main() {
         activity = (MainActivity) getActivity();
+        activity.getActionBar().setTitle(activity.getResources().getString(R.string.lbl_my_profile));
         donationsAdapter = new LightAdapter(getLightActivity());
         listDonations.setAdapter(donationsAdapter);
         if (activity.getUser() != null)

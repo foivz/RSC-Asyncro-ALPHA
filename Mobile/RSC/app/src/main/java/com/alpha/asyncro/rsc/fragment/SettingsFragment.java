@@ -74,6 +74,9 @@ public class SettingsFragment extends LightFragment {
             case 1:
                 languageToLoad = "hr";
                 break;
+            case 2:
+                languageToLoad = "es";
+                break;
         }
     }
 

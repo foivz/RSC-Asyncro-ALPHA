@@ -35,7 +35,9 @@ public class DonationsFragment extends LabeledFragment implements OnUserReadList
     @Override
     public void onUserRead(User user) {
         Donation[] donations = user.getDonations();
-        for (Donation donation : donations)
-            donationsAdapter.addItem(new DonationPresenter(donation));
+        if (donations != null) {
+            for (Donation donation : donations)
+                donationsAdapter.addItem(new DonationPresenter(donation));
+        }
     }
 }

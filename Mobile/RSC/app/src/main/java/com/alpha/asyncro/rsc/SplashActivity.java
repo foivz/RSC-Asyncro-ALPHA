@@ -1,8 +1,7 @@
 package com.alpha.asyncro.rsc;
 
 import android.content.Intent;
-import android.graphics.Typeface;
-import android.widget.TextView;
+import android.content.res.Configuration;
 
 import com.alpha.asyncro.rsc.data.controller.UserController;
 import com.alpha.asyncro.rsc.data.model.User;
@@ -10,7 +9,8 @@ import com.alpha.asyncro.rsc.util.Preferences;
 import com.lightandroid.data.api.listener.OnDataResponseListener;
 import com.lightandroid.navigation.activity.LightSplashActivity;
 import com.lightandroid.type.LightData;
-import com.lightandroid.util.LightFont;
+
+import java.util.Locale;
 
 import retrofit.client.Response;
 
@@ -18,6 +18,7 @@ import retrofit.client.Response;
 public class SplashActivity extends LightSplashActivity implements OnDataResponseListener {
 
     private UserController userController;
+    private Locale locale;
 
     @Override
     public int provideLayoutRes() {
@@ -31,7 +32,7 @@ public class SplashActivity extends LightSplashActivity implements OnDataRespons
 
     @Override
     public Class getNextClassActivity() {
-
+        changeLang(Preferences.loadLanguage(getBaseContext()));
         userController = new UserController(this);
         if (userController.isUserLoggedIn()) {
             userController.setOnDataResponseListener(this);
@@ -52,5 +53,17 @@ public class SplashActivity extends LightSplashActivity implements OnDataRespons
         } else
             startActivity(new Intent(this, LoginActivity.class));
         finish();
+    }
+
+    public void changeLang(String lang) {
+        Configuration config = getResources().getConfiguration();
+        if (!"".equals(lang) && !config.locale.getLanguage().equals(lang)) {
+            Preferences.storeLanguage(lang, this);
+            locale = new Locale(lang);
+            Locale.setDefault(locale);
+            Configuration conf = new Configuration(config);
+            conf.locale = locale;
+            this.getResources().updateConfiguration(conf, this.getResources().getDisplayMetrics());
+        }
     }
 }

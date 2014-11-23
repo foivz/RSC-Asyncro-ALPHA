@@ -11,6 +11,7 @@
     <string-array name="arr_language">
         <item>English</item>
         <item>Hrvatski</item>
+        <item>Espana</item>
     </string-array>
 
     <string name="key_twitter_consumer">Qwug8inWnmUr5QpxQhbSR64FO</string>

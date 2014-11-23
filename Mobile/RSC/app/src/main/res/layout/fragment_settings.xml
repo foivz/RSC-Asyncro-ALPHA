@@ -56,12 +56,12 @@
             android:layout_height="wrap_content" />
     </TableRow>
 
-    <com.gc.materialdesign.views.ButtonRectangle
-        android:layout_width="match_parent"
+    <com.gc.materialdesign.views.ButtonFlat
+        android:layout_width="wrap_content"
         android:id="@+id/btnSave"
         android:layout_alignParentBottom="true"
         android:text="@string/lbl_save"
-        app:rippleSpeed="1000"
+        app:rippleSpeed="100"
         android:layout_height="wrap_content" />
 
 </RelativeLayout>

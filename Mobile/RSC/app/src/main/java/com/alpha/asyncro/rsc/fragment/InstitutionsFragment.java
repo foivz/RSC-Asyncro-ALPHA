@@ -46,7 +46,8 @@ public class InstitutionsFragment extends LabeledFragment implements OnDataMulti
             institutionController.setOnDataMultipleResponseListener(this);
             User stored = Preferences.loadUser(getLightActivity());
             institutionController.getInstitutions(stored.getToken());
-        }
+        } else
+            display(institutions);
     }
 
 
@@ -57,7 +58,7 @@ public class InstitutionsFragment extends LabeledFragment implements OnDataMulti
     }
 
     private void display(Institution[] institutions) {
-        if (institutions != null)
+        if (institutions != null && institutionsAdapter != null)
             for (Institution institution : institutions)
                 institutionsAdapter.addItem(new InstitutionPresenter(institution));
     }
@@ -65,5 +66,9 @@ public class InstitutionsFragment extends LabeledFragment implements OnDataMulti
     @Override
     public void onUserRead(User user) {
 
+    }
+
+    public static void setInstitutions(Institution[] institutions) {
+        InstitutionsFragment.institutions = institutions;
     }
 }
