@@ -1,5 +1,8 @@
 package com.alpha.asyncro.rsc.fragment;
 
+import android.view.View;
+import android.widget.TextView;
+
 import com.alpha.asyncro.rsc.R;
 import com.alpha.asyncro.rsc.data.model.Donation;
 import com.alpha.asyncro.rsc.data.model.User;
@@ -18,12 +21,16 @@ public class DonationsFragment extends LabeledFragment implements OnUserReadList
 
     @InjectView(R.id.twoWay)
     TwoWayView twoWayView;
+    @InjectView(R.id.txtEmpty)
+    TextView txtEmpty;
+    @InjectView(R.id.lblEmpty)
+    TextView lblEmpty;
 
     private LightRecyclerViewAdapter donationsAdapter;
 
     @Override
     public int provideLayoutRes() {
-        return R.layout.layout_twoway;
+        return R.layout.item_donations;
     }
 
     @Override
@@ -35,7 +42,9 @@ public class DonationsFragment extends LabeledFragment implements OnUserReadList
     @Override
     public void onUserRead(User user) {
         Donation[] donations = user.getDonations();
-        if (donations != null) {
+        if (donations != null && donations.length > 0) {
+            txtEmpty.setVisibility(View.GONE);
+            lblEmpty.setVisibility(View.GONE);
             for (Donation donation : donations)
                 donationsAdapter.addItem(new DonationPresenter(donation));
         }

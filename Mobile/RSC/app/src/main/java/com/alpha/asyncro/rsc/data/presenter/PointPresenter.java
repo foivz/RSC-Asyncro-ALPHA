@@ -51,9 +51,9 @@ public class PointPresenter implements LightAdapterItem {
         String heart = context.getResources().getString(R.string.ic_heart);
         String drop = context.getResources().getString(R.string.ic_drop);
         for (int i = 0; i < numHearts; i++)
-            hearts += heart;
+            hearts += heart + " ";
         for (int i = 0; i < numDrops; i++)
-            drops += drop;
+            drops += drop + " ";
         return hearts + drops;
     }
 }
