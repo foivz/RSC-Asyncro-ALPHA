@@ -24,6 +24,7 @@ Route::get('/account/twitter/callback', [ 'as' => 'twitterCallbackRoute', 'uses'
 
 /***************API******************/
 Route::post('/api/account/registration', ['as' => 'registerApiRoute', 'uses' => 'AccountApiController@register']);
+Route::post('/api/account/registration/twitter', ['as' => 'registerApiRouteTwitter', 'uses' => 'TwitterController@registerTwitter']);
 Route::post('/api/account/login', ['as' => 'loginApiRoute', 'uses' => 'AccountApiController@login']);
 Route::post('/api/account/forgot', ['as' => 'forgotApiRoute', 'uses' => 'AccountApiController@forgot']);
 Route::post('/api/account/reset', ['as' => 'resetApiRoute', 'uses' => 'AccountApiController@reset']);
@@ -63,6 +64,7 @@ Route::post('/donations/{ins}/store', [ 'as' => 'donations.store', 'uses' => 'Do
 Route::get('/donations/{ins}/destroy/{id}', [ 'as' => 'donations.destroy', 'uses' => 'DonationsController@destroy' ]);
 Route::get('/donations/{ins}/edit/{id}', [ 'as' => 'donations.edit', 'uses' => 'DonationsController@edit' ]);
 Route::patch('/donations/{ins}/update/{id}', [ 'as' => 'donations.update', 'uses' => 'DonationsController@update' ]);
+Route::get('/donations/{ins}/bloodgroup/{group}', [ 'as' => 'donations.bybloodgroup', 'uses' => 'DonationsController@byBloodGroup' ]);
 
 //Route::resource('donations', 'DonationsController');
 

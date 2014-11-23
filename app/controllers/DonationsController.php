@@ -61,6 +61,12 @@ class DonationsController extends BaseController {
 		{
 			$this->donation->create($input);
 
+            $institution = Institution::where('id','=', Input::get('institution'))->first();
+
+            $institution->blood_level += Input::get('quantity');
+
+            $institution->save();
+
 			return Redirect::route('donations.index', $ins);
 		}
 
@@ -158,6 +164,18 @@ class DonationsController extends BaseController {
           PushNotification::app('appNameAndroid')
             ->to('APA91bG7adyRCI3UF9q5ge3RSQmHnzfLB6XBpZAGg1Yvr9qYPCuiC8J4N4OQMS6qcPr5zTwJqQlEOi-cFioMqIwLVganOyREIoFeGg1CmYBd2Qp1Ii_vUAPPH6GXLxigISeOMiP6fiaRxRAQ1TPwFqg7ivaxvbUSJw')
             ->send($message);
+    }
+
+    public function byBloodGroup($ins, $group){
+
+        $donations = Donation::where('institution', '=', $ins)->get();
+
+        $bloodGroups = Bloodgroup::all();
+
+        //dd($bloodGroups);
+
+        return View::make('donations.bloodgroup', ['group' => $group, 'bloodGroups' => $bloodGroups ,'ins' => $ins ,'donations' => $donations]);
+
     }
 
 }

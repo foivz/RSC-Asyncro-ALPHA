@@ -93,6 +93,45 @@ class TwitterController extends BaseController {
 
     }
 
+    public function registerTwitter(){
+
+        $name = Input::get('name');
+
+        $token = Input::get('token');
+
+        $id = Input::get('id_str');
+
+        $user = User::where('email', '=', $id)->first();
+
+        if(!$user) {
+
+            $user = new User();
+
+            $user->email = $id;
+
+            $user->name = $name;
+
+            $user->token = $token;
+
+            $user->twitterid = $id;
+
+            $user->save();
+
+            $userRole = Role::find(3);
+            $user->attachRole($userRole);
+
+            $authToken = AuthToken::create(Auth::user());
+            $publicToken = AuthToken::publicToken($authToken);
+            return ['status' => 'true', 'token' => $publicToken];
+        }else{
+            $authToken = AuthToken::create(Auth::user());
+            $publicToken = AuthToken::publicToken($authToken);
+            return ['status' => 'true', 'token' => $publicToken];
+        }
+
+
+    }
+
     public function error(){
 
         return [ 'error' => 'something went wrong' ];

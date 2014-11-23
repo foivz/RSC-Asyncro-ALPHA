@@ -15,22 +15,22 @@ class BloodgroupsTableSeeder extends Seeder {
                 'name'=>'A+'
         ]);
         Bloodgroup::create([
-            'name'=>'B+'
-        ]);
-        Bloodgroup::create([
-            'name'=>'AB+'
-        ]);
-        Bloodgroup::create([
-            'name'=>'0+'
-        ]);
-        Bloodgroup::create([
             'name'=>'A-'
+        ]);
+        Bloodgroup::create([
+            'name'=>'B+'
         ]);
         Bloodgroup::create([
             'name'=>'B-'
         ]);
         Bloodgroup::create([
+            'name'=>'AB+'
+        ]);
+        Bloodgroup::create([
             'name'=>'AB-'
+        ]);
+        Bloodgroup::create([
+            'name'=>'0+'
         ]);
         Bloodgroup::create([
             'name'=>'0-'

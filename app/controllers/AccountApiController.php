@@ -23,7 +23,7 @@ class AccountApiController extends \BaseController {
 
             $newUser->password = Hash::make(Input::get('password'));
 
-            FileUpload::saveImage('/uploads', 'avatar');
+            //FileUpload::saveImage('/uploads', 'avatar');
 
             try{
 
