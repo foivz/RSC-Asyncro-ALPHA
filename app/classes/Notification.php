@@ -8,9 +8,15 @@
 
 class Notification {
 
-    public static function Send(){
+    public static function Send($gcmId, $title, $message){
 
+        if($gcmId) {
 
+            PushNotification::app('appNameAndroid')
+                ->to($gcmId)
+                ->send(json_encode(['title' => $title, 'message' => $message]));
+
+        }
 
     }
 

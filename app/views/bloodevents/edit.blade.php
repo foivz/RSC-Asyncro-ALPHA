@@ -49,7 +49,7 @@
         <div class="form-group">
             {{ Form::label('institution_id', 'Institution_id:', array('class'=>'col-md-2 control-label')) }}
             <div class="col-sm-10">
-              {{ Form::input('number', 'institution_id', Input::old('institution_id'), array('class'=>'form-control')) }}
+              {{ Form::select('institution_id', $inst, $bloodevent->institution_id, array('class'=>'form-control')) }}
             </div>
         </div>
 

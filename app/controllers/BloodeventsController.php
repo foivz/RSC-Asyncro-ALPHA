@@ -36,7 +36,9 @@ class BloodeventsController extends BaseController {
 	 */
 	public function create()
 	{
-		return View::make('bloodevents.create');
+        $inst = Institution::lists('name', 'id');
+
+		return View::make('bloodevents.create', ['inst' => $inst]);
 	}
 
 	/**
@@ -85,12 +87,14 @@ class BloodeventsController extends BaseController {
 	{
 		$bloodevent = $this->bloodevent->find($id);
 
+        $inst = Institution::lists('name', 'id');
+
 		if (is_null($bloodevent))
 		{
 			return Redirect::route('bloodevents.index');
 		}
 
-		return View::make('bloodevents.edit', compact('bloodevent'));
+		return View::make('bloodevents.edit', ['bloodevent' => $bloodevent, 'inst' => $inst]);
 	}
 
 	/**
