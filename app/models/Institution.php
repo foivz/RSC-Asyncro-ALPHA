@@ -21,6 +21,6 @@ class Institution extends Eloquent {
         return $this->belongsTo('City');
     }
     public function users(){
-        return $this->belongsToMany('User','follows','user_id','institution_id');
+        return $this->belongsToMany('User','follows','institution_id','user_id');
     }
 }

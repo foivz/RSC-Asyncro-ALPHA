@@ -68,10 +68,12 @@ Route::get('/donations/{ins}/destroy/{id}', [ 'as' => 'donations.destroy', 'uses
 Route::get('/donations/{ins}/edit/{id}', [ 'as' => 'donations.edit', 'uses' => 'DonationsController@edit' ]);
 Route::patch('/donations/{ins}/update/{id}', [ 'as' => 'donations.update', 'uses' => 'DonationsController@update' ]);
 Route::get('/donations/{ins}/bloodgroup/{group}', [ 'as' => 'donations.bybloodgroup', 'uses' => 'DonationsController@byBloodGroup' ]);
-Route::get('/donations/edit/{id}', [ 'as' => 'donations.editEvent', 'uses' => 'DonationsController@editEvent' ]);
-Route::patch('/donations/update/{id}', [ 'as' => 'donations.eventUpdate', 'uses' => 'DonationsController@eventUpdate' ]);
 
-//Route::resource('donations', 'DonationsController');
+Route::get('/push/send/thanks/{userid}',['as'=>'push.sendthanks','uses'=>'PushController@sendThanks']);
+Route::get('/push/send/event/{userid}/{event}',['as'=>'push.sendinvite','uses'=>'PushController@sendInviteToEvent']);
+Route::get('/push/send/eligible/{userid}/',['as'=>'push.sendeligible','uses'=>'PushController@isEligible']);
+
+
 
 
 Route::resource('events', 'EventsController');
