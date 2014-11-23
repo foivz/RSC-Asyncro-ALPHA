@@ -130,7 +130,8 @@ class BloodeventsController extends BaseController {
 
 		return Redirect::route('bloodevents.index');
 	}
-    public function eventByDonation($donationId){
+    public function eventByDonation(){
+        $donationId=Input::get('donationId');
         return Donation::with('events')->find($donationId)->events;
     }
 }
