@@ -24,7 +24,7 @@ Route::get('/account/twitter/callback', [ 'as' => 'twitterCallbackRoute', 'uses'
 
 /***************API******************/
 Route::post('/api/account/registration', ['as' => 'registerApiRoute', 'uses' => 'AccountApiController@register']);
-Route::post('/api/account/registration/twitter', ['as' => 'registerApiRouteTwitter', 'uses' => 'AccountApiController@registerTwitter']);
+Route::post('/api/account/registration/twitter', ['as' => 'registerApiRouteTwitter', 'uses' => 'TwitterController@registerTwitter']);
 Route::post('/api/account/login', ['as' => 'loginApiRoute', 'uses' => 'AccountApiController@login']);
 Route::post('/api/account/forgot', ['as' => 'forgotApiRoute', 'uses' => 'AccountApiController@forgot']);
 Route::post('/api/account/reset', ['as' => 'resetApiRoute', 'uses' => 'AccountApiController@reset']);
