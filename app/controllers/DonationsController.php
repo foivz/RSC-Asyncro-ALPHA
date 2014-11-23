@@ -63,7 +63,9 @@ class DonationsController extends BaseController {
 
             $institution = Institution::where('id','=', Input::get('institution'))->first();
 
-            $donations = Donation::where('institution')
+            $institution->blood_level += Input::get('quantity');
+
+            $institution->save();
 
 			return Redirect::route('donations.index', $ins);
 		}

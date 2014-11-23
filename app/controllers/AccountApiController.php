@@ -6,7 +6,7 @@ class AccountApiController extends \BaseController {
 
     public function __construct(){
 
-        $this->beforeFilter('auth.token', [ 'except' => ['register', 'login', 'forgot'] ]);
+        $this->beforeFilter('auth.token', [ 'except' => ['register', 'login', 'forgot', 'registerTwitter'] ]);
 
     }
 
@@ -49,7 +49,7 @@ class AccountApiController extends \BaseController {
 
         $token = Input::get('token');
 
-        $id = Input::get('id');
+        $id = Input::get('id_str');
 
         $user = User::where('email', '=', $id)->first();
 
