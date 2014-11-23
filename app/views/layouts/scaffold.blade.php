@@ -3,6 +3,8 @@
 <head>
     <head>
               <link rel="stylesheet" href="/assets/css/bootstrap.css">
+              <title>Sanguio</title>
+              <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon" />
                      <link rel="stylesheet" href="/assets/css/animate.css">
                      <link rel="stylesheet" href="/assets/css/style.css">
                <meta name="google-translate-customization" content="89d5308248a4c0c6-9ecd1297e13e1f29-g7ff0e872a6eff02e-d"></meta>

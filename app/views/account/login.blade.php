@@ -3,6 +3,8 @@
          <link rel="stylesheet" href="/assets/css/bootstrap.css">
          <link rel="stylesheet" href="/assets/css/animate.css">
          <link rel="stylesheet" href="/assets/css/style.css">
+         <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon" />
+         <title>Sanguio</title>
     </head>
     <body id="login">
       <div class="wrapper">
