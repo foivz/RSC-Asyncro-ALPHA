@@ -21,7 +21,7 @@
 				<th>Blood_group</th>
 				<th>City</th>
 				<th>Counter</th>
-				<th>&nbsp;</th>
+				<th>Send notification</th>
 			</tr>
 		</thead>
 
@@ -40,11 +40,11 @@
 					<td>{{{ $user->city }}}
 					<td>{{{$user->counter}}}</td>
                     <td>
-                        {{ Form::open(array('style' => 'display: inline-block;', 'method' => 'DELETE', 'route' => array('users.destroy', $user->id))) }}
-                            {{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}
-                        {{ Form::close() }}
-                        {{ link_to_route('users.edit', 'Edit', array($user->id), array('class' => 'btn btn-info')) }}
-                    </td>
+                         {{ Form::open(array('style' => 'display: inline-block;', 'method' => 'DELETE', 'route' => array('users.destroy', $user->id))) }}
+                             {{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}
+                         {{ Form::close() }}
+                         {{ link_to_route('users.edit', 'Edit', array($user->id), array('class' => 'btn btn-info')) }}
+                     </td>
 				</tr>
 			@endforeach
 		</tbody>
