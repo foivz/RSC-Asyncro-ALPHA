@@ -71,6 +71,13 @@ class DonationsController extends BaseController {
 
             $user->points += 1;
 
+            if($user->points <= 3)
+                $user->rank = 'Donor';
+            else if($user->points >3 && $user->points <= 6)
+                $user->rank = 'Hero';
+            else
+                $user->rank = 'Life saver';
+
             $user->save();
 
 			return Redirect::route('donations.index', $ins);
