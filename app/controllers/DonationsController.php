@@ -61,6 +61,10 @@ class DonationsController extends BaseController {
 		{
 			$this->donation->create($input);
 
+            $institution = Institution::where('id','=', Input::get('institution'))->first();
+
+            $donations = Donation::where('institution')
+
 			return Redirect::route('donations.index', $ins);
 		}
 
@@ -164,9 +168,9 @@ class DonationsController extends BaseController {
 
         $donations = Donation::where('institution', '=', $ins)->get();
 
-        $bloodGroups = Bloodgroup::where();
+        $bloodGroups = Bloodgroup::all();
 
-        dd($bloodGroups);
+        //dd($bloodGroups);
 
         return View::make('donations.bloodgroup', ['group' => $group, 'bloodGroups' => $bloodGroups ,'ins' => $ins ,'donations' => $donations]);
 
