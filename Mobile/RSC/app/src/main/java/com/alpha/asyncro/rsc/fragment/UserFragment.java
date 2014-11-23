@@ -53,7 +53,7 @@ public class UserFragment extends LabeledFragment implements OnUserReadListener 
     @OnClick(R.id.btnShowDonorCard)
     void showDonorCard() {
         if (donorCardPresenter == null)
-            donorCardPresenter = new DonorCardPresenter(activity);
+            donorCardPresenter = new DonorCardPresenter(activity, activity.getUserController());
         donorCardPresenter.show(activity.getUser());
     }
 

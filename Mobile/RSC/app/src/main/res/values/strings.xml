@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Sanguio</string>
+    <string name="app_name">RSC</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
@@ -25,5 +25,8 @@
     <string name="lbl_logout">Logout</string>
     <string name="lbl_language_type">Select language</string>
     <string name="lbl_save">Save</string>
+    <string name="lbl_cancel">Cancel</string>
+    <string name="lbl_edit">Edit</string>
+    <string name="lbl_ok">OK</string>
     <string name="lbl_splash">Share,Love,Donate</string>
 </resources>

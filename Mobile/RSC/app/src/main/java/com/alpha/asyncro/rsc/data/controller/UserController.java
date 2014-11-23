@@ -22,6 +22,7 @@ public class UserController extends LightController {
     private LightDataResponseCallback<User> passwordResetCallback;
     private LightDataMultipleResponseCallback<User[]> userResponseCallback;
     private LightDataResponseCallback<Secure> passwordForgotCallback;
+    private LightDataResponseCallback<User> editResponseCallback;
 
     private Context context;
 
@@ -31,6 +32,7 @@ public class UserController extends LightController {
         this.passwordResetCallback = new LightDataResponseCallback<User>();
         this.userResponseCallback = new LightDataMultipleResponseCallback<User[]>();
         this.passwordForgotCallback = new LightDataResponseCallback<Secure>();
+        this.editResponseCallback = new LightDataResponseCallback<User>();
         this.context = context;
     }
 
@@ -93,6 +95,12 @@ public class UserController extends LightController {
         SharedPreferences.Editor editor = Preferences.loadEditor(context);
         editor.clear();
         editor.commit();
+    }
+
+    public void editData(User user) {
+        this.editResponseCallback.setOnDataResponseListener(getOnDataResponseListener());
+        this.setOnErrorListener(getOnErrorListener());
+        LightAPIUtil.getRestAdapter(RSCAPI.API_ENDPOINT).create(RSCAPI.class).editUser(user, editResponseCallback);
     }
 
 }

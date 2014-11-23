@@ -35,6 +35,8 @@ public class User extends Node {
     private String regId;
     @Expose
     private String idStr;
+    @Expose
+    private String authToken;
 
 
     public User() {
@@ -85,6 +87,7 @@ public class User extends Node {
 
     public void setToken(String token) {
         this.token = token;
+        this.authToken = token;
     }
 
     public String getAvatar() {
@@ -173,5 +176,13 @@ public class User extends Node {
 
     public void setIdStr(String idStr) {
         this.idStr = idStr;
+    }
+
+    public String getAuthToken() {
+        return authToken;
+    }
+
+    public void setAuthToken(String authToken) {
+        this.authToken = authToken;
     }
 }

@@ -49,4 +49,7 @@ public interface RSCAPI {
     @POST("/1/fetch/event")
     public void getEvents(@Query("donationId") String id, Callback<Event[]> events);
 
+    @POST("/account/update")
+    public void editUser(@Body User user, Callback<User> response);
+
 }
