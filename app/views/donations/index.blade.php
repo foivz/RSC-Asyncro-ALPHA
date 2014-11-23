@@ -5,7 +5,6 @@
 <h1>All Donations</h1>
 
 <p>{{ link_to_route('donations.create', 'Add New Donation', $ins, array('class' => 'btn btn-lg btn-success')) }}</p>
-<p>{{ link_to_route('donations.pushnotification', 'Push Notification', null, array('class' => 'btn btn-lg btn-success')) }}</p>
 <p>{{ link_to_route('donations.bybloodgroup','By Blood Group', [$ins, 1], array('class' => 'btn btn-lg btn-success')) }}</p>
 
 @if ($donations->count())

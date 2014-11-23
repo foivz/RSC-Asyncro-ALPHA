@@ -77,14 +77,14 @@
         <div class="form-group">
             {{ Form::label('blood_group', 'Blood_group:', array('class'=>'col-md-2 control-label')) }}
             <div class="col-sm-10">
-              {{ Form::input('number', 'blood_group', Input::old('blood_group'), array('class'=>'form-control')) }}
+              {{ Form::select('blood_group', $bloodGroups, 0, array('class'=>'form-control')) }}
             </div>
         </div>
 
         <div class="form-group">
             {{ Form::label('city', 'City:', array('class'=>'col-md-2 control-label')) }}
             <div class="col-sm-10">
-              {{ Form::input('number', 'city', Input::old('city'), array('class'=>'form-control')) }}
+              {{ Form::select('city', $cities, 0,array('class'=>'form-control')) }}
             </div>
         </div>
 

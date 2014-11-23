@@ -38,7 +38,11 @@ class UsersController extends BaseController {
 	 */
 	public function create()
 	{
-		return View::make('users.create');
+        $cities = City::lists('name', 'id');
+
+        $bloodGroups = Bloodgroup::lists('name', 'id');
+
+		return View::make('users.create', [ 'cities' => $cities, 'bloodGroups' => $bloodGroups ]);
 	}
 
 	/**
@@ -93,12 +97,16 @@ class UsersController extends BaseController {
 	{
 		$user = $this->user->find($id);
 
+        $cities = City::lists('name', 'id');
+
+        $bloodGroups = Bloodgroup::lists('name', 'id');
+
 		if (is_null($user))
 		{
 			return Redirect::route('users.index');
 		}
 
-		return View::make('users.edit', compact('user'));
+		return View::make('users.edit', ['user' => $user, 'cities' => $cities, 'bloodGroups' => $bloodGroups]);
 	}
 
 	/**

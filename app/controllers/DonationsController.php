@@ -63,7 +63,29 @@ class DonationsController extends BaseController {
 
             $institution = Institution::where('id','=', Input::get('institution'))->first();
 
-            $institution->blood_level += Input::get('quantity');
+            //$institution->blood_level += Input::get('quantity');
+
+            $value = 0;
+
+            $donations = $this->donation->where('institution', '=', Input::get('institution'))->get(['quantity']);
+
+            foreach($donations as $donation)
+            {
+                $value += $donation->quantity;
+            }
+
+            if($value < 5000){
+
+                $users = User::get();
+
+                foreach($users as $user){
+
+                    Notification::Send($user->gcm_regid, 'Low Supplies!', 'We\'re inviting you to donate blood!');
+
+                }
+            }
+
+            $institution->blood_level = $value;
 
             $institution->save();
 
@@ -71,12 +93,18 @@ class DonationsController extends BaseController {
 
             $user->points += 1;
 
-            if($user->points <= 3)
+            if($user->points <= 3) {
                 $user->rank = 'Donor';
-            else if($user->points >3 && $user->points <= 6)
+
+            }
+            else if($user->points >3 && $user->points <= 6) {
                 $user->rank = 'Hero';
-            else
+                Notification::Send($user->gcm_regid, 'New rank: HERO', 'You have earned new rank: HERO');
+            }
+            else {
                 $user->rank = 'Life saver';
+                Notification::Send($user->gcm_regid, 'New rank: LIFE SAVER', 'You have earned new rank: LIFE SAVER');
+            }
 
             $user->save();
 
