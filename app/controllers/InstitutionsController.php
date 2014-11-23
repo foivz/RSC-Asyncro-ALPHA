@@ -11,8 +11,9 @@ class InstitutionsController extends BaseController {
 
 	public function __construct(Institution $institution)
 	{
-        $this->beforeFilter('auth');
-        $this->beforeFilter('bothRoles');
+        $this->beforeFilter('auth',["except"=>["institutionByDonation"]]);
+        $this->beforeFilter('bothRoles',["except"=>["institutionByDonation"]]);
+        $this->beforeFilter('auth.token',["only"=>["institutionByDonation"]]);
 		$this->institution = $institution;
 	}
 
@@ -130,7 +131,7 @@ class InstitutionsController extends BaseController {
 		return Redirect::route('institutions.index');
 	}
     public function institutionByDonation($id){
-        return Institution::where('id','=',$id);
+        return Institution::where('id','=',$id)->with('city')->first();
     }
 
 }
