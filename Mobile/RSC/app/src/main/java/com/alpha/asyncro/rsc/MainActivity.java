@@ -180,6 +180,10 @@ public class MainActivity extends LightTabbedActivity implements OnDataMultipleR
                 startActivity(intent);
                 this.finish();
                 break;
+
+            case R.id.action_settings:
+                Intent intentSettings = new Intent(getBaseContext(),SettingsActivity.class);
+                startActivity(intentSettings);
         }
         return super.onOptionsItemSelected(item);
     }

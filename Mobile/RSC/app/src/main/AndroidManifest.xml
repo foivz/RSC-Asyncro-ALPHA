@@ -45,8 +45,11 @@
         <activity android:name=".LoginActivity" />
         <activity
             android:name=".MainActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize" />
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            />
         <activity android:name="com.github.gorbin.asne.core.OAuthActivity" />
+        <activity android:name="com.alpha.asyncro.rsc.SettingsActivity" android:configChanges="locale"/>
+
 
         <!--
           WakefulBroadcastReceiver that will receive intents from GCM

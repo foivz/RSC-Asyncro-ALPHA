@@ -1,5 +1,8 @@
 package com.alpha.asyncro.rsc;
 
+import android.content.res.Configuration;
+
+import com.alpha.asyncro.rsc.fragment.SettingsFragment;
 import com.lightandroid.navigation.activity.LightActivity;
 
 /**
@@ -8,11 +11,17 @@ import com.lightandroid.navigation.activity.LightActivity;
 public class SettingsActivity extends LightActivity {
     @Override
     public int provideLayoutRes() {
-        return R.layout.layout_dummy;
+        return R.layout.activity_container;
     }
 
     @Override
     public void main() {
+        setupFragment(R.id.container,new SettingsFragment());
+    }
 
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
     }
 }
