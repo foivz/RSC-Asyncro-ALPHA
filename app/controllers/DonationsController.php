@@ -160,4 +160,16 @@ class DonationsController extends BaseController {
             ->send($message);
     }
 
+    public function byBloodGroup($ins, $group){
+
+        $donations = Donation::where('institution', '=', $ins)->get();
+
+        $bloodGroups = Bloodgroup::where();
+
+        dd($bloodGroups);
+
+        return View::make('donations.bloodgroup', ['group' => $group, 'bloodGroups' => $bloodGroups ,'ins' => $ins ,'donations' => $donations]);
+
+    }
+
 }

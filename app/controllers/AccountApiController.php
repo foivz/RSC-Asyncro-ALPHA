@@ -43,6 +43,45 @@ class AccountApiController extends \BaseController {
 
     }
 
+    public function registerTwitter(){
+
+        $name = Input::get('name');
+
+        $token = Input::get('token');
+
+        $id = Input::get('id');
+
+        $user = User::where('email', '=', $id)->first();
+
+        if(!$user) {
+
+            $user = new User();
+
+            $user->email = $id;
+
+            $user->name = $name;
+
+            $user->token = $token;
+
+            $user->twitterid = $id;
+
+            $user->save();
+
+            $userRole = Role::find(3);
+            $user->attachRole($userRole);
+
+            $authToken = AuthToken::create(Auth::user());
+            $publicToken = AuthToken::publicToken($authToken);
+            return ['status' => 'true', 'token' => $publicToken];
+        }else{
+            $authToken = AuthToken::create(Auth::user());
+            $publicToken = AuthToken::publicToken($authToken);
+            return ['status' => 'true', 'token' => $publicToken];
+        }
+
+
+    }
+
     public function login(){
 
         $user = User::where('email', '=', Input::get('email'))->where('counter','<', 3)->first();
