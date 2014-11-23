@@ -28,10 +28,10 @@
 					<td>{{{ $bloodevent->logo }}}</td>
 					<td>{{{ $bloodevent->institution_id }}}</td>
                     <td>
-                        {{ Form::open(array('style' => 'display: inline-block;', 'method' => 'DELETE', 'route' => array('bloodevents.destroy', $bloodevent->id))) }}
-                            {{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}
+                        {{ Form::open(array('style' => 'display: inline-block; margin-top:0;', 'method' => 'DELETE', 'route' => array('bloodevents.destroy', $bloodevent->id))) }}
+                            {{ Form::submit('Delete', array('class' => 'btn btn-danger', 'style' => 'margin-top:0;')) }}
                         {{ Form::close() }}
-                        {{ link_to_route('bloodevents.edit', 'Edit', array($bloodevent->id), array('class' => 'btn btn-info')) }}
+                        {{ link_to_route('bloodevents.edit', 'Edit', array($bloodevent->id), array('class' => 'btn btn-info', 'style' =>'margin-top:0;')) }}
                     </td>
 				</tr>
 			@endforeach

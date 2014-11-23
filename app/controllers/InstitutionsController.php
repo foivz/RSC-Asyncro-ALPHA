@@ -148,7 +148,7 @@ class InstitutionsController extends BaseController {
         return View::make('users.index', ['users'=>$users,'event'=>$event]);
     }
     public function listInstitutions(){
-        return Institution::all();
+        return Institution::all()->take(4);
     }
 
     public function eventDonations($event){

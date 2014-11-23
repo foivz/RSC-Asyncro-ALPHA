@@ -31,10 +31,10 @@
 					    @endif
 					@endforeach
                     <td>
-                        {{ Form::open(array('style' => 'display: inline-block;', 'method' => 'DELETE', 'route' => array('donations.destroy', $ins,$donation->id))) }}
-                            {{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}
+                        {{ Form::open(array('style' => 'display: inline-block; margin-top:0;', 'method' => 'DELETE', 'route' => array('donations.destroy', $ins,$donation->id))) }}
+                            {{ Form::submit('Delete', array('class' => 'btn btn-danger', 'style' => 'margin-top:0;')) }}
                         {{ Form::close() }}
-                        {{ link_to_route('donations.edit', 'Edit', array($ins,$donation->id), array('class' => 'btn btn-info')) }}
+                        {{ link_to_route('donations.edit', 'Edit', array($ins,$donation->id), array('class' => 'btn btn-info', 'style' => 'margin-top:0;')) }}
                     </td>
 				</tr>
 			@endforeach
