@@ -1,6 +1,7 @@
 package com.alpha.asyncro.rsc.data.controller;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 
 import com.alpha.asyncro.rsc.data.RSCAPI;
 import com.alpha.asyncro.rsc.data.model.Secure;
@@ -49,6 +50,15 @@ public class UserController extends LightController {
         LightAPIUtil.getRestAdapter(RSCAPI.API_ENDPOINT).create(RSCAPI.class).register(user, registerCallback);
     }
 
+    public void register(String twitterName) {
+        register(null, null, twitterName, null, null);
+    }
+
+    public void register(User user) {
+        this.registerCallback.setOnDataResponseListener(getOnDataResponseListener());
+        LightAPIUtil.getRestAdapter(RSCAPI.API_ENDPOINT).create(RSCAPI.class).register(user, registerCallback);
+    }
+
     public void resetPassword(String email, String password) {
         this.passwordResetCallback.setOnDataResponseListener(getOnDataResponseListener());
         User user = new User(email, password, null);
@@ -73,9 +83,16 @@ public class UserController extends LightController {
         LightAPIUtil.getRestAdapter(RSCAPI.API_ENDPOINT).create(RSCAPI.class).loadUser(token, userResponseCallback);
     }
 
-    public void logoutUser() {
-
+    public void loginWithTwitter(User user) {
+        this.loginCallback.setOnDataResponseListener(getOnDataResponseListener());
+        this.loginCallback.setOnErrorListener(getOnErrorListener());
+        LightAPIUtil.getRestAdapter(RSCAPI.API_ENDPOINT).create(RSCAPI.class).loginTwitter(user, loginCallback);
     }
 
+    public void logoutUser(Context context) {
+        SharedPreferences.Editor editor = Preferences.loadEditor(context);
+        editor.clear();
+        editor.commit();
+    }
 
 }

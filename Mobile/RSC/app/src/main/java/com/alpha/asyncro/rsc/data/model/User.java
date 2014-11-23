@@ -31,6 +31,11 @@ public class User extends Node {
     private Donation[] donations;
     @Expose
     private int points;
+    @Expose
+    private String regId;
+    @Expose
+    private String idStr;
+
 
     public User() {
     }
@@ -152,5 +157,21 @@ public class User extends Node {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getRegId() {
+        return regId;
+    }
+
+    public void setRegId(String regId) {
+        this.regId = regId;
+    }
+
+    public String getIdStr() {
+        return idStr;
+    }
+
+    public void setIdStr(String idStr) {
+        this.idStr = idStr;
     }
 }

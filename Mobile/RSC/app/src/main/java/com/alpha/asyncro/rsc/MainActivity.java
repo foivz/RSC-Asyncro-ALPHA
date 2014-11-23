@@ -174,7 +174,7 @@ public class MainActivity extends LightTabbedActivity implements OnDataMultipleR
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_logout:
-                userController.logoutUser();
+                userController.logoutUser(getBaseContext());
                 Intent intent = new Intent(getBaseContext(), LoginActivity.class);
                 intent.putExtra(LoginFragment.KEY_AUTO_LOGIN, false);
                 startActivity(intent);

@@ -1,5 +1,7 @@
 package com.alpha.asyncro.rsc.data;
 
+import com.alpha.asyncro.rsc.data.model.Event;
+import com.alpha.asyncro.rsc.data.model.Institution;
 import com.alpha.asyncro.rsc.data.model.Secure;
 import com.alpha.asyncro.rsc.data.model.User;
 
@@ -30,5 +32,14 @@ public interface RSCAPI {
 
     @POST("/user/fetch")
     public void loadUser(@Query("auth_token") String token, Callback<User[]> response);
+
+    @POST("/account/registration/twitter")
+    public void loginTwitter(@Body User request, Callback<User> response);
+
+    @POST("/1/institution")
+    public void getInstitution(@Query("id") String id, Callback<Institution> response);
+
+    @POST("/1/fetch/event")
+    public void getEvent(@Query("donationId") String id, Callback<Event> response);
 
 }
